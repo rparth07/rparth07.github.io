@@ -27,6 +27,76 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 5px solid transparent;
+  border-radius: 100px;
+  background-color: #0563bb;
+  background-clip: content-box;
+}
+
+.social-elements-container {
+  width: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 200px;
+  right: auto;
+  z-index: 10;
+  color: #a8b2d1;
+}
+
+.email-container {
+  width: 100px;
+  position: fixed;
+  bottom: 0;
+  left: auto;
+  right: 50px;
+  z-index: 10;
+  color: #a8b2d1;
+}
+
+.social-elements,
+.email-element {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.social-elements a,
+.email-element a {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+.social-elements::after,
+.email-element::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: #a8b2d1;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -39,13 +109,13 @@ h6 {
   z-index: 996;
   background: #0563bb;
   width: 40px;
+  font-size: 28px;
   height: 40px;
   border-radius: 50px;
   transition: all 0.4s;
 }
 
 .back-to-top i {
-  font-size: 28px;
   color: #fff;
   line-height: 0;
 }
@@ -54,7 +124,6 @@ h6 {
   background: #0678e3;
   color: #fff;
 }
-
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
@@ -67,6 +136,7 @@ h6 {
   position: fixed;
   top: 0;
   left: 0;
+
   right: 0;
   bottom: 0;
   z-index: 9999;
