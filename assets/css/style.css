@@ -250,7 +250,6 @@ a {
   height: 56px;
   width: 100%;
   overflow: hidden;
-  transition: 0.3s;
 }
 
 .nav-menu a i {
@@ -401,7 +400,7 @@ a {
 }
 
 #hero .social-links a {
-  font-size: 24px;
+  font-size: 30px;
   display: inline-block;
   color: #45505b;
   line-height: 1;
