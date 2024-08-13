@@ -97,6 +97,7 @@ a {
   position: relative;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -124,6 +125,7 @@ a {
   background: #0678e3;
   color: #fff;
 }
+
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
@@ -163,6 +165,7 @@ a {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -172,6 +175,7 @@ a {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -232,7 +236,7 @@ a {
   list-style: none;
 }
 
-.nav-menu > ul > li {
+.nav-menu>ul>li {
   position: relative;
   white-space: nowrap;
 }
@@ -265,6 +269,7 @@ a {
   .nav-menu a {
     width: 56px;
   }
+
   .nav-menu a span {
     display: none;
     color: #fff;
@@ -273,25 +278,25 @@ a {
 
 .nav-menu a:hover,
 .nav-menu .active,
-.nav-menu li:hover > a {
+.nav-menu li:hover>a {
   color: #fff;
   background: #0563bb;
 }
 
 .nav-menu a:hover span,
 .nav-menu .active span,
-.nav-menu li:hover > a span {
+.nav-menu li:hover>a span {
   color: #fff;
 }
 
 .nav-menu a:hover,
-.nav-menu li:hover > a {
+.nav-menu li:hover>a {
   width: 100%;
   color: #fff;
 }
 
 .nav-menu a:hover span,
-.nav-menu li:hover > a span {
+.nav-menu li:hover>a span {
   display: block;
 }
 
@@ -370,7 +375,7 @@ a {
   font-size: clamp(80px, 8vw, 80px);
 }
 
-#hero > div {
+#hero>div {
   position: absolute;
   top: 5rem;
   left: 30rem;
@@ -416,10 +421,12 @@ a {
   #hero {
     text-align: center;
   }
+
   #hero h1 {
     font-size: 32px;
     line-height: 36px;
   }
+
   #hero p {
     margin-top: 10px;
     font-size: 20px;
@@ -480,7 +487,7 @@ section {
   height: 70%;
   width: 70%;
   object-fit: cover;
-  box-shadow: 5px 5px 0px 0px #c8a494;
+  box-shadow: 5px 5px 0px 0px #5450495c;
 }
 
 /*--------------------------------------------------------------
@@ -835,10 +842,7 @@ section {
   position: relative;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -846,10 +850,7 @@ section {
   border: 1px solid #0563bb;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet-active {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #0563bb;
 }
 
@@ -872,7 +873,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li + li {
+.portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
 }
 
@@ -1197,7 +1198,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
@@ -1262,6 +1263,7 @@ section {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -1271,6 +1273,7 @@ section {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
