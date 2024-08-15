@@ -485,7 +485,6 @@ section {
 
 .profile {
   height: 70%;
-  width: 70%;
   object-fit: cover;
   box-shadow: 5px 5px 0px 0px #5450495c;
 }
@@ -568,7 +567,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -1115,6 +1114,10 @@ section {
   text-align: center;
 }
 
+.contact .row {
+  margin-top: 3rem;
+}
+
 .contact .row h2 {
   font-size: 4rem;
   font-weight: 700;
@@ -1364,4 +1367,105 @@ section {
   /* filter: grayscale(0%); */
 
   /* -o-transition-timing-function: ease-in; */
+}
+
+/* Media Queries for Responsiveness */
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+
+  .email-container {
+    display: none;
+  }
+
+  section {
+    padding: 0;
+  }
+
+  h2,
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h5,
+  section h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  #hero>div {
+    top: 10rem;
+    left: 0;
+  }
+
+  .profile-img-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .section-ending-padding {
+    padding-bottom: 5rem;
+  }
+
+  .skill-container:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  #education .row {
+    scale: 0.8;
+  }
+
+  #contact .row {
+    margin-top: 0;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  section {
+    padding: 30px;
+  }
+
+  #hero>div {
+    top: 10rem;
+    left: 15rem;
+  }
+
+  .email-container {
+    display: none;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+  /* Your CSS here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+  #hero>div {
+    left: 25rem;
+  }
+
+  #hero h1 {
+    line-height: 100%;
+  }
+}
+
+/* Extra extra large devices (ultra-wide screens, 1400px and up) */
+@media (max-width: 1400px) {
+  /* Your CSS here */
 }
