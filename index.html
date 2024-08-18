@@ -10,9 +10,13 @@
   <meta content="portfolio" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/d.jpg" rel="icon">
+  <!-- //TODO: need to fix this link -->
+  <link href="assets/img/d.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
@@ -25,11 +29,11 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="index-page">
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -66,6 +70,8 @@
       <a href="mailto:pmr642001@gmail.com">pmr642001@gmail.com</a>
     </div>
   </div>
+
+  <!-- <main class="main"> -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="row">
     <div class="col-sx-12 col-md-6 col-sm-12 col-lg-6 justify-content-end" data-aos="zoom-in" data-aos-delay="100">
@@ -77,7 +83,7 @@
         <span class="typed" data-typed-items="Software Developer, Open Source Contributor, Educator, Mentor"></span>
       </p>
 
-      <div class="social-links ps-2">
+      <div class="social-links">
         <a href="https://github.com/rparth07" class="github">
           <i class="bx bxl-github"></i>
         </a>
@@ -95,29 +101,40 @@
   <!-- ======= About Section ======= -->
   <section id="about" data-aos="fade-up" data-aos-delay="100">
     <div class="container p-10">
-      <div class="row justify-content-center">
-        <div class="col">
-          <div class="section-title">
-            <h2>About me.</h2>
+      <div class="col">
+        <div class="section-title">
+          <h2>About Me.</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-1 col-md-1"></div>
+          <div class="profile-img-container pl-5 col-sx-12 col-md-4 col-sm-12 col-lg-4" data-aos="zoom-out"
+            data-aos-delay="100">
+            <img src="assets/img/profile-photo.jpg" class="img-fluid profile" id="dp" alt="">
           </div>
-          <div class="pt-3 row">
-            <div class="col-lg-1 col-md-1"></div>
-            <div class=" col-sx-12 col-md-7 col-sm-12 col-lg-7 justify-content-end">
-              <h5>Senior Software Developer at Tark</h5>
-              <br />
-              <h5>Open Source Contributor</h5>
-              <p>Actively Building and contributing to projects</p>
-              <br />
-              <h5>Educator and mentor</h5>
-              <p>Educated hundreds of students, sharing knowledge and expertise in tech</p>
-            </div>
-            <div class="profile-img-container pl-5 col-sx-12 col-md-4 col-sm-12 col-lg-4 justify-content-start"
-              data-aos="zoom-out" data-aos-delay="100">
-              <img src="assets/img/profile-photo.jpg" class="img-fluid profile" id="dp" alt="">
+          <div class=" col-sx-12 col-md-7 col-sm-12 col-lg-7 justify-content-end">
+            <div class="about-details-container">
+              <div class="about-containers">
+                <div class="details-container">
+                  <img src="./assets/img/experience.png" alt="Experience icon" class="icon" />
+                  <h3>Experience</h3>
+                  <p>2+ years <br />Senior Software Developer at Tark</p>
+                </div>
+                <div class="details-container">
+                  <img src="./assets/img/experience.png" alt="Education icon" class="icon" />
+                  <h3>Open Source Contributor</h3>
+                  <p>Actively Building and contributing to projects</p>
+                </div>
+                <div class="details-container">
+                  <img src="./assets/img/experience.png" alt="Education icon" class="icon" />
+                  <h3>Educator and Mentor</h3>
+                  <p>Educated hundreds of students, sharing knowledge and expertise in tech</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
     <!-- End About Section -->
     <br>
@@ -131,21 +148,166 @@
         <h2>Skills</h2>
       </div>
       <br>
-      <div class="skill-body">
-        <div class="skill-container">
-          <h6>Languages:</h6>
-          <p>C#, C++, SQL, HTML, CSS, TypeScript, JavaScript, Apex</p>
-        </div>
-        <div class="skill-container">
-          <h6>Framework:</h6>
-          <p>.NET, Entity Framework, Angular, Redux, Bootstrap, jQuery, xUnit</p>
-        </div>
-        <div class="skill-container">
-          <h6>Technology & Tools:</h6>
-          <p>Git, RabbitMQ, Jira, Visual Studio, SQL Server Management Studio, Postman, Salesforce, Tableau</p>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Languages</h2>
+            <div class="article-container">
+              <article>
+                <!-- <div class="custom-badge col-sm-4 col-md-4 col-lg-3"><span class="skill-icon"><img
+                      src="https://img.icons8.com/color/80/000000/c-sharp-logo.png"></span>
+                </div> -->
+                <img src="./assets/img/languages/CSharp.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>C#</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/C++ (CPlusPlus).png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>C++</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/MySQL.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>SQL</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/HTML5.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>HTML</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/CSS3.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>CSS</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/TypeScript.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>TypeScript</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/JavaScript.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>JavaScript</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Oracle.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Apex</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Framework</h2>
+            <div class="article-container">
+              <article>
+                <img src="./assets/img/languages/NET core.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>.NET Core</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/NET core.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Entity Framework</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Angular.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Angular</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Redux.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Redux</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Bootstrap.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Bootstrap</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/jQuery.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>jQuery</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/xUnit.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>xUnit</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Technology & Tools</h2>
+            <div class="article-container">
+              <article>
+                <img src="./assets/img/languages/Git.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Git</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/RabbitMQ.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>RabbitMQ</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Jira.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Jira</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Postman.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Postman</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/ssms.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>SQL Server Management Studio</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Visual Studio.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Visual Studio</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Salesforce.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Salesforce</h3>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/img/languages/Tableau.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Tableau</h3>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="section-ending-padding"></div>
     </div>
   </section>
   <!--End Skills Section-->
@@ -177,7 +339,8 @@
             Designed jobs for data integrity checks and cleanup, ensuring consistency and accuracy in the database.
           </li>
           <li>
-            Managed synchronization of external system data with internal databases, ensuring accurate data linkage and
+            Managed synchronization of external system data with internal databases, ensuring accurate data linkage
+            and
             event tracking.
           </li>
           <li>
@@ -260,59 +423,125 @@
   <!-- End Education Section -->
 
   <!-- ======= Project Section ======= -->
-  <section id="project" data-aos="zoom-in-up" data-aos-delay="100">
+  <!-- <section id="projects" data-aos="zoom-in-up" data-aos-delay="100" class="h-100 h-custom">
     <div class="container">
       <div class="section-title">
         <h2>Projects</h2>
       </div>
       <br>
-      <div id="cart">
-        <div>
-          <b>
-            <h2>Airline Booking</h2>
-            <p>Description: I developed a comprehensive Airline Fare Calculation System that dynamically calculates
-              airfares based on multiple factors, offering an intuitive user experience for booking flights. The system
-              allows
-              users to select trip types—One-way, Round-trip, or Multicity—while considering essential parameters like
-              class,
-              number of adults, children, and infants.
-            </p>
-          </b>
-          <ul>
-            <li>
-              Developed a dynamic fare calculation system for flights using .NET, Angular, C#, MSSQL, and Onion
-              Architecture.
-            </li>
-            <li>
-              Implemented trip types (One-way, Round-trip, Multicity) with class-based fare rules, including special
-              handling for children and infants.
-            </li>
-            <li>
-              Designed algorithms for calculating fares based on distance, airline, and class, with dynamic sorting and
-              multi-stop flight support.
-            </li>
-            <li>
-              Enabled admin capabilities for importing flight schedules via CSV and managing seating formats and
-              operational
-              days.
-            </li>
+      <div class="m-3"></div>
+      <div class="container">
+        <div class="card mb-3">
+          <div class="card-body">
+            <b>
+              <h2>Stock Analyzer</h2>
+            </b>
+            <ul>
+              <li>coming soon</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <div>
+              <b>
+                <h2>Airline Booking</h2>
+                <p>Description: I developed a comprehensive Airline Fare Calculation System that dynamically calculates
+                  airfares based on multiple factors, offering an intuitive user experience for booking flights. The
+                  system
+                  allows
+                  users to select trip types—One-way, Round-trip, or Multicity—while considering essential parameters
+                  like
+                  class,
+                  number of adults, children, and infants.
+                </p>
+              </b>
+              <ul>
+                <li>
+                  Developed a dynamic fare calculation system for flights using .NET, Angular, C#, MSSQL, and Onion
+                  Architecture.
+                </li>
+                <li>
+                  Implemented trip types (One-way, Round-trip, Multicity) with class-based fare rules, including special
+                  handling for children and infants.
+                </li>
+                <li>
+                  Designed algorithms for calculating fares based on distance, airline, and class, with dynamic sorting
+                  and
+                  multi-stop flight support.
+                </li>
+                <li>
+                  Enabled admin capabilities for importing flight schedules via CSV and managing seating formats and
+                  operational
+                  days.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-ending-padding"></div>
+    </div>
+  </section> -->
+  <!-- End Project Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <ul id="portfolio-filters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-web">Web</li>
+            <li data-filter=".filter-cli">Cli</li>
           </ul>
         </div>
       </div>
 
-      <div class="m-3"></div>
-      <div>
-        <b>
-          <h2>Stock Analyzer</h2>
-        </b>
-        <ul>
-          <li>coming soon</li>
-        </ul>
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="./assets/img/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Starbucks App</h4>
+              <p>develop using MEEN Stack</p>
+              <div class="portfolio-links">
+                <a href="./assets/img/masonry-portfolio-1.jpg" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Starbucks App : interactive web app"><i class="bx bx-plus"></i></a>
+                <a href="https://github.com/DishenMakwana/Starbucks-App" target="_blank" title="code link"><i
+                    class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="./assets/img/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Memories App</h4>
+              <p>Social Media App : web base MERN stack app</p>
+              <div class="portfolio-links">
+                <a href="./assets/img/masonry-portfolio-1.jpg" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Social Media App : web base MERN stack app"><i
+                    class="bx bx-plus"></i></a>
+                <a href="https://github.com/DishenMakwana/Memories-App" target="_blank" title="code link"><i
+                    class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="section-ending-padding"></div>
     </div>
   </section>
-  <!-- End Project Section -->
+  <!-- End Portfolio Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
@@ -336,10 +565,7 @@
     </div>
   </section>
   <!-- End Contact Section -->
-
-  </main>
-  <!-- End #main -->
-
+  <!-- </main> -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -356,7 +582,7 @@
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
