@@ -369,6 +369,7 @@ a {
   width: auto;
   flex-direction: column;
   align-items: center;
+  align-self: center;
 }
 
 #hero h1 {
