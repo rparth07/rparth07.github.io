@@ -1,6 +1,14 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+:root {
+  --back-animation-control-button-width: 50px;
+  --back-animation-control-button-height: calc(var(--back-animation-control-button-width) / 2.5);
+  --front-animation-control-button-height: var(--back-animation-control-button-height);
+  --animation-control-button-border: calc(var(--back-animation-control-button-width) / 30);
+  --animation-control-button-time-transition: 300ms;
+}
+
 body {
   font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", system-ui,
     sans-serif;
@@ -1099,6 +1107,62 @@ article .icon {
 
 .contact .php-email-form button[type="submit"]:hover {
   background: #0678e3;
+}
+
+.on-off {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--back-animation-control-button-width) + 2 * var(--animation-control-button-border));
+  height: calc(var(--front-animation-control-button-height) + 2 * var(--animation-control-button-border));
+  line-height: var(--front-animation-control-button-height);
+  vertical-align: middle;
+  position: absolute;
+  top: 30vh;
+  left: 30vw;
+}
+
+.back {
+  width: var(--back-animation-control-button-width);
+  height: var(--back-animation-control-button-height);
+  border: var(--animation-control-button-border) solid white;
+  background-color: lightgreen;
+  position: absolute;
+  border-radius: var(--back-animation-control-button-height);
+  transition: background-color var(--animation-control-button-time-transition) linear;
+}
+
+.back2 {
+  width: calc(var(--back-animation-control-button-width) + 30px);
+  height: calc(var(--back-animation-control-button-height) + 30px);
+  background-color: grey;
+  position: absolute;
+  opacity: 0.1;
+  border-radius: var(--back-animation-control-button-height);
+  transition: background-color var(--animation-control-button-time-transition) linear;
+}
+
+.front {
+  width: var(--front-animation-control-button-height);
+  height: var(--front-animation-control-button-height);
+  border: var(--animation-control-button-border) solid white;
+  border-radius: var(--front-animation-control-button-height);
+  position: absolute;
+  left: 0;
+  background-color: lightgrey;
+  transition: left var(--animation-control-button-time-transition) ease-in-out,
+    right var(--animation-control-button-time-transition) ease-in-out;
+}
+
+.front:hover {
+  cursor: pointer;
+}
+
+.text {
+  color: blue;
+  position: absolute;
+  padding: calc(var(--back-animation-control-button-height) * 0.4);
+  font-size: calc(var(--back-animation-control-button-height) * 0.4);
 }
 
 @-webkit-keyframes animate-loading {
