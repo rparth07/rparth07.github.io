@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'vite';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-const server = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
+const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] } });
 try {
  const { portfolio: data, validateContent, safeUrl } = await server.ssrLoadModule('/src/content/portfolio.ts');
  assert.deepEqual(validateContent(data), []);
@@ -12,6 +12,9 @@ try {
  assert(validateContent(duplicate).some(error => error.includes('duplicate ids')));
  assert.equal(safeUrl('javascript:alert(1)'), '#');
  assert.equal(safeUrl('https://example.com'), 'https://example.com');
+ assert.equal(safeUrl('/assets/img/profile-photo.jpg'), '/portfolio-3d/assets/img/profile-photo.jpg');
+ assert.equal(safeUrl('#about'), '#about');
+ assert.equal(safeUrl('//example.com'), '#');
  data.work.items.push({...data.work.items[0],id:'test-project',title:'Additional Project'});
  data.career.items.push({...data.career.items[0],id:'test-experience',role:'Additional Experience'});
  data.services.items.push({...data.services.items[0],id:'test-service',title:'Additional Service'});

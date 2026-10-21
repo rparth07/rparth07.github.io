@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test:content": "node tests/content.test.mjs",
     "validate:content": "node scripts/validate-content.mjs",
-    "audit:branding": "node scripts/audit-branding.mjs"
+    "audit:branding": "node scripts/audit-branding.mjs",
+    "postbuild": "node scripts/finalize-build.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
