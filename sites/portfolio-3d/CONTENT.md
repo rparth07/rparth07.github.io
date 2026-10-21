@@ -58,7 +58,7 @@ New editable fields:
 - `contact.lines[]` and `buttonLabel` for the contact invitation.
 - `site.keywords` and `favicon` for metadata. Google social icons use `icon: "google"`.
 
-The resume currently links to your GitHub profile, as requested. About paragraphs and both service descriptions are explicitly marked placeholders. Your original About summaries (including “2+ years” and “Senior Software Developer at Tark”) are preserved verbatim; the detailed experience retains the supplied “Software Developer” title.
+The `resume` field currently links to GitHub and is labeled GITHUB. Supply a resume document URL and change its label when ready. About paragraphs and service descriptions use the supplied experience and skills. Your original About summaries (including “2+ years” and “Senior Software Developer at Tark”) are preserved verbatim; the detailed experience retains the supplied “Software Developer” title.
 
 Use the updated examples: v1 project/job objects need the new fields above before adding them to v2 JSON. The validator reports any missing fields. Name and role text sizes adapt to the supplied longer titles.
 

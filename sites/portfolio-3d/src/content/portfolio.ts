@@ -34,7 +34,7 @@ export function safeUrl(value: string): string {
 }
 export async function loadPortfolio() {
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}data/portfolio.json`, { cache: "no-store" });
+    const response = await fetch(`${import.meta.env.BASE_URL}data/portfolio.json`, { cache: "no-store", signal: AbortSignal.timeout(8000) });
     if (!response.ok) throw new Error(`Content request failed (${response.status})`);
     const content: unknown = await response.json();
     const errors = validateContent(content);

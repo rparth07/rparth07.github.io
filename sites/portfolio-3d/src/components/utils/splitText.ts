@@ -7,7 +7,7 @@ export default function setSplitText() {
   cleanup();
   const splits: SplitType[] = [];
   const context = gsap.context(() => {
-    if (window.innerWidth < 900) return;
+    if (window.innerWidth < 900 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     document.querySelectorAll<HTMLElement>(".para, .title").forEach(el => {
       const title = el.classList.contains("title");
       // Keep authored block/line structure intact.

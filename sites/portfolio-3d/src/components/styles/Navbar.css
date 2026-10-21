@@ -84,7 +84,7 @@
 
 /* Always-visible link between the two portfolio experiences. */
 .portfolio-switch {
-  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  position: fixed; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%);
   z-index: 10000; display: inline-flex; align-items: center; justify-content: center;
   gap: 10px; min-height: 44px; padding: 10px 18px; box-sizing: border-box;
   border: 1px solid #5eead4; border-radius: 24px; background: #0b1018; color: #5eead4;

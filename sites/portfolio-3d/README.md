@@ -18,7 +18,8 @@ The `postbuild` step includes the original license in the published output.
 
 Edit `public/data/portfolio.json` and see [CONTENT.md](CONTENT.md) for its schema.
 Rebuild and commit the production output when publishing content or code changes.
-About/service descriptions remain supplied placeholders; the resume links to GitHub.
+About/service descriptions use the supplied work history and skills. The profile
+link is labeled GitHub; replace its URL and label when a resume document is available.
 
 The source retains the supplied avatar and design derived from an MIT-licensed
 portfolio. The original copyright and permission notice remains in [LICENSE](LICENSE),

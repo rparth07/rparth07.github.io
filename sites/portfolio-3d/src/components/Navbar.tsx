@@ -14,7 +14,7 @@ const Navbar = () => {
     // -------------------------
     smoother = new Lenis({
       duration: 1.2,
-      smoothWheel: true,
+      smoothWheel: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     });
 
     let frame = 0;
@@ -26,7 +26,7 @@ const Navbar = () => {
 
     frame = requestAnimationFrame(raf);
 
-    smoother.scrollTo(0);
+    // The initial animation restores the requested section after loading.
 
     // -------------------------
     // NAV LINK SCROLLING
@@ -41,6 +41,7 @@ const Navbar = () => {
         const section = element.getAttribute("data-href");
         if (window.innerWidth > 1024 && section?.startsWith("#") && document.getElementById(section.slice(1))) {
           e.preventDefault();
+          history.pushState(null, "", section);
           smoother?.scrollTo(section, { offset: -90 });
         }
       };
@@ -74,7 +75,7 @@ const Navbar = () => {
           {portfolio.contact.email}
         </a>
 
-        <ul>{portfolio.navigation.map(link => <li key={link.id}><a data-href={safeUrl(link.href)} href={safeUrl(link.href)}><HoverLinks text={link.label} /></a></li>)}</ul>
+        <ul>{portfolio.navigation.map(link => <li key={link.id}><a aria-label={link.label} data-href={safeUrl(link.href)} href={safeUrl(link.href)}><HoverLinks text={link.label} /></a></li>)}</ul>
       </div>
 
       <a href="/" className="portfolio-switch" data-cursor="disable" aria-label="Switch to classic portfolio">View classic portfolio <span aria-hidden="true">&rarr;</span></a>

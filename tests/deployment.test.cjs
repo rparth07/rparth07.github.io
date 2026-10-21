@@ -17,7 +17,7 @@ test('both portfolios have separate static entry points and content', () => {
 });
 test('built scripts, styles, fonts, and icons stay inside the 3D path', () => {
   const html = read('portfolio-3d/index.html');
-  const urls = [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m => m[1]);
+  const urls = [...html.matchAll(/<(?:script|link)\b[^>]*(?:src|href)="([^"#]+)"/g)].map(m => m[1]);
   assert(urls.length > 0);
   for (const url of urls) {
     assert(url.startsWith('/portfolio-3d/'), url);

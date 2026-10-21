@@ -9,11 +9,14 @@ const Cursor = () => {
     const cursor = cursorRef.current!;
     const mousePos = { x: 0, y: 0 };
     const cursorPos = { x: 0, y: 0 };
-    document.addEventListener("mousemove", (e) => {
+    const onMouseMove = (e: MouseEvent) => {
       mousePos.x = e.clientX;
       mousePos.y = e.clientY;
-    });
-    requestAnimationFrame(function loop() {
+    };
+    document.addEventListener("mousemove", onMouseMove);
+    let frame = 0;
+    const removeHandlers: Array<() => void> = [];
+    frame = requestAnimationFrame(function loop() {
       if (!hover) {
         const delay = 6;
         cursorPos.x += (mousePos.x - cursorPos.x) / delay;
@@ -21,11 +24,11 @@ const Cursor = () => {
         gsap.to(cursor, { x: cursorPos.x, y: cursorPos.y, duration: 0.1 });
         // cursor.style.transform = `translate(${cursorPos.x}px, ${cursorPos.y}px)`;
       }
-      requestAnimationFrame(loop);
+      frame = requestAnimationFrame(loop);
     });
     document.querySelectorAll("[data-cursor]").forEach((item) => {
       const element = item as HTMLElement;
-      element.addEventListener("mouseover", (e: MouseEvent) => {
+      const onOver = (e: MouseEvent) => {
         const target = e.currentTarget as HTMLElement;
         const rect = target.getBoundingClientRect();
 
@@ -40,12 +43,21 @@ const Cursor = () => {
         if (element.dataset.cursor === "disable") {
           cursor.classList.add("cursor-disable");
         }
-      });
-      element.addEventListener("mouseout", () => {
+      };
+      const onOut = () => {
         cursor.classList.remove("cursor-disable", "cursor-icons");
         hover = false;
-      });
+      };
+      element.addEventListener("mouseover", onOver);
+      element.addEventListener("mouseout", onOut);
+      removeHandlers.push(() => {element.removeEventListener("mouseover", onOver); element.removeEventListener("mouseout", onOut);});
     });
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener("mousemove", onMouseMove);
+      removeHandlers.forEach(remove => remove());
+      gsap.killTweensOf(cursor);
+    };
   }, []);
 
   return <div className="cursor-main" ref={cursorRef}></div>;

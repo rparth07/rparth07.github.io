@@ -20,9 +20,11 @@ const Scene = () => {
   const sceneRef = useRef(new THREE.Scene());
   const { setLoading } = useLoading();
 
+  const [failed, setFailed] = useState(false);
   const [character, setChar] = useState<THREE.Object3D | null>(null);
   useEffect(() => {
     if (canvasDiv.current) {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       let rect = canvasDiv.current.getBoundingClientRect();
       let container = { width: rect.width, height: rect.height };
       const aspect = container.width / container.height;
@@ -34,12 +36,18 @@ const Scene = () => {
       };
       let characterObject: THREE.Object3D | null = null;
 
-      const renderer = new THREE.WebGLRenderer({
-        alpha: true,
-        antialias: true,
-      });
+      let renderer: THREE.WebGLRenderer;
+      try {
+        renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
+      } catch (error) {
+        console.error("3D renderer unavailable", error);
+        setFailed(true);
+        setAllTimeline();
+        setLoading(100);
+        return;
+      }
       renderer.setSize(container.width, container.height);
-      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
       canvasDiv.current.appendChild(renderer.domElement);
@@ -60,8 +68,20 @@ const Scene = () => {
       let progress = setProgress((value) => setLoading(value));
       const { loadCharacter } = setCharacter(renderer, scene, camera);
 
+      let loadingFailed = false;
+      const failLoading = (error: unknown) => {
+        if (disposed || loadingFailed) return;
+        loadingFailed = true;
+        console.error("3D preview unavailable", error);
+        progress.clear();
+        cancelAnimationFrame(frame);
+        setFailed(true);
+        setAllTimeline();
+      };
+      const loadTimeout = setTimeout(() => failLoading(new Error("3D loading timed out")), 30000);
       loadCharacter().then((gltf) => {
-        if (gltf && !disposed) {
+        clearTimeout(loadTimeout);
+        if (gltf && !disposed && !loadingFailed) {
           const animations = setAnimations(gltf);
           hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
           mixer = animations.mixer;
@@ -83,7 +103,7 @@ const Scene = () => {
           });
           window.addEventListener("resize", onResize);
         }
-      });
+      }).catch(error => { clearTimeout(loadTimeout); failLoading(error); });
 
       let mouse = { x: 0, y: 0 },
         interpolation = { x: 0.1, y: 0.2 };
@@ -91,16 +111,9 @@ const Scene = () => {
       const onMouseMove = (event: MouseEvent) => {
         handleMouseMove(event, (x, y) => (mouse = { x, y }));
       };
-      let debounce: number | undefined;
-      const onTouchStart = (event: TouchEvent) => {
-        const element = event.target as HTMLElement;
-        debounce = setTimeout(() => {
-          element?.addEventListener("touchmove", (e: TouchEvent) =>
-            handleTouchMove(e, (x, y) => (mouse = { x, y })),
-          );
-        }, 200);
+      const onTouchMove = (event: TouchEvent) => {
+        handleTouchMove(event, (x, y) => (mouse = { x, y }));
       };
-
       const onTouchEnd = () => {
         handleTouchEnd((x, y, interpolationX, interpolationY) => {
           mouse = { x, y };
@@ -111,13 +124,13 @@ const Scene = () => {
       document.addEventListener("mousemove", onMouseMove);
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
-        landingDiv.addEventListener("touchstart", onTouchStart);
+        landingDiv.addEventListener("touchmove", onTouchMove, {passive: true});
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
       const animate = () => {
-        if (disposed) return;
+        if (disposed || loadingFailed) return;
         frame = requestAnimationFrame(animate);
-        if (headBone) {
+        if (headBone && !reducedMotion) {
           handleHeadRotation(
             headBone,
             mouse.x,
@@ -127,10 +140,10 @@ const Scene = () => {
             THREE.MathUtils.lerp,
           );
 
-          light.setPointLight(screenLight);
+          if (screenLight) light.setPointLight(screenLight);
         }
         const delta = clock.getDelta();
-        if (mixer) {
+        if (mixer && !reducedMotion) {
           mixer.update(delta);
         }
         renderer.render(scene, camera);
@@ -139,21 +152,30 @@ const Scene = () => {
       return () => {
         disposed = true;
         cancelAnimationFrame(frame);
-        clearTimeout(debounce);
+        clearTimeout(loadTimeout);
+        progress.stop();
+        mixer?.stopAllAction();
+        scene.traverse(object => {
+          const mesh = object as THREE.Mesh;
+          mesh.geometry?.dispose();
+          const materials = Array.isArray(mesh.material) ? mesh.material : mesh.material ? [mesh.material] : [];
+          materials.forEach(material => material.dispose());
+        });
+        scene.environment?.dispose();
         scene.clear();
         renderer.dispose();
         window.removeEventListener("resize", onResize);
-        if (canvasDiv.current) {
-          canvasDiv.current.removeChild(renderer.domElement);
-        }
+        renderer.domElement.remove();
         if (landingDiv) {
           document.removeEventListener("mousemove", onMouseMove);
-          landingDiv.removeEventListener("touchstart", onTouchStart);
+          landingDiv.removeEventListener("touchmove", onTouchMove);
           landingDiv.removeEventListener("touchend", onTouchEnd);
         }
       };
     }
   }, []);
+
+  if (failed) return <p className="scene-fallback" role="status">3D preview unavailable. You can still explore the portfolio below.</p>;
 
   return (
     <>
