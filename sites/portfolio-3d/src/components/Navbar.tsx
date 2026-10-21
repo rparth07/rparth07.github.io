@@ -77,6 +77,8 @@ const Navbar = () => {
         <ul>{portfolio.navigation.map(link => <li key={link.id}><a data-href={safeUrl(link.href)} href={safeUrl(link.href)}><HoverLinks text={link.label} /></a></li>)}</ul>
       </div>
 
+      <a href="/" className="portfolio-switch" data-cursor="disable" aria-label="Switch to classic portfolio">View classic portfolio <span aria-hidden="true">&rarr;</span></a>
+
       <div className="landing-circle1"></div>
       <div className="landing-circle2"></div>
       <div className="nav-fade"></div>

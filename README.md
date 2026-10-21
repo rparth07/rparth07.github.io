@@ -12,6 +12,9 @@ Opening `/portfolio-3d` redirects to the directory URL `/portfolio-3d/` on the s
 server. The 3D site's section links use hashes beneath that path, for example
 `/portfolio-3d/#work`; no single-page-app rewrite or replacement root page is needed.
 
+Visitors can switch between the two experiences using the always-visible button
+at the bottom of either portfolio. Links open in the same tab.
+
 ## Preview both sites
 
 From the repository root:

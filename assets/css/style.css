@@ -1275,3 +1275,14 @@ article > div { min-width: 0; overflow-wrap: anywhere; }
 }
 
 .email-container { color: #45505b; }
+
+/* Always-visible link between the two portfolio experiences. */
+.portfolio-switch {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 10000; display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; min-height: 44px; padding: 10px 18px; box-sizing: border-box;
+  border: 1px solid #0563bb; border-radius: 24px; background: #fff; color: #0563bb;
+  font-size: 14px; font-weight: 600; white-space: nowrap; text-decoration: none;
+  box-shadow: 0 4px 18px rgba(39, 40, 41, 0.12);
+}
+.portfolio-switch:hover { background: #0563bb; color: #fff; }
