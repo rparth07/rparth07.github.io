@@ -1,39 +1,26 @@
-# Parth Raiyani — 3D Portfolio
+# Animated 3D portfolio source
 
-Parth Raiyani's personal portfolio, featuring the approved Parth Coder Avatar v1.0, interactive 3D scenes, scroll animations, projects, experience, education, and skills.
+This is the imported React/TypeScript source for `/portfolio-3d/`. The classic site
+lives at the repository root. See [the repository README](../../README.md) for
+preview, deployment, checks, and build instructions.
 
-## Run locally
+From this directory:
 
-```sh
-npm install
+```powershell
+npm ci
 npm run dev -- --host 127.0.0.1
-```
-
-Open http://127.0.0.1:5173/.
-
-## Update content
-
-Edit `public/data/portfolio.json` and refresh the page. See [CONTENT.md](CONTENT.md) for field descriptions and examples. About and service descriptions are intentional placeholders awaiting final copy. The resume currently links to Parth's GitHub profile.
-
-## Checks and production build
-
-```sh
-npm run validate:content
-npm run test:content
-npm run audit:branding
 npm run build
-npm run preview
 ```
 
-## Project structure
+Development URL: http://127.0.0.1:5173/portfolio-3d/.
+Production output: `../../portfolio-3d/`. Building replaces only that directory.
+The `postbuild` step includes the original license in the published output.
 
-- `src/components/`: page sections, animation behavior, and 3D scene.
-- `src/content/portfolio.ts`: JSON loading and validation.
-- `src/components/styles/`: layout and typography.
-- `public/data/`: editable portfolio content, schema, and examples.
-- `public/assets/img/`: profile, project, and skill images.
-- `public/models/parth-coder-avatar-v1.0.glb`: approved, locked avatar.
-- `public/fonts/`: locally hosted fonts and their licenses.
-- `tests/` and `scripts/`: content checks and branding audit.
+Edit `public/data/portfolio.json` and see [CONTENT.md](CONTENT.md) for its schema.
+Rebuild and commit the production output when publishing content or code changes.
+About/service descriptions remain supplied placeholders; the resume links to GitHub.
 
-Built with React, TypeScript, Vite, Three.js, GSAP, and Lenis. The current customization retains code and design derived from an MIT-licensed portfolio; it is not a from-scratch implementation. The original copyright and permission notice remains in [LICENSE](LICENSE). Font licenses remain beside their files. Dependency license notices remain with their respective packages.
+The source retains the supplied avatar and design derived from an MIT-licensed
+portfolio. The original copyright and permission notice remains in [LICENSE](LICENSE),
+with font notices beside their files. The approved avatar and required environment
+map are included; experimental avatar variants and installed packages are excluded.
