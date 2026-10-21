@@ -9,7 +9,7 @@ const setCharacter = (
 ) => {
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("/draco/");
+  dracoLoader.setDecoderPath(`${import.meta.env.BASE_URL}draco/`);
   loader.setDRACOLoader(dracoLoader);
 
   const loadCharacter = () => {
@@ -17,7 +17,7 @@ const setCharacter = (
       try {
         let character: THREE.Object3D;
         loader.load(
-          "/models/parth-coder-avatar-v1.0.glb?v=1",
+          `${import.meta.env.BASE_URL}models/parth-coder-avatar-v1.0.glb?v=1`,
           async (gltf) => {
             character = gltf.scene;
             await renderer.compileAsync(character, camera, scene);

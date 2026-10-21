@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'vite';
-const server = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
+const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] } });
 try {
  const { validateContent } = await server.ssrLoadModule('/src/content/portfolio.ts');
  const data = JSON.parse(await readFile(process.argv[2] || 'public/data/portfolio.json', 'utf8'));

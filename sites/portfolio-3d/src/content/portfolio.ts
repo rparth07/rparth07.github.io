@@ -24,7 +24,11 @@ export function validateContent(value: unknown, rule: any = schema, path = "port
   return errors;
 }
 export function safeUrl(value: string): string {
-  if (value.startsWith("/") && !value.startsWith("//") || value.startsWith("#")) return value;
+  if (value.startsWith("#")) return value;
+  if (value.startsWith("/") && !value.startsWith("//")) {
+    // Content asset paths belong to this portfolio, not the classic site's root.
+    return `${import.meta.env.BASE_URL}${value.slice(1)}`;
+  }
   try { const url = new URL(value); if (["https:", "http:", "mailto:"].includes(url.protocol)) return value; } catch { /* invalid link */ }
   return "#";
 }
