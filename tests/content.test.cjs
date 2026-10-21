@@ -68,3 +68,25 @@ test('empty collections work and optional project buttons are omitted', async ()
   assert.equal(r.ok, true);
   assert.ok(!r.nodes.get('.portfolio-container').innerHTML.includes('<a '));
 });
+
+
+test('project cards are balanced siblings rather than nested cards', async () => {
+  const result = await render(structuredClone(original));
+  const html = result.nodes.get('.portfolio-container').innerHTML;
+  let depth = 0;
+  let cards = 0;
+  for (const [tag] of html.matchAll(/<\/?div\b[^>]*>/g)) {
+    if (tag.startsWith('</')) {
+      depth--;
+      assert(depth >= 0, 'unexpected closing div');
+    } else {
+      if (/class="[^"]*\bportfolio-item\b/.test(tag)) {
+        assert.equal(depth, 0, 'project card is nested inside another card');
+        cards++;
+      }
+      depth++;
+    }
+  }
+  assert.equal(depth, 0, 'project markup has unclosed containers');
+  assert.equal(cards, original.projects.length);
+});

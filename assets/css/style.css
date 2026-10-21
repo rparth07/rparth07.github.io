@@ -1223,59 +1223,19 @@ article .icon {
     flex-wrap: wrap;
   }
 }
-/* Keep content and controls usable across desktop, tablet, and phone widths. */
-:focus-visible {
-  outline: 3px solid #0563bb;
-  outline-offset: 4px;
-}
+/* Keyboard access without changing the classic layout. */
+:focus-visible { outline: 3px solid #0563bb; outline-offset: 4px; }
 .nav-menu a:focus-visible { width: 100%; }
 .nav-menu a:focus-visible span { display: block; }
 .mobile-nav-toggle { width: 44px; height: 44px; }
-#hero { margin: 0; min-height: 600px; height: 100svh; }
-#hero h1 { line-height: 1.15; }
-#hero > div { max-width: 100%; }
-.profile { height: auto; }
-.icon { cursor: default; }
-.details-container { min-width: 0; }
-article { min-width: 0; max-width: 100%; }
-article > div { min-width: 0; overflow-wrap: anywhere; }
-.portfolio .portfolio-links a { min-width: 44px; min-height: 44px; }
-.back-to-top { width: 44px; height: 44px; }
-.contact { height: auto; min-height: 75svh; }
-@media (max-width: 1199.98px) {
-  section { padding: 60px 100px; }
-  .email-container { display: none; }
-}
 @media (max-width: 991.98px) {
-  section { padding: 48px 24px; }
   #header { visibility: hidden; }
   .mobile-nav-active #header { visibility: visible; }
-  #hero { padding: 48px 24px; }
-  #hero > div { position: relative; top: auto; scale: none; }
-  .profile-img-container { padding-top: 0; align-self: center; }
-  #about .details-container { flex-basis: 100%; }
-}
-@media (max-width: 575.98px) {
-  body { font-size: 16px; }
-  section { padding: 40px 16px; }
-  #hero h1 { font-size: clamp(32px, 9vw, 48px); }
-  #hero p { font-size: 18px; }
-  #skills .details-container { flex-basis: 100%; padding: 1rem; }
-  #education .row { scale: none; }
-  #contact .row h2 { font-size: clamp(32px, 9vw, 48px); }
-}
-@media (hover: none) {
-  .portfolio .portfolio-wrap .portfolio-info { position: relative; opacity: 1; background: #f2f3f5; padding: 16px; }
-  .portfolio .portfolio-wrap .portfolio-info::before,
-  .portfolio .portfolio-wrap .portfolio-info::after { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
   .nav-menu a, #header, .mobile-nav-toggle, .portfolio-wrap, .portfolio-info, .back-to-top { transition: none; }
 }
-
-.email-container { color: #45505b; }
-
 /* Always-visible link between the two portfolio experiences. */
 .portfolio-switch {
   position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
