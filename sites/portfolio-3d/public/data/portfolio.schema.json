@@ -1,0 +1,718 @@
+{
+  "type": "object",
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "site",
+    "navigation",
+    "hero",
+    "about",
+    "services",
+    "career",
+    "work",
+    "techStack",
+    "contact",
+    "socialLinks",
+    "resume",
+    "footer",
+    "loading",
+    "education",
+    "skills"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "integer",
+      "enum": [
+        2
+      ]
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "title",
+        "description",
+        "language",
+        "logo",
+        "keywords",
+        "favicon"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "string"
+        },
+        "favicon": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "navigation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "href"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "hero": {
+      "type": "object",
+      "required": [
+        "greeting",
+        "nameLines",
+        "subtitle",
+        "roles"
+      ],
+      "properties": {
+        "greeting": {
+          "type": "string"
+        },
+        "nameLines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "about": {
+      "type": "object",
+      "required": [
+        "heading",
+        "paragraphs",
+        "photo",
+        "photoAlt",
+        "highlights"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "photo": {
+          "type": "string"
+        },
+        "photoAlt": {
+          "type": "string"
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "icon",
+              "lines",
+              "href"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string",
+                "enum": [
+                  "experience",
+                  "opensource",
+                  "mentor"
+                ]
+              },
+              "lines": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 0
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "services": {
+      "type": "object",
+      "required": [
+        "headingLead",
+        "headingItalic",
+        "headingSecond",
+        "headingAccent",
+        "toolsLabel",
+        "items"
+      ],
+      "properties": {
+        "headingLead": {
+          "type": "string"
+        },
+        "headingItalic": {
+          "type": "string"
+        },
+        "headingSecond": {
+          "type": "string"
+        },
+        "headingAccent": {
+          "type": "string"
+        },
+        "toolsLabel": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "subtitle",
+              "description",
+              "tools"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "tools": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "career": {
+      "type": "object",
+      "required": [
+        "heading",
+        "connector",
+        "headingSecond",
+        "items"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "connector": {
+          "type": "string"
+        },
+        "headingSecond": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "role",
+              "organization",
+              "period",
+              "description",
+              "highlights",
+              "projects"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "organization": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "highlights": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 0
+              },
+              "projects": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "highlights"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "highlights": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 0
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "minItems": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "work": {
+      "type": "object",
+      "required": [
+        "heading",
+        "headingAccent",
+        "toolsLabel",
+        "previousLabel",
+        "nextLabel",
+        "goToLabel",
+        "items",
+        "demoLabel",
+        "sourceLabel"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "headingAccent": {
+          "type": "string"
+        },
+        "toolsLabel": {
+          "type": "string"
+        },
+        "previousLabel": {
+          "type": "string"
+        },
+        "nextLabel": {
+          "type": "string"
+        },
+        "goToLabel": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "category",
+              "description",
+              "tools",
+              "image",
+              "imageAlt",
+              "url",
+              "sourceUrl"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "tools": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 0
+              },
+              "image": {
+                "type": "string"
+              },
+              "imageAlt": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "sourceUrl": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "demoLabel": {
+          "type": "string"
+        },
+        "sourceLabel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "techStack": {
+      "type": "object",
+      "required": [
+        "heading",
+        "items"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "image"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "heading",
+        "emailLabel",
+        "email",
+        "socialLabel",
+        "lines",
+        "buttonLabel"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "emailLabel": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "socialLabel": {
+          "type": "string"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "buttonLabel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "socialLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "url",
+          "icon"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "enum": [
+              "github",
+              "linkedin",
+              "google",
+              "twitter",
+              "facebook",
+              "link"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "resume": {
+      "type": "object",
+      "required": [
+        "label",
+        "url"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "footer": {
+      "type": "object",
+      "required": [
+        "credit",
+        "by",
+        "author",
+        "year"
+      ],
+      "properties": {
+        "credit": {
+          "type": "string"
+        },
+        "by": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "loading": {
+      "type": "object",
+      "required": [
+        "roles",
+        "loadingLabel",
+        "welcomeLabel"
+      ],
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "loadingLabel": {
+          "type": "string"
+        },
+        "welcomeLabel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "education": {
+      "type": "object",
+      "required": [
+        "heading",
+        "items"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "qualification",
+              "period",
+              "score",
+              "institution"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "qualification": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              },
+              "score": {
+                "type": "string"
+              },
+              "institution": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "skills": {
+      "type": "object",
+      "required": [
+        "heading",
+        "groups"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "items"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "image"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "minItems": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Parth 3D portfolio content v2"
+}
