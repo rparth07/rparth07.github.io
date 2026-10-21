@@ -36,8 +36,8 @@ No npm installation is needed just to view the checked-in sites.
   served copy. Prefer updating the source and rebuilding so future builds retain it.
 
 The copied 3D portfolio retains its supplied avatar, animation, content, and design.
-Its about/service copy has intentional placeholders and its resume link points to
-GitHub, as in the supplied source.
+Its about/service copy uses the supplied work history and skills. The former resume
+link is labeled GitHub because no resume document has been supplied.
 
 ## Develop and rebuild the 3D portfolio
 
@@ -107,3 +107,17 @@ and adapted for this subpath. Its original MIT notice remains in
 [sites/portfolio-3d/LICENSE](sites/portfolio-3d/LICENSE) and the published build.
 Font license notices remain beside the font files. Its React, Three.js, GSAP,
 Lenis, and other dependencies retain their respective licenses.
+
+
+## Reliability review
+
+The 3D loader releases the page if the avatar fails or takes over 30 seconds; a
+missing WebGL renderer or failed tech-stack preview does not remove the readable
+portfolio. JSON requests fall back after eight seconds. Scene progress timers,
+render loops, pointer handlers, and loading transitions have cleanup paths.
+Section URLs are restored after loading, offscreen project slides are inert to
+keyboard navigation, and motion preferences disable automatic role cycling,
+marquee, pointer animation, and continuous character motion. Classic menu labels,
+keyboard focus, no-JavaScript visibility, and tablet gutters are retained.
+
+See [REVIEW.md](REVIEW.md) for the verification record and remaining content needs.
