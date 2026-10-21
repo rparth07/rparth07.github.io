@@ -1,0 +1,10 @@
+{
+  "name": "parth-raiyani-portfolios",
+  "private": true,
+  "scripts": {
+    "build:3d": "npm --prefix sites/portfolio-3d run build",
+    "test:classic": "node --test tests/content.test.cjs",
+    "test:deployment": "node --test tests/deployment.test.cjs",
+    "test:3d": "npm --prefix sites/portfolio-3d run test:content"
+  }
+}

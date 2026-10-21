@@ -1,0 +1,602 @@
+{
+  "$schema": "./portfolio.schema.json",
+  "schemaVersion": 2,
+  "site": {
+    "title": "Parth Raiyani",
+    "description": "Parth Raiyani Portfolio",
+    "language": "en",
+    "logo": "PR",
+    "keywords": "portfolio",
+    "favicon": "/assets/img/profile-photo.jpg"
+  },
+  "navigation": [
+    {
+      "id": "hero",
+      "label": "HOME",
+      "href": "#landingDiv"
+    },
+    {
+      "id": "about",
+      "label": "ABOUT",
+      "href": "#about"
+    },
+    {
+      "id": "skills",
+      "label": "SKILLS",
+      "href": "#skills"
+    },
+    {
+      "id": "experience",
+      "label": "EXPERIENCE",
+      "href": "#experience"
+    },
+    {
+      "id": "education",
+      "label": "EDUCATION",
+      "href": "#education"
+    },
+    {
+      "id": "portfolio",
+      "label": "PROJECTS",
+      "href": "#work"
+    },
+    {
+      "id": "contact",
+      "label": "CONTACT",
+      "href": "#contact"
+    }
+  ],
+  "hero": {
+    "greeting": "Hi, my name is",
+    "nameLines": [
+      "PARTH",
+      "RAIYANI"
+    ],
+    "subtitle": "I'm",
+    "roles": [
+      "Software Developer",
+      "Open Source Developer",
+      "Educator",
+      "Mentor"
+    ]
+  },
+  "about": {
+    "heading": "About Me.",
+    "paragraphs": [
+      "Placeholder: Introduce your software development background, open-source contributions, teaching, and mentoring here."
+    ],
+    "photo": "/assets/img/profile-photo.jpg",
+    "photoAlt": "Parth Raiyani",
+    "highlights": [
+      {
+        "id": "experience",
+        "title": "Experience",
+        "icon": "experience",
+        "lines": [
+          "2+ years",
+          "Senior Software Developer at Tark"
+        ],
+        "href": "#experience"
+      },
+      {
+        "id": "open-source-contributor",
+        "title": "Open Source Developer",
+        "icon": "opensource",
+        "lines": [
+          "Actively Building and contributing to projects"
+        ],
+        "href": "https://github.com/rparth07"
+      },
+      {
+        "id": "educator-and-mentor",
+        "title": "Educator and Mentor",
+        "icon": "mentor",
+        "lines": [
+          "Educated hundreds of students, sharing knowledge and expertise in tech"
+        ],
+        "href": "#contact"
+      }
+    ]
+  },
+  "services": {
+    "headingLead": "W",
+    "headingItalic": "HAT",
+    "headingSecond": "I",
+    "headingAccent": " DO",
+    "toolsLabel": "Skillset & tools",
+    "items": [
+      {
+        "id": "website-development",
+        "title": "WEBSITE DEVELOPMENT",
+        "subtitle": "Service 1 — placeholder",
+        "description": "Describe your website and web application development service here.",
+        "tools": [
+          "Angular",
+          ".NET Core",
+          "TypeScript"
+        ]
+      },
+      {
+        "id": "backend-development",
+        "title": "BACKEND & APIs",
+        "subtitle": "Service 2 — placeholder",
+        "description": "Describe your backend, API development, and data integration service here.",
+        "tools": [
+          "C#",
+          ".NET Core",
+          "SQL"
+        ]
+      }
+    ]
+  },
+  "career": {
+    "heading": "Experience",
+    "connector": "",
+    "headingSecond": "",
+    "items": [
+      {
+        "id": "software-developer-intern-september-2021-june-2022",
+        "role": "Software Developer Intern",
+        "organization": "Tark Technologies",
+        "period": "September 2021 - June 2022",
+        "description": "",
+        "highlights": [
+          "Enhanced problem-solving skills and solidified understanding of OOP principles.",
+          "Documented code and technical processes to support team knowledge sharing and project continuity.",
+          "Contributed to developing unit tests and assisted in automated testing to ensure robust application functionality.",
+          "Participated in code reviews and contributed to improving code quality and software performance."
+        ],
+        "projects": []
+      },
+      {
+        "id": "software-developer-june-2022-present",
+        "role": "Software Developer",
+        "organization": "Tark Technologies",
+        "period": "June 2022 - Present",
+        "description": "",
+        "highlights": [],
+        "projects": [
+          {
+            "id": "data-integration-and-automation",
+            "name": "Data Integration and Automation",
+            "highlights": [
+              "Developed features to link data entities, enhancing relationships and improving analytical capabilities.",
+              "Automated data aggregation processes across multiple datasets, streamlining reporting and analysis.",
+              "Designed jobs for data integrity checks and cleanup, ensuring consistency and accuracy in the database.",
+              "Managed synchronization of external system data with internal databases, ensuring accurate data linkage and event tracking.",
+              "Engineered scripts to identify dependencies in automated processes and code components, facilitating efficient troubleshooting.",
+              "Created comprehensive test cases for automation workflows, ensuring robust and reliable system operations.",
+              "Utilized data visualization tools to generate dashboards, supporting informed decision-making."
+            ]
+          },
+          {
+            "id": "api-and-rule-management",
+            "name": "API and Rule Management",
+            "highlights": [
+              "Enhanced rule-based features to improve flexibility and accuracy in system configurations.",
+              "Expanded API functionalities to provide detailed insights and enhance decision-making processes.",
+              "Implemented global search capabilities, enabling efficient retrieval of relevant data.",
+              "Developed and maintained REST APIs for managing data mappings, ensuring consistency and integrity across systems.",
+              "Conducted rigorous testing of APIs, ensuring robustness and reliability of the system."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "work": {
+    "heading": "Projects",
+    "headingAccent": "",
+    "toolsLabel": "Tools & Features",
+    "previousLabel": "Previous project",
+    "nextLabel": "Next project",
+    "goToLabel": "Go to project",
+    "items": [
+      {
+        "id": "airline-reservation",
+        "title": "Airline Reservation",
+        "category": "Web Application",
+        "description": "Built with .NET + Angular",
+        "tools": [
+          ".NET",
+          "Angular"
+        ],
+        "image": "/assets/img/airline-reservation.png",
+        "imageAlt": "Airline Reservation screenshot",
+        "url": "https://rparth07-airline-reservation.netlify.app",
+        "sourceUrl": "https://github.com/rparth07/airline-reservation"
+      },
+      {
+        "id": "parth-traders",
+        "title": "Parth Traders",
+        "category": "Web Application",
+        "description": "Built with .NET + Angular",
+        "tools": [
+          ".NET",
+          "Angular"
+        ],
+        "image": "/assets/img/parth-traders.png",
+        "imageAlt": "Parth Traders screenshot",
+        "url": "https://rparth07-parth-traders.netlify.app",
+        "sourceUrl": "https://github.com/rparth07/Parth-Traders"
+      },
+      {
+        "id": "stock-explorer",
+        "title": "Stock Explorer",
+        "category": "Web Application",
+        "description": "Built with .NET + Angular",
+        "tools": [
+          ".NET",
+          "Angular"
+        ],
+        "image": "/assets/img/stock-analyzer.png",
+        "imageAlt": "Stock Explorer screenshot",
+        "url": "https://rparth07-stock-explorer.netlify.app",
+        "sourceUrl": "https://github.com/rparth07/Stock-Analyzer"
+      },
+      {
+        "id": "todo",
+        "title": "TODO",
+        "category": "Web Application",
+        "description": "Built with Angular",
+        "tools": [
+          "Angular"
+        ],
+        "image": "/assets/img/todo.png",
+        "imageAlt": "TODO screenshot",
+        "url": "https://rparth07-todo.netlify.app",
+        "sourceUrl": "https://github.com/rparth07/ToDo"
+      },
+      {
+        "id": "prompt-guide",
+        "title": "Prompt Guide",
+        "category": "Documentation",
+        "description": "Built with VuePress",
+        "tools": [
+          "VuePress"
+        ],
+        "image": "/assets/img/prompt-guide.png",
+        "imageAlt": "Prompt Guide screenshot",
+        "url": "https://prompt-guide.netlify.app",
+        "sourceUrl": "https://github.com/rparth07/Prompt-Guide"
+      }
+    ],
+    "demoLabel": "Live demo",
+    "sourceLabel": "Source code"
+  },
+  "techStack": {
+    "heading": "My Techstack",
+    "items": [
+      {
+        "id": "csharp",
+        "name": "C#",
+        "image": "/assets/img/languages/CSharp.png"
+      },
+      {
+        "id": "cpp",
+        "name": "C++",
+        "image": "/assets/img/languages/C++ (CPlusPlus).png"
+      },
+      {
+        "id": "sql",
+        "name": "SQL",
+        "image": "/assets/img/languages/MySQL.png"
+      },
+      {
+        "id": "html",
+        "name": "HTML",
+        "image": "/assets/img/languages/HTML5.png"
+      },
+      {
+        "id": "css",
+        "name": "CSS",
+        "image": "/assets/img/languages/CSS3.png"
+      },
+      {
+        "id": "typescript",
+        "name": "TypeScript",
+        "image": "/assets/img/languages/TypeScript.png"
+      },
+      {
+        "id": "javascript",
+        "name": "JavaScript",
+        "image": "/assets/img/languages/JavaScript.png"
+      },
+      {
+        "id": "apex",
+        "name": "Apex",
+        "image": "/assets/img/languages/Oracle.png"
+      },
+      {
+        "id": "net-core",
+        "name": ".NET Core",
+        "image": "/assets/img/languages/NET core.png"
+      },
+      {
+        "id": "entity-framework",
+        "name": "Entity Framework",
+        "image": "/assets/img/languages/NET core.png"
+      },
+      {
+        "id": "angular",
+        "name": "Angular",
+        "image": "/assets/img/languages/Angular.png"
+      },
+      {
+        "id": "redux",
+        "name": "Redux",
+        "image": "/assets/img/languages/Redux.png"
+      },
+      {
+        "id": "bootstrap",
+        "name": "Bootstrap",
+        "image": "/assets/img/languages/Bootstrap.png"
+      },
+      {
+        "id": "jquery",
+        "name": "jQuery",
+        "image": "/assets/img/languages/jQuery.png"
+      },
+      {
+        "id": "xunit",
+        "name": "xUnit",
+        "image": "/assets/img/languages/xUnit.png"
+      },
+      {
+        "id": "git",
+        "name": "Git",
+        "image": "/assets/img/languages/Git.png"
+      },
+      {
+        "id": "rabbitmq",
+        "name": "RabbitMQ",
+        "image": "/assets/img/languages/RabbitMQ.png"
+      },
+      {
+        "id": "jira",
+        "name": "Jira",
+        "image": "/assets/img/languages/Jira.png"
+      },
+      {
+        "id": "postman",
+        "name": "Postman",
+        "image": "/assets/img/languages/Postman.png"
+      },
+      {
+        "id": "sql-server-management-studio",
+        "name": "SQL Server Management Studio",
+        "image": "/assets/img/languages/ssms.png"
+      },
+      {
+        "id": "visual-studio",
+        "name": "Visual Studio",
+        "image": "/assets/img/languages/Visual Studio.png"
+      },
+      {
+        "id": "salesforce",
+        "name": "Salesforce",
+        "image": "/assets/img/languages/Salesforce.png"
+      },
+      {
+        "id": "tableau",
+        "name": "Tableau",
+        "image": "/assets/img/languages/Tableau.png"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Get In Touch",
+    "emailLabel": "Email",
+    "email": "pmr642001@gmail.com",
+    "socialLabel": "Social",
+    "lines": [
+      "Whether you have a question or just want to say hi.",
+      "Feel free to contact me. I'll try my best to get back to you!"
+    ],
+    "buttonLabel": "Say Hello"
+  },
+  "socialLinks": [
+    {
+      "id": "github",
+      "label": "GitHub profile",
+      "url": "https://github.com/rparth07",
+      "icon": "github"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn profile",
+      "url": "https://www.linkedin.com/in/parth-raiyani-243b48199/",
+      "icon": "linkedin"
+    },
+    {
+      "id": "google",
+      "label": "Google Developer profile",
+      "url": "https://g.dev/raiyaniparth07",
+      "icon": "google"
+    }
+  ],
+  "resume": {
+    "label": "RESUME",
+    "url": "https://github.com/rparth07"
+  },
+  "footer": {
+    "credit": "Developed & Implemented",
+    "by": "by",
+    "author": "Parth Raiyani",
+    "year": 2026
+  },
+  "loading": {
+    "roles": [
+      "SOFTWARE DEVELOPER",
+      "OPEN SOURCE DEVELOPER",
+      "EDUCATOR",
+      "MENTOR"
+    ],
+    "loadingLabel": "Loading",
+    "welcomeLabel": "Welcome"
+  },
+  "education": {
+    "heading": "Education",
+    "items": [
+      {
+        "id": "bachelor-of-technology-in-computer-science-engineering",
+        "qualification": "Bachelor of Technology in Computer Science & Engineering",
+        "period": "2018 - 2022",
+        "score": "CPI : 8.94",
+        "institution": "V.V.P. Engineering College, Rajkot, India"
+      },
+      {
+        "id": "state-board-hsc",
+        "qualification": "State Board HSC",
+        "period": "2017-2018",
+        "score": "Percentile Score: 93.32",
+        "institution": "Panini Science School, Rajkot, India"
+      },
+      {
+        "id": "state-board-ssc",
+        "qualification": "State Board SSC",
+        "period": "2015 - 2016",
+        "score": "Percentile Score: 99.18",
+        "institution": "Patanjali Vidyalay, Rajkot, India"
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Skills",
+    "groups": [
+      {
+        "id": "languages",
+        "title": "Languages",
+        "items": [
+          {
+            "id": "csharp",
+            "name": "C#",
+            "image": "/assets/img/languages/CSharp.png"
+          },
+          {
+            "id": "cpp",
+            "name": "C++",
+            "image": "/assets/img/languages/C++ (CPlusPlus).png"
+          },
+          {
+            "id": "sql",
+            "name": "SQL",
+            "image": "/assets/img/languages/MySQL.png"
+          },
+          {
+            "id": "html",
+            "name": "HTML",
+            "image": "/assets/img/languages/HTML5.png"
+          },
+          {
+            "id": "css",
+            "name": "CSS",
+            "image": "/assets/img/languages/CSS3.png"
+          },
+          {
+            "id": "typescript",
+            "name": "TypeScript",
+            "image": "/assets/img/languages/TypeScript.png"
+          },
+          {
+            "id": "javascript",
+            "name": "JavaScript",
+            "image": "/assets/img/languages/JavaScript.png"
+          },
+          {
+            "id": "apex",
+            "name": "Apex",
+            "image": "/assets/img/languages/Oracle.png"
+          }
+        ]
+      },
+      {
+        "id": "framework",
+        "title": "Framework",
+        "items": [
+          {
+            "id": "net-core",
+            "name": ".NET Core",
+            "image": "/assets/img/languages/NET core.png"
+          },
+          {
+            "id": "entity-framework",
+            "name": "Entity Framework",
+            "image": "/assets/img/languages/NET core.png"
+          },
+          {
+            "id": "angular",
+            "name": "Angular",
+            "image": "/assets/img/languages/Angular.png"
+          },
+          {
+            "id": "redux",
+            "name": "Redux",
+            "image": "/assets/img/languages/Redux.png"
+          },
+          {
+            "id": "bootstrap",
+            "name": "Bootstrap",
+            "image": "/assets/img/languages/Bootstrap.png"
+          },
+          {
+            "id": "jquery",
+            "name": "jQuery",
+            "image": "/assets/img/languages/jQuery.png"
+          },
+          {
+            "id": "xunit",
+            "name": "xUnit",
+            "image": "/assets/img/languages/xUnit.png"
+          }
+        ]
+      },
+      {
+        "id": "technology-tools",
+        "title": "Technology & Tools",
+        "items": [
+          {
+            "id": "git",
+            "name": "Git",
+            "image": "/assets/img/languages/Git.png"
+          },
+          {
+            "id": "rabbitmq",
+            "name": "RabbitMQ",
+            "image": "/assets/img/languages/RabbitMQ.png"
+          },
+          {
+            "id": "jira",
+            "name": "Jira",
+            "image": "/assets/img/languages/Jira.png"
+          },
+          {
+            "id": "postman",
+            "name": "Postman",
+            "image": "/assets/img/languages/Postman.png"
+          },
+          {
+            "id": "sql-server-management-studio",
+            "name": "SQL Server Management Studio",
+            "image": "/assets/img/languages/ssms.png"
+          },
+          {
+            "id": "visual-studio",
+            "name": "Visual Studio",
+            "image": "/assets/img/languages/Visual Studio.png"
+          },
+          {
+            "id": "salesforce",
+            "name": "Salesforce",
+            "image": "/assets/img/languages/Salesforce.png"
+          },
+          {
+            "id": "tableau",
+            "name": "Tableau",
+            "image": "/assets/img/languages/Tableau.png"
+          }
+        ]
+      }
+    ]
+  }
+}
