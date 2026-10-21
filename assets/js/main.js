@@ -7,6 +7,8 @@
 (function () {
   "use strict";
 
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
   /**
    * Easy selector helper function
    */
@@ -70,7 +72,7 @@
     let elementPos = select(el).offsetTop;
     window.scrollTo({
       top: elementPos,
-      behavior: "smooth",
+      behavior: reducedMotion.matches ? "auto" : "smooth",
     });
   };
 
@@ -97,6 +99,23 @@
     select("body").classList.toggle("mobile-nav-active");
     this.classList.toggle("bi-list");
     this.classList.toggle("bi-x");
+    const expanded = select("body").classList.contains("mobile-nav-active");
+    this.setAttribute("aria-expanded", String(expanded));
+    this.setAttribute("aria-label", expanded ? "Close navigation" : "Open navigation");
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.body.classList.contains("mobile-nav-active")) {
+      const toggle = select(".mobile-nav-toggle");
+      toggle.click();
+      toggle.focus();
+    }
+  });
+  const desktop = window.matchMedia("(min-width: 992px)");
+  desktop.addEventListener("change", () => {
+    if (desktop.matches && document.body.classList.contains("mobile-nav-active")) {
+      select(".mobile-nav-toggle").click();
+    }
   });
 
   /**
@@ -115,6 +134,8 @@
           let navbarToggle = select(".mobile-nav-toggle");
           navbarToggle.classList.toggle("bi-list");
           navbarToggle.classList.toggle("bi-x");
+          navbarToggle.setAttribute("aria-expanded", "false");
+          navbarToggle.setAttribute("aria-label", "Open navigation");
         }
         scrollto(this.hash);
       }
@@ -147,7 +168,7 @@
    * Hero type effect
    */
   const typed = select(".typed");
-  if (typed) {
+  if (typed && !reducedMotion.matches) {
     let typed_strings = typed.getAttribute("data-typed-items");
     typed_strings = typed_strings.split(",");
     new Typed(".typed", {
@@ -157,6 +178,10 @@
       backSpeed: 50,
       backDelay: 2000,
     });
+  }
+
+  if (typed && reducedMotion.matches) {
+    typed.textContent = typed.getAttribute("data-typed-items").split(",")[0];
   }
 
   /**
@@ -267,6 +292,7 @@
    */
   window.addEventListener("load", () => {
     AOS.init({
+      disable: reducedMotion.matches,
       duration: 1000,
       easing: "ease-in-out",
       once: true,

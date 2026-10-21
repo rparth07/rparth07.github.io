@@ -10,9 +10,8 @@
   <meta content="portfolio" name="keywords">
 
   <!-- Favicons -->
-  <!-- //TODO: need to fix this link -->
-  <link href="assets/img/d.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/profile-photo.jpg" rel="icon">
+  <link href="assets/img/profile-photo.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -36,22 +35,22 @@
 <body class="index-page">
 
   <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <button type="button" class="bi bi-list mobile-nav-toggle d-lg-none" aria-label="Open navigation" aria-controls="navbar" aria-expanded="false"></button>
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex flex-column justify-content-center">
-    <nav id="navbar" class="navbar nav-menu">
+    <nav id="navbar" class="navbar nav-menu" aria-label="Main navigation">
       <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code"></i> <span>Skills</span></a></li>
-        <li><a href="#experience" class="nav-link scrollto"><i class="bx bx-briefcase"></i> <span>Experience</span></a>
+        <li><a href="#hero" class="nav-link scrollto active"><i aria-hidden="true" class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i aria-hidden="true" class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#skills" class="nav-link scrollto"><i aria-hidden="true" class="bx bx-code"></i> <span>Skills</span></a></li>
+        <li><a href="#experience" class="nav-link scrollto"><i aria-hidden="true" class="bx bx-briefcase"></i> <span>Experience</span></a>
         </li>
-        <li><a href="#education" class="nav-link scrollto"><i class="bx bx-terminal"></i> <span>Education</span></a>
+        <li><a href="#education" class="nav-link scrollto"><i aria-hidden="true" class="bx bx-terminal"></i> <span>Education</span></a>
         </li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a>
+        <li><a href="#portfolio" class="nav-link scrollto"><i aria-hidden="true" class="bx bx-book-content"></i> <span>Projects</span></a>
         </li>
-        <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        <li><a href="#contact" class="nav-link scrollto"><i aria-hidden="true" class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
     </nav>
     <!-- .nav-menu -->
@@ -63,10 +62,10 @@
     </div>
   </div>
 
-  <!-- <main class="main"> -->
+  <main id="main">
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="row">
-    <div class="col-sx-12 col-md-6 col-sm-12 col-lg-6 justify-content-end" data-aos="zoom-in" data-aos-delay="100">
+    <div class="col-12 col-md-6 col-sm-12 col-lg-6 justify-content-end" data-aos="zoom-in" data-aos-delay="100">
       <p class="ps-2 p-5">Hi, my name is</p>
       <h1 class="big-heading">
         <span style="font-weight: lighter;">Parth</span> Raiyani
@@ -76,14 +75,14 @@
       </p>
 
       <div class="social-links">
-        <a href="https://github.com/rparth07" class="github">
-          <i class="bx bxl-github"></i>
+        <a href="https://github.com/rparth07" class="github" aria-label="GitHub profile">
+          <i aria-hidden="true" class="bx bxl-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/parth-raiyani-243b48199/" class="linkedin">
-          <i class="bx bxl-linkedin"></i>
+        <a href="https://www.linkedin.com/in/parth-raiyani-243b48199/" class="linkedin" aria-label="LinkedIn profile">
+          <i aria-hidden="true" class="bx bxl-linkedin"></i>
         </a>
-        <a href="https://g.dev/raiyaniparth07" class="google">
-          <i class='bx bxl-google'></i>
+        <a href="https://g.dev/raiyaniparth07" class="google" aria-label="Google Developer profile">
+          <i aria-hidden="true" class='bx bxl-google'></i>
         </a>
       </div>
     </div>
@@ -99,25 +98,25 @@
         </div>
         <div class="row">
           <div class="col-lg-1 col-md-1"></div>
-          <div class="profile-img-container pl-5 col-sx-12 col-md-4 col-sm-12 col-lg-4" data-aos="zoom-out"
+          <div class="profile-img-container pl-5 col-12 col-md-4 col-sm-12 col-lg-4" data-aos="zoom-out"
             data-aos-delay="100">
-            <img src="assets/img/profile-photo.jpg" class="img-fluid profile" id="dp" alt="">
+            <img src="assets/img/profile-photo.jpg" class="img-fluid profile" id="dp" alt="Parth Raiyani">
           </div>
-          <div class=" col-sx-12 col-md-7 col-sm-12 col-lg-7 justify-content-end">
+          <div class=" col-12 col-md-7 col-sm-12 col-lg-7 justify-content-end">
             <div class="about-details-container">
               <div class="about-containers">
                 <div class="details-container">
-                  <img src="./assets/img/experience.png" alt="Experience icon" class="icon" />
+                  <img src="./assets/img/experience.png" alt="" class="icon" />
                   <h3>Experience</h3>
                   <p>2+ years <br />Senior Software Developer at Tark</p>
                 </div>
                 <div class="details-container">
-                  <img src="./assets/img/experience.png" alt="Education icon" class="icon" />
+                  <img src="./assets/img/experience.png" alt="" class="icon" />
                   <h3>Open Source Contributor</h3>
                   <p>Actively Building and contributing to projects</p>
                 </div>
                 <div class="details-container">
-                  <img src="./assets/img/experience.png" alt="Education icon" class="icon" />
+                  <img src="./assets/img/experience.png" alt="" class="icon" />
                   <h3>Educator and Mentor</h3>
                   <p>Educated hundreds of students, sharing knowledge and expertise in tech</p>
                 </div>
@@ -126,7 +125,6 @@
           </div>
         </div>
       </div>
-    </div>
     </div>
     <!-- End About Section -->
     <br>
@@ -146,49 +144,49 @@
             <h2 class="experience-sub-title">Languages</h2>
             <div class="article-container">
               <article>
-                <img src="./assets/img/languages/CSharp.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/CSharp.png" alt="" class="icon" />
                 <div>
                   <h3>C#</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/C++ (CPlusPlus).png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/C++ (CPlusPlus).png" alt="" class="icon" />
                 <div>
                   <h3>C++</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/MySQL.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/MySQL.png" alt="" class="icon" />
                 <div>
                   <h3>SQL</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/HTML5.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/HTML5.png" alt="" class="icon" />
                 <div>
                   <h3>HTML</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/CSS3.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/CSS3.png" alt="" class="icon" />
                 <div>
                   <h3>CSS</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/TypeScript.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/TypeScript.png" alt="" class="icon" />
                 <div>
                   <h3>TypeScript</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/JavaScript.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/JavaScript.png" alt="" class="icon" />
                 <div>
                   <h3>JavaScript</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Oracle.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Oracle.png" alt="" class="icon" />
                 <div>
                   <h3>Apex</h3>
                 </div>
@@ -199,43 +197,43 @@
             <h2 class="experience-sub-title">Framework</h2>
             <div class="article-container">
               <article>
-                <img src="./assets/img/languages/NET core.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/NET core.png" alt="" class="icon" />
                 <div>
                   <h3>.NET Core</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/NET core.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/NET core.png" alt="" class="icon" />
                 <div>
                   <h3>Entity Framework</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Angular.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Angular.png" alt="" class="icon" />
                 <div>
                   <h3>Angular</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Redux.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Redux.png" alt="" class="icon" />
                 <div>
                   <h3>Redux</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Bootstrap.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Bootstrap.png" alt="" class="icon" />
                 <div>
                   <h3>Bootstrap</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/jQuery.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/jQuery.png" alt="" class="icon" />
                 <div>
                   <h3>jQuery</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/xUnit.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/xUnit.png" alt="" class="icon" />
                 <div>
                   <h3>xUnit</h3>
                 </div>
@@ -246,49 +244,49 @@
             <h2 class="experience-sub-title">Technology & Tools</h2>
             <div class="article-container">
               <article>
-                <img src="./assets/img/languages/Git.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Git.png" alt="" class="icon" />
                 <div>
                   <h3>Git</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/RabbitMQ.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/RabbitMQ.png" alt="" class="icon" />
                 <div>
                   <h3>RabbitMQ</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Jira.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Jira.png" alt="" class="icon" />
                 <div>
                   <h3>Jira</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Postman.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Postman.png" alt="" class="icon" />
                 <div>
                   <h3>Postman</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/ssms.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/ssms.png" alt="" class="icon" />
                 <div>
                   <h3>SQL Server Management Studio</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Visual Studio.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Visual Studio.png" alt="" class="icon" />
                 <div>
                   <h3>Visual Studio</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Salesforce.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Salesforce.png" alt="" class="icon" />
                 <div>
                   <h3>Salesforce</h3>
                 </div>
               </article>
               <article>
-                <img src="./assets/img/languages/Tableau.png" alt="Experience icon" class="icon" />
+                <img src="./assets/img/languages/Tableau.png" alt="" class="icon" />
                 <div>
                   <h3>Tableau</h3>
                 </div>
@@ -395,7 +393,7 @@
           <div class="education-item">
             <h4>State Board HSC</h4>
             <h5>2017-2018</h5>
-            <h5>percentile Score: 93.32 </h5>
+            <h5>Percentile Score: 93.32 </h5>
             <p><em>Panini Science School, Rajkot, India</em></p>
           </div>
           <div class="education-item">
@@ -421,20 +419,20 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="./assets/img/airline-reservation.png" class="img-fluid" alt="">
+            <img src="./assets/img/airline-reservation.png" class="img-fluid" alt="Airline Reservation screenshot">
             <div class="portfolio-info">
               <h4>Airline Reservation</h4>
-              <p>develop using .NET + Angular</p>
+              <p>Built with .NET + Angular</p>
               <div class="portfolio-links">
                 <a href="./assets/img/airline-reservation.png" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Airline Reservation">
-                  <i class="bx bx-plus"></i>
+                  class="portfolio-lightbox" title="Airline Reservation" aria-label="Preview Airline Reservation">
+                  <i aria-hidden="true" class="bx bx-plus"></i>
                 </a>
-                <a href="https://rparth07-airline-reservation.netlify.app" target="_blank" title="project link">
-                  <i class="bx bx-link"></i>
+                <a href="https://rparth07-airline-reservation.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Open live project" title="Live project">
+                  <i aria-hidden="true" class="bx bx-link"></i>
                 </a>
-                <a href="https://github.com/rparth07/airline-reservation" target="_blank" title="code link">
-                  <i class='bx bx-code-alt'></i>
+                <a href="https://github.com/rparth07/airline-reservation" target="_blank" rel="noopener noreferrer" aria-label="View project source code" title="Source code">
+                  <i aria-hidden="true" class='bx bx-code-alt'></i>
                 </a>
               </div>
             </div>
@@ -443,20 +441,20 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="./assets/img/parth-traders.png" class="img-fluid" alt="">
+            <img src="./assets/img/parth-traders.png" class="img-fluid" alt="Parth Traders screenshot">
             <div class="portfolio-info">
               <h4>Parth Traders</h4>
-              <p>develop using .NET + Angular</p>
+              <p>Built with .NET + Angular</p>
               <div class="portfolio-links">
                 <a href="./assets/img/parth-traders.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Parth Traders">
-                  <i class="bx bx-plus"></i>
+                  title="Parth Traders" aria-label="Preview Parth Traders">
+                  <i aria-hidden="true" class="bx bx-plus"></i>
                 </a>
-                <a href="https://rparth07-parth-traders.netlify.app" target="_blank" title="project link">
-                  <i class="bx bx-link"></i>
+                <a href="https://rparth07-parth-traders.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Open live project" title="Live project">
+                  <i aria-hidden="true" class="bx bx-link"></i>
                 </a>
-                <a href="https://github.com/rparth07/Parth-Traders" target="_blank" title="code link">
-                  <i class='bx bx-code-alt'></i>
+                <a href="https://github.com/rparth07/Parth-Traders" target="_blank" rel="noopener noreferrer" aria-label="View project source code" title="Source code">
+                  <i aria-hidden="true" class='bx bx-code-alt'></i>
                 </a>
               </div>
             </div>
@@ -465,20 +463,20 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="./assets/img/stock-analyzer.png" class="img-fluid" alt="">
+            <img src="./assets/img/stock-analyzer.png" class="img-fluid" alt="Stock Explorer screenshot">
             <div class="portfolio-info">
               <h4>Stock Explorer</h4>
-              <p>develop using .NET + Angular</p>
+              <p>Built with .NET + Angular</p>
               <div class="portfolio-links">
                 <a href="./assets/img/stock-analyzer.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Stock Explorer">
-                  <i class="bx bx-plus"></i>
+                  title="Stock Explorer" aria-label="Preview Stock Explorer">
+                  <i aria-hidden="true" class="bx bx-plus"></i>
                 </a>
-                <a href="https://rparth07-stock-explorer.netlify.app" target="_blank" title="project link">
-                  <i class="bx bx-link"></i>
+                <a href="https://rparth07-stock-explorer.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Open live project" title="Live project">
+                  <i aria-hidden="true" class="bx bx-link"></i>
                 </a>
-                <a href="https://github.com/rparth07/Stock-Analyzer" target="_blank" title="code link">
-                  <i class='bx bx-code-alt'></i>
+                <a href="https://github.com/rparth07/Stock-Analyzer" target="_blank" rel="noopener noreferrer" aria-label="View project source code" title="Source code">
+                  <i aria-hidden="true" class='bx bx-code-alt'></i>
                 </a>
               </div>
             </div>
@@ -487,20 +485,20 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="./assets/img/todo.png" class="img-fluid" alt="">
+            <img src="./assets/img/todo.png" class="img-fluid" alt="TODO screenshot">
             <div class="portfolio-info">
               <h4>TODO</h4>
-              <p>develop using Angular</p>
+              <p>Built with Angular</p>
               <div class="portfolio-links">
                 <a href="./assets/img/todo.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Stock Explorer">
-                  <i class="bx bx-plus"></i>
+                  title="TODO" aria-label="Preview TODO">
+                  <i aria-hidden="true" class="bx bx-plus"></i>
                 </a>
-                <a href="https://rparth07-todo.netlify.app" target="_blank" title="project link">
-                  <i class="bx bx-link"></i>
+                <a href="https://rparth07-todo.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Open live project" title="Live project">
+                  <i aria-hidden="true" class="bx bx-link"></i>
                 </a>
-                <a href="https://github.com/rparth07/ToDo" target="_blank" title="code link">
-                  <i class='bx bx-code-alt'></i>
+                <a href="https://github.com/rparth07/ToDo" target="_blank" rel="noopener noreferrer" aria-label="View project source code" title="Source code">
+                  <i aria-hidden="true" class='bx bx-code-alt'></i>
                 </a>
               </div>
             </div>
@@ -509,20 +507,20 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="./assets/img/prompt-guide.png" class="img-fluid" alt="">
+            <img src="./assets/img/prompt-guide.png" class="img-fluid" alt="Prompt Guide screenshot">
             <div class="portfolio-info">
               <h4>Prompt Guide</h4>
-              <p>develop using VuePress</p>
+              <p>Built with VuePress</p>
               <div class="portfolio-links">
                 <a href="./assets/img/prompt-guide.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="TODOr">
-                  <i class="bx bx-plus"></i>
+                  title="Prompt Guide" aria-label="Preview Prompt Guide">
+                  <i aria-hidden="true" class="bx bx-plus"></i>
                 </a>
-                <a href="https://prompt-guide.netlify.app" target="_blank" title="project link">
-                  <i class="bx bx-link"></i>
+                <a href="https://prompt-guide.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Open live project" title="Live project">
+                  <i aria-hidden="true" class="bx bx-link"></i>
                 </a>
-                <a href="https://github.com/rparth07/Prompt-Guide" target="_blank" title="code link">
-                  <i class='bx bx-code-alt'></i>
+                <a href="https://github.com/rparth07/Prompt-Guide" target="_blank" rel="noopener noreferrer" aria-label="View project source code" title="Source code">
+                  <i aria-hidden="true" class='bx bx-code-alt'></i>
                 </a>
               </div>
             </div>
@@ -557,8 +555,8 @@
   </section>
   <!-- End Contact Section -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+  </main>
+  <a href="#hero" aria-label="Back to top" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
@@ -566,11 +564,8 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
