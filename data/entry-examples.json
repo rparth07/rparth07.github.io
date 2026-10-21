@@ -1,0 +1,48 @@
+{
+  "about": {
+    "title": "New summary",
+    "icon": "",
+    "lines": [
+      "Your summary here."
+    ]
+  },
+  "skillGroups": {
+    "title": "New category",
+    "items": [
+      {
+        "name": "New skill",
+        "icon": ""
+      }
+    ]
+  },
+  "experience": {
+    "role": "Your role",
+    "company": "Company name",
+    "period": "2026 - Present",
+    "highlights": [
+      "Describe your contribution."
+    ],
+    "projects": [
+      {
+        "name": "Project name",
+        "highlights": [
+          "Describe the work."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "qualification": "Qualification",
+    "period": "2022 - 2026",
+    "score": "",
+    "institution": "Institution name"
+  },
+  "projects": {
+    "name": "New project",
+    "description": "Brief project description",
+    "image": "assets/img/my-new-project.png",
+    "imageAlt": "New project screenshot",
+    "liveUrl": "https://example.com",
+    "sourceUrl": ""
+  }
+}

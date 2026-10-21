@@ -1,0 +1,356 @@
+{
+  "type": "object",
+  "required": [
+    "profile",
+    "metadata",
+    "navigation",
+    "headings",
+    "about",
+    "skillGroups",
+    "experience",
+    "education",
+    "projects",
+    "contact"
+  ],
+  "properties": {
+    "profile": {
+      "type": "object",
+      "required": [
+        "firstName",
+        "lastName",
+        "greeting",
+        "rolePrefix",
+        "roles",
+        "email",
+        "photo",
+        "photoAlt",
+        "socialLinks"
+      ],
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "greeting": {
+          "type": "string"
+        },
+        "rolePrefix": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "email": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "photoAlt": {
+          "type": "string"
+        },
+        "socialLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "url",
+              "icon",
+              "className"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "className": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "title",
+        "description",
+        "keywords",
+        "favicon"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "string"
+        },
+        "favicon": {
+          "type": "string"
+        }
+      }
+    },
+    "navigation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section",
+          "label",
+          "icon"
+        ],
+        "properties": {
+          "section": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "headings": {
+      "type": "object",
+      "required": [
+        "about",
+        "skills",
+        "experience",
+        "education",
+        "portfolio",
+        "contact"
+      ],
+      "properties": {
+        "about": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "string"
+        },
+        "experience": {
+          "type": "string"
+        },
+        "education": {
+          "type": "string"
+        },
+        "portfolio": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        }
+      }
+    },
+    "about": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "icon",
+          "lines"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "skillGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "items"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "icon"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "company",
+          "period",
+          "projects",
+          "highlights"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "highlights"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "highlights": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "qualification",
+          "period",
+          "score",
+          "institution"
+        ],
+        "properties": {
+          "qualification": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "score": {
+            "type": "string"
+          },
+          "institution": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "description",
+          "image",
+          "imageAlt",
+          "liveUrl",
+          "sourceUrl"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "imageAlt": {
+            "type": "string"
+          },
+          "liveUrl": {
+            "type": "string"
+          },
+          "sourceUrl": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "title",
+        "lines",
+        "buttonLabel"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "buttonLabel": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portfolio content",
+  "description": "Content for the existing portfolio sections. Array order is display order."
+}
