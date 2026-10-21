@@ -63,7 +63,8 @@
   "about": {
     "heading": "About Me.",
     "paragraphs": [
-      "Placeholder: Introduce your software development background, open-source contributions, teaching, and mentoring here."
+      "Senior Software Developer at Tark, open source contributor, educator and mentor.",
+      "Actively building and contributing to projects, and sharing knowledge and expertise in tech."
     ],
     "photo": "/assets/img/profile-photo.jpg",
     "photoAlt": "Parth Raiyani",
@@ -108,8 +109,8 @@
       {
         "id": "website-development",
         "title": "WEBSITE DEVELOPMENT",
-        "subtitle": "Service 1 — placeholder",
-        "description": "Describe your website and web application development service here.",
+        "subtitle": "Web applications",
+        "description": "Web application projects built with Angular and .NET, including Airline Reservation, Parth Traders, and Stock Explorer.",
         "tools": [
           "Angular",
           ".NET Core",
@@ -119,8 +120,8 @@
       {
         "id": "backend-development",
         "title": "BACKEND & APIs",
-        "subtitle": "Service 2 — placeholder",
-        "description": "Describe your backend, API development, and data integration service here.",
+        "subtitle": "APIs and data integration",
+        "description": "REST API development, data mappings, automated workflows, and data integrity checks, as detailed in my experience below.",
         "tools": [
           "C#",
           ".NET Core",
@@ -416,7 +417,7 @@
     }
   ],
   "resume": {
-    "label": "RESUME",
+    "label": "GITHUB",
     "url": "https://github.com/rparth07"
   },
   "footer": {

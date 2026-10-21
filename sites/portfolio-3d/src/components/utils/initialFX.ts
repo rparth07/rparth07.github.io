@@ -11,8 +11,29 @@ export function initialFX() {
   splits.forEach(split => split.revert());
   splits = [];
   document.body.style.overflowY = "auto";
-  smoother?.scrollTo(0, { immediate: true });
+  let section = "";
+  try { section = decodeURIComponent(window.location.hash.slice(1)); } catch { /* malformed hash: show home */ }
+  const target = document.getElementById(section);
+  if (target) {
+    requestAnimationFrame(() => {
+      if (smoother) smoother.scrollTo(target, { immediate: true, offset: -90 });
+      else target.scrollIntoView();
+    });
+  } else smoother?.scrollTo(0, { immediate: true });
   document.querySelector("main")?.classList.add("main-active");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.set([".header", ".icons-section", ".nav-fade", ".landing-info h3"], {opacity: 1});
+    document.querySelectorAll<HTMLElement>(".landing-info h2").forEach(row => {
+      [...row.children].forEach((entry, index) => {
+        const element = entry as HTMLElement;
+        element.style.display = index ? "none" : "block";
+        element.style.opacity = "1";
+        element.style.visibility = "visible";
+        element.style.transform = "none";
+      });
+    });
+    return;
+  }
   intro = gsap.context(() => {
     gsap.to("body", { backgroundColor: "#0a0e17", duration: 0.5 });
     gsap.fromTo([".header", ".icons-section", ".nav-fade"], { opacity: 0 }, { opacity: 1, duration: 1.2 });

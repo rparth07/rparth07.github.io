@@ -66,7 +66,7 @@ const Work = () => {
               }}
             >
               {projects.map((project, index) => (
-                <div className="carousel-slide" key={project.id}>
+                <div className="carousel-slide" key={project.id} ref={element => { if (element) element.inert = index !== currentIndex; }} aria-hidden={index !== currentIndex}>
                   <div className="carousel-content">
                     <div className="carousel-info">
                       <div className="carousel-number">
@@ -79,12 +79,12 @@ const Work = () => {
                         <div className="carousel-tools">
                           <span className="tools-label">{portfolio.work.toolsLabel}</span>
                           <p>{project.tools.join(", ")}</p>
-                          <div className="project-links"><a href={safeUrl(project.url)} target="_blank" rel="noopener noreferrer">{portfolio.work.demoLabel} ↗</a><a href={safeUrl(project.sourceUrl)} target="_blank" rel="noopener noreferrer">{portfolio.work.sourceLabel} ↗</a></div>
+                          <div className="project-links">{project.url && <a href={safeUrl(project.url)} target="_blank" rel="noopener noreferrer">{portfolio.work.demoLabel} ↗</a>}{project.sourceUrl && <a href={safeUrl(project.sourceUrl)} target="_blank" rel="noopener noreferrer">{portfolio.work.sourceLabel} ↗</a>}</div>
                         </div>
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">
-                      <WorkImage image={safeUrl(project.image)} alt={project.imageAlt} />
+                      <WorkImage image={safeUrl(project.image)} alt={project.imageAlt} link={project.url ? safeUrl(project.url) : project.sourceUrl ? safeUrl(project.sourceUrl) : undefined} />
                     </div>
                   </div>
                 </div>
@@ -102,6 +102,7 @@ const Work = () => {
                 }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`${portfolio.work.goToLabel} ${index + 1}`}
+                aria-current={index === currentIndex ? "true" : undefined}
                 data-cursor="disable"
               />
             ))}

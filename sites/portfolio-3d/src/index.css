@@ -22,9 +22,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
   --accentColor: #5eead4;
   --backgroundColor: #0a0e17;
   --vh: 100vh;
@@ -147,3 +147,14 @@ body {
 .techstack h2 { position: relative; top: auto; margin: 40px 0 24px; font-size: clamp(40px, 5vw, 80px); line-height: 1.1; flex: 0 0 auto; }
 .techstack .tech-canvas { min-height: 0; flex: 1 1 0; height: auto !important; }
 #about, #work, #contact { scroll-margin-top: 90px; }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accentColor); outline-offset: 4px; }
+.scene-fallback { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); max-width: calc(100% - 40px); z-index: 10000; padding: 12px 18px; background: #0a0e17; color: #eae5ec; border: 1px solid #5eead4; font-size: 14px; }
+.graphics-fallback { padding: 40px; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  .main-active { animation: none; opacity: 1; }
+  .landing-circle1, .landing-circle2, .loaderGame-ball, .loaderGame-line { animation: none; }
+  .carousel-track, .hover-in, .cursor-main { transition: none; }
+}

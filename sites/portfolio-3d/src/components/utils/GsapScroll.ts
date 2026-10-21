@@ -54,7 +54,8 @@ export function setCharTimeline(
       object.material.transparent = true;
       object.material.opacity = 0;
       object.material.emissive.set("#B0F5EA");
-      gsap.timeline({ repeat: -1, repeatRefresh: true }).to(object.material, {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) object.material.emissiveIntensity = 2;
+      else gsap.timeline({ repeat: -1, repeatRefresh: true }).to(object.material, {
         emissiveIntensity: () => intensity() * 8,
         duration: () => Math.random() * 0.6,
         delay: () => Math.random() * 0.1,
@@ -134,6 +135,11 @@ export function setCharTimeline(
 }
 
 export function setAllTimeline() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    careerContext?.revert();
+    gsap.set(".career-info-box", {autoAlpha: 1, y: 0});
+    return;
+  }
   careerContext?.revert();
   careerContext = gsap.context(() => {
     gsap.fromTo(".career-timeline", { scaleY: 0, maxHeight: "100%", transformOrigin: "top" }, {

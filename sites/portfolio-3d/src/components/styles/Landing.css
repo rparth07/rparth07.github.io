@@ -415,3 +415,8 @@ h2.landing-info-h2 {
   .landing-info h2 { font-size: clamp(28px, 3vw, 60px); }
   h2.landing-info-h2 { font-size: clamp(30px, 3.5vw, 70px); }
 }
+
+/* Reserve room for the persistent portfolio switch on phones and tablets. */
+@media (max-width: 1024px) {
+  .landing-info { bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+}

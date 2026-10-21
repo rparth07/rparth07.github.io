@@ -11,28 +11,27 @@ const Loading = ({ percent }: { percent: number }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
 
-  if (percent >= 100) {
-    setTimeout(() => {
-      setLoaded(true);
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 1000);
-    }, 600);
-  }
+  useEffect(() => {
+    if (percent < 100) return;
+    const ready = setTimeout(() => setLoaded(true), 600);
+    const finish = setTimeout(() => setIsLoaded(true), 1600);
+    return () => { clearTimeout(ready); clearTimeout(finish); };
+  }, [percent]);
 
   useEffect(() => {
-    import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
-        setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        }, 900);
-      }
+    if (!isLoaded) return;
+    let cancelled = false;
+    let timer: ReturnType<typeof setTimeout>;
+    import("./utils/initialFX").then(module => {
+      if (cancelled) return;
+      setClicked(true);
+      timer = setTimeout(() => {
+        module.initialFX();
+        setIsLoading(false);
+      }, 900);
     });
-  }, [isLoaded]);
+    return () => { cancelled = true; clearTimeout(timer); };
+  }, [isLoaded, setIsLoading]);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const { currentTarget: target } = e;
@@ -62,7 +61,7 @@ const Loading = ({ percent }: { percent: number }) => {
       </div>
       <div className="loading-screen">
         <div className="loading-marquee">
-          <Marquee>
+          <Marquee play={!window.matchMedia("(prefers-reduced-motion: reduce)").matches}>
             {[...portfolio.loading.roles, ...portfolio.loading.roles].map((role,i) => <span key={i}>{role}</span>)}
           </Marquee>
         </div>
@@ -112,8 +111,10 @@ export const setProgress = (setLoading: (value: number) => void) => {
     }
   }, 100);
 
+  function stop() { clearInterval(interval); }
+
   function clear() {
-    clearInterval(interval);
+    stop();
     setLoading(100);
   }
 
@@ -131,5 +132,5 @@ export const setProgress = (setLoading: (value: number) => void) => {
       }, 2);
     });
   }
-  return { loaded, percent, clear };
+  return { loaded, percent, clear, stop };
 };

@@ -19,6 +19,7 @@ const setCharacter = (
         loader.load(
           `${import.meta.env.BASE_URL}models/parth-coder-avatar-v1.0.glb?v=1`,
           async (gltf) => {
+            try {
             character = gltf.scene;
             await renderer.compileAsync(character, camera, scene);
             character.traverse((child: any) => {
@@ -30,15 +31,19 @@ const setCharacter = (
                 mesh.frustumCulled = true;
               }
             });
+
+
+
+            const rightFoot = character.getObjectByName("footR");
+            if (rightFoot) rightFoot.position.y = 3.36;
+            const leftFoot = character.getObjectByName("footL");
+            if (leftFoot) leftFoot.position.y = 3.36;
             resolve(gltf);
-
-
-            character!.getObjectByName("footR")!.position.y = 3.36;
-            character!.getObjectByName("footL")!.position.y = 3.36;
 
             // Monitor scale is handled by GsapScroll.ts animations
 
-            dracoLoader.dispose();
+            } catch (error) { reject(error); }
+            finally { dracoLoader.dispose(); }
           },
           undefined,
           (error) => {

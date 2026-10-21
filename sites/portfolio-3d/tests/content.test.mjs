@@ -46,5 +46,14 @@ try {
  const about = renderToStaticMarkup(createElement(About));
  assert.equal(about.split('class="highlight-icon"').length-1, data.about.highlights.length);
  assert(about.includes('Explore Open Source Developer'));
+ const {default: Work} = await server.ssrLoadModule('/src/components/Work.tsx');
+ const project = data.work.items[0];
+ const savedLinks = {url: project.url, sourceUrl: project.sourceUrl};
+ project.url = ''; project.sourceUrl = '';
+ const work = renderToStaticMarkup(createElement(Work));
+ assert(work.includes('aria-hidden="true"'), 'Offscreen slides need accessibility state');
+ const firstSlide = work.split('class="carousel-slide"')[1].split('class="carousel-slide"')[0];
+ assert(!firstSlide.includes('href="#"'), 'Missing URLs must not become dead buttons');
+ Object.assign(project, savedLinks);
  console.log('PASS: content validation, duplicate ids, unsafe links, extra project, experience, service, and rotating role rendering.');
 } finally { await server.close(); }

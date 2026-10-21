@@ -14,6 +14,8 @@ import HoverLinks from "./HoverLinks";
 
 const SocialIcons = () => {
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const cleanups: Array<() => void> = [];
     const social = document.getElementById("social") as HTMLElement;
 
     social.querySelectorAll("span").forEach((item) => {
@@ -26,6 +28,7 @@ const SocialIcons = () => {
       let currentX = 0;
       let currentY = 0;
 
+      let frame = 0;
       const updatePosition = () => {
         currentX += (mouseX - currentX) * 0.1;
         currentY += (mouseY - currentY) * 0.1;
@@ -33,12 +36,13 @@ const SocialIcons = () => {
         link.style.setProperty("--siLeft", `${currentX}px`);
         link.style.setProperty("--siTop", `${currentY}px`);
 
-        requestAnimationFrame(updatePosition);
+        frame = requestAnimationFrame(updatePosition);
       };
 
       const onMouseMove = (e: MouseEvent) => {
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const bounds = elem.getBoundingClientRect();
+        const x = e.clientX - bounds.left;
+        const y = e.clientY - bounds.top;
 
         if (x < 40 && x > 10 && y < 40 && y > 5) {
           mouseX = x;
@@ -53,10 +57,12 @@ const SocialIcons = () => {
 
       updatePosition();
 
-      return () => {
-        elem.removeEventListener("mousemove", onMouseMove);
-      };
+      cleanups.push(() => {
+        cancelAnimationFrame(frame);
+        document.removeEventListener("mousemove", onMouseMove);
+      });
     });
+    return () => cleanups.forEach(cleanup => cleanup());
   }, []);
 
   return (
@@ -66,9 +72,11 @@ const SocialIcons = () => {
       </div>
       <a
         className="resume-button"
-        download
+        download={/\.(pdf|docx?)(?:[?#]|$)/i.test(portfolio.resume.url) || undefined}
         target="_blank"
         href={safeUrl(portfolio.resume.url)}
+        rel="noopener noreferrer"
+        aria-label={portfolio.resume.label}
       >
         <HoverLinks text={portfolio.resume.label} />
         <span>

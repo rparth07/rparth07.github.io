@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import GraphicsBoundary from "./GraphicsBoundary";
 import Skills from "./Skills";
 import Education from "./Education";
 import "./styles/ContentSections.css";
@@ -54,9 +55,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <Education />
             <Work />
             {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
+              <GraphicsBoundary><Suspense fallback={<div>Loading tech stack...</div>}>
                 <TechStack />
-              </Suspense>
+              </Suspense></GraphicsBoundary>
             )}
             <Contact />
           </div>
