@@ -1,14 +1,14 @@
 .header {
   display: flex;
-  max-width: var(--cMaxWidth);
-  width: var(--cWidth);
+  max-width: none;
+  width: 100%;
   justify-content: space-between;
-  padding: 20px 0px;
+  padding: 20px clamp(15px, 3vw, 48px);
   margin-bottom: -100px;
   box-sizing: border-box;
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  transform: none;
   top: 0;
   z-index: 9999;
 }
@@ -47,7 +47,7 @@
 }
 @media only screen and (min-width: 500px) {
   .header {
-    padding: 20px 0px;
+    padding: 20px clamp(15px, 3vw, 48px);
   }
   .header ul {
     flex-direction: row;
@@ -68,7 +68,7 @@
 }
 @media only screen and (min-width: 1200px) {
   .header {
-    padding: 35px 0px;
+    padding: 35px clamp(15px, 3vw, 48px);
   }
   .header ul {
     column-gap: 80px;
