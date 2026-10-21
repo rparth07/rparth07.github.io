@@ -6,7 +6,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'assets/js/content.js'), 'utf8');
 const original = JSON.parse(fs.readFileSync(path.join(root, 'data/portfolio.json'), 'utf8'));
-async function render(data) {
+async function render(data, options = {}) {
   const nodes = new Map();
   const errors = [];
   const node = key => {
@@ -19,7 +19,7 @@ async function render(data) {
   const document = {baseURI: 'http://localhost:8000/',
     querySelector: node, querySelectorAll: () => [],
     getElementById: id => ['hero','about','skills','experience','education','portfolio','contact'].includes(id) ? node('#' + id) : null};
-  const context = {window: {}, document, URL, fetch: async () => ({ok:true, json:async () => data}), console: {error: (...args) => errors.push(args)}};
+  const context = {window: {}, document, URL, AbortSignal, fetch: options.fetch || (async () => ({ok:true, json:async () => data})), console: {error: (...args) => errors.push(args)}};
   vm.runInNewContext(source, context);
   return {ok: await context.window.portfolioReady, nodes, errors};
 }
@@ -89,4 +89,14 @@ test('project cards are balanced siblings rather than nested cards', async () =>
   }
   assert.equal(depth, 0, 'project markup has unclosed containers');
   assert.equal(cards, original.projects.length);
+});
+
+
+test('HTTP and network failures preserve the classic fallback', async () => {
+  for (const fetch of [async () => ({ok: false, status: 503}), async () => { throw new Error('Network unavailable'); }]) {
+    const result = await render(structuredClone(original), {fetch});
+    assert.equal(result.ok, false);
+    assert.equal(result.nodes.size, 2);
+    assert.equal(result.errors.length, 1);
+  }
 });

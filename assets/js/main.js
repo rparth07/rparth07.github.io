@@ -20,10 +20,11 @@
    */
   const select = (el, all = false) => {
     el = el.trim();
+    if (!el || el === "#") return all ? [] : null;
     if (all) {
       return [...document.querySelectorAll(el)];
     } else {
-      return document.querySelector(el);
+      try { return document.querySelector(el); } catch { return null; }
     }
   };
 
@@ -143,7 +144,13 @@
           navbarToggle.setAttribute("aria-expanded", "false");
           navbarToggle.setAttribute("aria-label", "Open navigation");
         }
+        history.pushState(null, "", this.hash);
         scrollto(this.hash);
+        if (e.detail === 0) {
+          const target = select(this.hash);
+          target.setAttribute("tabindex", "-1");
+          target.focus({preventScroll: true});
+        }
       }
     },
     true
