@@ -56,7 +56,7 @@ window.portfolioReady = (async () => {
     textArray(data.contact.lines, 'contact.lines');
   };
   try {
-    const response = await fetch('data/portfolio.json', {cache: 'no-cache'});
+    const response = await fetch('data/portfolio.json', {cache: 'no-cache', signal: AbortSignal.timeout(8000)});
     if (!response.ok) throw new Error(`Content request failed (${response.status})`);
     const data = await response.json();
     validateContent(data);
@@ -67,7 +67,7 @@ window.portfolioReady = (async () => {
     if (!profile || !metadata || !contact || !Array.isArray(profile.roles) || !Array.isArray(profile.socialLinks)) throw new Error('Missing profile, metadata, or contact fields');
     // Prepare every fragment before changing the page, so invalid data leaves the fallback intact.
     const fragments = {
-      '#navbar ul': data.navigation.map((n,i) => `<li><a href="#${escape(n.section)}" class="nav-link scrollto${i === 0 ? ' active' : ''}">${icon(n.icon)} <span>${escape(n.label)}</span></a></li>`).join(''),
+      '#navbar ul': data.navigation.map((n,i) => `<li><a href="#${escape(n.section)}" aria-label="${escape(n.label)}" class="nav-link scrollto${i === 0 ? ' active' : ''}">${icon(n.icon)} <span>${escape(n.label)}</span></a></li>`).join(''),
       '#hero h1': `<span style="font-weight: lighter;">${escape(profile.firstName)}</span> ${escape(profile.lastName)}`,
       '#hero .social-links': profile.socialLinks.map(s => `<a href="${escape(url(s.url))}" class="${escape(s.className || '')}" aria-label="${escape(s.label)}">${icon(s.icon)}</a>`).join(' '),
       '#about .about-containers': data.about.map(a => `<div class="details-container">${image(a.icon)}<h3>${escape(a.title)}</h3><p>${lines(a.lines)}</p></div>`).join(''),
