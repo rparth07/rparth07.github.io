@@ -1,0 +1,78 @@
+/* Portfolio type system: expressive display, calm reading text. */
+:root {
+  --font-reading: "Geist", sans-serif;
+  --font-display: "Space Grotesk", "Geist", sans-serif;
+  --type-section: clamp(36px, 4.5vw, 68px);
+  --type-body: clamp(16px, 1.15vw, 18px);
+  --text-primary: #eae5ec;
+  --text-secondary: #c4cbd6;
+}
+body { font-family: var(--font-reading); font-weight: 400; line-height: 1.65; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-style: normal; }
+button, input, textarea { font: inherit; }
+.header .navbar-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: -.03em; }
+.header ul { font-family: var(--font-reading); font-size: 13px; line-height: 1.4; }
+.header ul li { font-weight: 500; letter-spacing: .055em; }
+.landing-intro h1 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.025em; line-height: 1.02; }
+.landing-intro h2, .landing-info h3 { font-family: var(--font-reading); font-weight: 400; letter-spacing: .01em; line-height: 1.45; }
+.landing-info h2, h2.landing-info-h2 { font-family: var(--font-display); font-weight: 600; letter-spacing: .015em; }
+.about-profile h3 { font-family: var(--font-display); font-size: clamp(22px, 2vw, 28px); font-weight: 500; letter-spacing: .06em; line-height: 1.2; }
+.about-me p { font-family: var(--font-reading); font-weight: 450; letter-spacing: -.01em; line-height: 1.5; }
+.about-highlights h4 { font-family: var(--font-display); font-size: 18px; font-weight: 500; letter-spacing: -.01em; line-height: 1.35; }
+.about-highlights div { font-family: var(--font-reading); font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
+.content-section h2, .career-section h2, .work-section h2, .techstack h2 {
+  font-family: var(--font-display); font-size: var(--type-section); font-weight: 500;
+  letter-spacing: -.03em; line-height: 1.1; color: var(--text-primary);
+}
+.career-section h2 { background: none; -webkit-text-fill-color: currentColor; }
+.skill-group h3 { font-family: var(--font-display); font-weight: 500; font-size: 23px; letter-spacing: -.015em; line-height: 1.3; }
+.skill-group li { font-family: var(--font-reading); font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 1.45; }
+.education-list h3 { font-family: var(--font-display); font-size: clamp(23px, 2.2vw, 32px); font-weight: 500; letter-spacing: -.02em; line-height: 1.25; }
+.education-list p { font-size: 16px; line-height: 1.65; font-weight: 400; letter-spacing: 0; }
+.education-period { font-variant-numeric: tabular-nums; }
+.career-info h4 { font-family: var(--font-display); font-size: clamp(24px, 2.1vw, 32px); line-height: 1.2; font-weight: 500; letter-spacing: -.02em; width: auto; }
+.career-info h5 { font-family: var(--font-reading); font-size: 17px; font-weight: 500; line-height: 1.45; letter-spacing: 0; }
+.career-info h3 { font-family: var(--font-reading); font-size: 15px; font-weight: 500; line-height: 1.6; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.career-project h6 { font-family: var(--font-display); font-size: 21px; font-weight: 500; letter-spacing: -.015em; line-height: 1.35; }
+.career-details, .career-info-box .career-details p { font-family: var(--font-reading); font-size: var(--type-body); font-weight: 400; line-height: 1.75; letter-spacing: 0; color: var(--text-secondary); }
+.career-details li { margin-bottom: 14px; }
+.what-box h2, .what-box:first-child h2 { font-family: var(--font-display); font-size: clamp(36px, 3.5vw, 64px); font-weight: 600; letter-spacing: -.025em; line-height: 1.12; }
+.hat-h2 { font-style: normal; }
+.do-h2 { margin-inline-start: .2em; }
+.what-content h3 { font-family: var(--font-display); font-size: clamp(21px, 1.8vw, 28px); font-weight: 600; line-height: 1.18; letter-spacing: -.015em; overflow-wrap: normal; }
+.what-content h4 { font-family: var(--font-reading); font-size: 14px; font-weight: 400; letter-spacing: 0; line-height: 1.45; opacity: 1; color: #b7c1cf; margin-top: 8px; }
+.what-content p { font-family: var(--font-reading); font-size: 15px; line-height: 1.6; font-weight: 400; letter-spacing: 0; color: var(--text-secondary); }
+.what-content-in h5 { font-family: var(--font-reading); font-size: 12px; font-weight: 500; letter-spacing: .025em; line-height: 1.5; opacity: 1; color: #b7c1cf; }
+.what-tags { font-family: var(--font-reading); font-size: 12px; font-weight: 450; letter-spacing: 0; line-height: 1.5; }
+.carousel-number h3 { font-family: var(--font-display); font-weight: 500; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.carousel-details h4 { font-family: var(--font-display); font-size: clamp(23px, 2.2vw, 32px); font-weight: 500; letter-spacing: -.025em; line-height: 1.2; }
+.carousel-details p, .carousel-tools p { font-family: var(--font-reading); font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: 1.65; color: var(--text-secondary); }
+.carousel-details .carousel-category { font-size: 14px; font-weight: 450; color: #cbd3df; }
+.tools-label { font-family: var(--font-reading); font-size: 12px; font-weight: 500; letter-spacing: .055em; }
+.project-links a { font-family: var(--font-reading); font-size: 14px; font-weight: 500; }
+.contact-section h3 { font-family: var(--font-display); font-size: clamp(34px, 4vw, 58px); font-weight: 500; letter-spacing: -.03em; line-height: 1.1; text-transform: none; }
+.contact-intro, .contact-flex p { font-family: var(--font-reading); font-size: 16px; font-weight: 400; line-height: 1.65; letter-spacing: 0; }
+.contact-intro { color: var(--text-secondary); }
+.contact-flex h4 { font-family: var(--font-reading); font-size: 13px; font-weight: 500; line-height: 1.5; letter-spacing: .025em; opacity: 1; color: #b7c1cf; }
+a.contact-social { font-family: var(--font-reading); font-size: 18px; font-weight: 400; line-height: 1.65; letter-spacing: -.01em; }
+.contact-box h2 { font-family: var(--font-reading); font-size: 16px; line-height: 1.65; font-weight: 400; letter-spacing: 0; }
+.contact-box h5 { font-family: var(--font-reading); font-size: 13px; font-weight: 400; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.resume-button { font-family: var(--font-reading); font-size: 13px; line-height: 1.4; font-weight: 500; letter-spacing: .14em; }
+.loading-marquee { font-family: var(--font-display); font-weight: 600; letter-spacing: -.025em; }
+.loading-content, .loading-content2 { font-family: var(--font-reading); font-weight: 500; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+/* Keep the section heading visually grouped with the service panel. */
+@media(min-width:1025px) { .what-box:first-child { top: calc(50% - 340px); } }
+@media(min-width:1025px) and (max-width:1400px) { .what-box:first-child { top: calc(50% - 290px); } }
+@media(max-width:767px) {
+ .header ul { font-size: 10px; }
+ .about-profile h3 { font-size: 22px; }
+ .about-highlights h4 { font-size: 17px; }
+ .skill-group li { font-size: 15px; }
+ .career-info h4 { font-size: 26px; }
+ .career-details { font-size: 16px; }
+ .what-content p { font-size: 14px; }
+ .what-content h3 { font-size: 22px; }
+ .what-box h2 { margin-bottom: 32px; }
+ .contact-flex p { overflow-wrap: anywhere; }
+ a.contact-social { font-size: 17px; }
+}

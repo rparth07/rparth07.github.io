@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import { createServer } from 'vite';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+const server = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
+try {
+ const { portfolio: data, validateContent, safeUrl } = await server.ssrLoadModule('/src/content/portfolio.ts');
+ assert.deepEqual(validateContent(data), []);
+ const invalid = structuredClone(data); invalid.work.items = 'wrong';
+ assert(validateContent(invalid).some(error => error.includes('work.items')));
+ const duplicate = structuredClone(data); duplicate.career.items.push({...duplicate.career.items[0]});
+ assert(validateContent(duplicate).some(error => error.includes('duplicate ids')));
+ assert.equal(safeUrl('javascript:alert(1)'), '#');
+ assert.equal(safeUrl('https://example.com'), 'https://example.com');
+ data.work.items.push({...data.work.items[0],id:'test-project',title:'Additional Project'});
+ data.career.items.push({...data.career.items[0],id:'test-experience',role:'Additional Experience'});
+ data.services.items.push({...data.services.items[0],id:'test-service',title:'Additional Service'});
+ data.hero.roles.push('Architect');
+ assert.deepEqual(validateContent(data), []);
+ for (const [component, expected, marker, count] of [['Work','Additional Project','class="carousel-slide"',data.work.items.length],['Career','Additional Experience','class="career-info-box"',data.career.items.length],['WhatIDo','Additional Service','what-content what-noTouch',data.services.items.length],['Landing','Architect','role-entry',data.hero.roles.length * 2]]) {
+  const {default: Component} = await server.ssrLoadModule(`/src/components/${component}.tsx`);
+  const html=renderToStaticMarkup(createElement(Component));
+  assert(html.includes(expected),`${component}: new item missing`);
+  assert.equal(html.split(marker).length-1,count,`${component}: wrong number of entries`);
+  if(component==='WhatIDo') assert(html.includes('what-many'));
+ }
+ const {default: Skills} = await server.ssrLoadModule('/src/components/Skills.tsx');
+ const skills = renderToStaticMarkup(createElement(Skills));
+ for (const group of data.skills.groups) for (const item of group.items) assert(skills.includes(item.name), `Missing skill ${item.name}`);
+ const {default: Education} = await server.ssrLoadModule('/src/components/Education.tsx');
+ const education = renderToStaticMarkup(createElement(Education));
+ for (const item of data.education.items) assert(education.includes(item.institution), 'Missing institution');
+ const {default: Career} = await server.ssrLoadModule('/src/components/Career.tsx');
+ const career = renderToStaticMarkup(createElement(Career));
+ for (const item of data.career.items) for (const project of item.projects) assert(career.includes(project.name), 'Missing experience project');
+ assert.equal(data.resume.url, 'https://github.com/rparth07');
+ assert(!JSON.stringify(data).toLowerCase().includes('amjad'), 'Old owner details remain');
+ const {default: Contact} = await server.ssrLoadModule('/src/components/Contact.tsx');
+ const contact = renderToStaticMarkup(createElement(Contact));
+ assert(!contact.includes('Original design by'));
+ assert(!contact.includes('Bachelor of Technology'));
+ const {default: About} = await server.ssrLoadModule('/src/components/About.tsx');
+ const about = renderToStaticMarkup(createElement(About));
+ assert.equal(about.split('class="highlight-icon"').length-1, data.about.highlights.length);
+ assert(about.includes('Explore Open Source Developer'));
+ console.log('PASS: content validation, duplicate ids, unsafe links, extra project, experience, service, and rotating role rendering.');
+} finally { await server.close(); }

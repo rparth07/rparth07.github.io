@@ -1,0 +1,68 @@
+{
+  "addToWorkItems": {
+    "id": "my-new-project",
+    "title": "My New Project",
+    "category": "Web Application",
+    "tools": [
+      "React",
+      "Node.js"
+    ],
+    "image": "/images/my-new-project.png",
+    "url": "https://example.com",
+    "description": "Briefly describe this project.",
+    "imageAlt": "Screenshot of my new project",
+    "sourceUrl": "https://github.com/rparth07/example"
+  },
+  "addToCareerItems": {
+    "id": "my-new-role",
+    "role": "Software Engineer",
+    "organization": "Company Name",
+    "period": "2026 \u2013 Present",
+    "description": "Describe your responsibilities and achievements here.",
+    "highlights": [
+      "Describe one achievement."
+    ],
+    "projects": [
+      {
+        "id": "internal-project",
+        "name": "Project name",
+        "highlights": [
+          "Describe your contribution."
+        ]
+      }
+    ]
+  },
+  "addToServicesItems": {
+    "id": "cloud",
+    "title": "CLOUD",
+    "subtitle": "Reliable deployments",
+    "description": "Describe the service here.",
+    "tools": [
+      "Docker",
+      "AWS"
+    ]
+  },
+  "addToTechStackItems": {
+    "id": "docker",
+    "name": "Docker",
+    "image": "/images/docker.webp"
+  },
+  "addToSocialLinks": {
+    "id": "website",
+    "label": "Website",
+    "url": "https://example.com",
+    "icon": "link"
+  },
+  "addToEducationItems": {
+    "id": "new-qualification",
+    "qualification": "Qualification name",
+    "institution": "Institution name",
+    "period": "2026 - 2028",
+    "score": "Your result"
+  },
+  "addToSkillsGroupItems": {
+    "id": "new-skill",
+    "name": "New skill",
+    "image": "/assets/img/languages/new-skill.png"
+  }
+}
