@@ -4,8 +4,14 @@
  * Author: BootstrapMade.com
  * License: https://bootstrapmade.com/license/
  */
-(function () {
+(async function () {
   "use strict";
+
+  await window.portfolioReady;
+  const onPageLoad = callback => {
+    if (document.readyState === "complete") callback();
+    else window.addEventListener("load", callback, {once: true});
+  };
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -62,7 +68,7 @@
       }
     });
   };
-  window.addEventListener("load", navbarlinksActive);
+  onPageLoad(navbarlinksActive);
   onscroll(document, navbarlinksActive);
 
   /**
@@ -88,7 +94,7 @@
         backtotop.classList.remove("active");
       }
     };
-    window.addEventListener("load", toggleBacktotop);
+    onPageLoad(toggleBacktotop);
     onscroll(document, toggleBacktotop);
   }
 
@@ -146,7 +152,7 @@
   /**
    * Scroll with ofset on page load with hash links in the url
    */
-  window.addEventListener("load", () => {
+  onPageLoad(() => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
         scrollto(window.location.hash);
@@ -159,7 +165,7 @@
    */
   let preloader = select("#preloader");
   if (preloader) {
-    window.addEventListener("load", () => {
+    onPageLoad(() => {
       preloader.remove();
     });
   }
@@ -173,6 +179,7 @@
     typed_strings = typed_strings.split(",");
     new Typed(".typed", {
       strings: typed_strings,
+      contentType: "text",
       loop: true,
       typeSpeed: 100,
       backSpeed: 50,
@@ -205,13 +212,20 @@
   /**
    * Porfolio isotope and filter
    */
-  window.addEventListener("load", () => {
+  onPageLoad(() => {
     let portfolioContainer = select(".portfolio-container");
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: ".portfolio-item",
       });
 
+      // JSON-rendered images may finish after the window load event.
+      portfolioContainer.querySelectorAll("img").forEach(image => {
+        if (!image.complete) {
+          image.addEventListener("load", () => portfolioIsotope.layout(), {once: true});
+          image.addEventListener("error", () => portfolioIsotope.layout(), {once: true});
+        }
+      });
       let portfolioFilters = select("#portfolio-filters li", true);
 
       on(
@@ -290,7 +304,7 @@
   /**
    * Animation on scroll
    */
-  window.addEventListener("load", () => {
+  onPageLoad(() => {
     AOS.init({
       disable: reducedMotion.matches,
       duration: 1000,

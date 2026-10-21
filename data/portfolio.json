@@ -1,0 +1,336 @@
+{
+  "$schema": "./portfolio.schema.json",
+  "profile": {
+    "firstName": "Parth",
+    "lastName": "Raiyani",
+    "greeting": "Hi, my name is",
+    "rolePrefix": "I'm",
+    "roles": [
+      "Software Developer",
+      "Open Source Contributor",
+      "Educator",
+      "Mentor"
+    ],
+    "email": "pmr642001@gmail.com",
+    "photo": "assets/img/profile-photo.jpg",
+    "photoAlt": "Parth Raiyani",
+    "socialLinks": [
+      {
+        "label": "GitHub profile",
+        "url": "https://github.com/rparth07",
+        "icon": "bxl-github",
+        "className": "github"
+      },
+      {
+        "label": "LinkedIn profile",
+        "url": "https://www.linkedin.com/in/parth-raiyani-243b48199/",
+        "icon": "bxl-linkedin",
+        "className": "linkedin"
+      },
+      {
+        "label": "Google Developer profile",
+        "url": "https://g.dev/raiyaniparth07",
+        "icon": "bxl-google",
+        "className": "google"
+      }
+    ]
+  },
+  "metadata": {
+    "title": "Parth Raiyani",
+    "description": "Parth Raiyani Portfolio",
+    "keywords": "portfolio",
+    "favicon": "assets/img/profile-photo.jpg"
+  },
+  "navigation": [
+    {
+      "section": "hero",
+      "label": "Home",
+      "icon": "bx-home"
+    },
+    {
+      "section": "about",
+      "label": "About",
+      "icon": "bx-user"
+    },
+    {
+      "section": "skills",
+      "label": "Skills",
+      "icon": "bx-code"
+    },
+    {
+      "section": "experience",
+      "label": "Experience",
+      "icon": "bx-briefcase"
+    },
+    {
+      "section": "education",
+      "label": "Education",
+      "icon": "bx-terminal"
+    },
+    {
+      "section": "portfolio",
+      "label": "Projects",
+      "icon": "bx-book-content"
+    },
+    {
+      "section": "contact",
+      "label": "Contact",
+      "icon": "bx-envelope"
+    }
+  ],
+  "headings": {
+    "about": "About Me.",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "portfolio": "Projects",
+    "contact": "Contact"
+  },
+  "about": [
+    {
+      "title": "Experience",
+      "icon": "./assets/img/experience.png",
+      "lines": [
+        "2+ years",
+        "Senior Software Developer at Tark"
+      ]
+    },
+    {
+      "title": "Open Source Contributor",
+      "icon": "./assets/img/experience.png",
+      "lines": [
+        "Actively Building and contributing to projects"
+      ]
+    },
+    {
+      "title": "Educator and Mentor",
+      "icon": "./assets/img/experience.png",
+      "lines": [
+        "Educated hundreds of students, sharing knowledge and expertise in tech"
+      ]
+    }
+  ],
+  "skillGroups": [
+    {
+      "title": "Languages",
+      "items": [
+        {
+          "name": "C#",
+          "icon": "./assets/img/languages/CSharp.png"
+        },
+        {
+          "name": "C++",
+          "icon": "./assets/img/languages/C++ (CPlusPlus).png"
+        },
+        {
+          "name": "SQL",
+          "icon": "./assets/img/languages/MySQL.png"
+        },
+        {
+          "name": "HTML",
+          "icon": "./assets/img/languages/HTML5.png"
+        },
+        {
+          "name": "CSS",
+          "icon": "./assets/img/languages/CSS3.png"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "./assets/img/languages/TypeScript.png"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "./assets/img/languages/JavaScript.png"
+        },
+        {
+          "name": "Apex",
+          "icon": "./assets/img/languages/Oracle.png"
+        }
+      ]
+    },
+    {
+      "title": "Framework",
+      "items": [
+        {
+          "name": ".NET Core",
+          "icon": "./assets/img/languages/NET core.png"
+        },
+        {
+          "name": "Entity Framework",
+          "icon": "./assets/img/languages/NET core.png"
+        },
+        {
+          "name": "Angular",
+          "icon": "./assets/img/languages/Angular.png"
+        },
+        {
+          "name": "Redux",
+          "icon": "./assets/img/languages/Redux.png"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "./assets/img/languages/Bootstrap.png"
+        },
+        {
+          "name": "jQuery",
+          "icon": "./assets/img/languages/jQuery.png"
+        },
+        {
+          "name": "xUnit",
+          "icon": "./assets/img/languages/xUnit.png"
+        }
+      ]
+    },
+    {
+      "title": "Technology & Tools",
+      "items": [
+        {
+          "name": "Git",
+          "icon": "./assets/img/languages/Git.png"
+        },
+        {
+          "name": "RabbitMQ",
+          "icon": "./assets/img/languages/RabbitMQ.png"
+        },
+        {
+          "name": "Jira",
+          "icon": "./assets/img/languages/Jira.png"
+        },
+        {
+          "name": "Postman",
+          "icon": "./assets/img/languages/Postman.png"
+        },
+        {
+          "name": "SQL Server Management Studio",
+          "icon": "./assets/img/languages/ssms.png"
+        },
+        {
+          "name": "Visual Studio",
+          "icon": "./assets/img/languages/Visual Studio.png"
+        },
+        {
+          "name": "Salesforce",
+          "icon": "./assets/img/languages/Salesforce.png"
+        },
+        {
+          "name": "Tableau",
+          "icon": "./assets/img/languages/Tableau.png"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Developer",
+      "company": "Tark Technologies",
+      "period": "June 2022 - Present",
+      "projects": [
+        {
+          "name": "Data Integration and Automation",
+          "highlights": [
+            "Developed features to link data entities, enhancing relationships and improving analytical capabilities.",
+            "Automated data aggregation processes across multiple datasets, streamlining reporting and analysis.",
+            "Designed jobs for data integrity checks and cleanup, ensuring consistency and accuracy in the database.",
+            "Managed synchronization of external system data with internal databases, ensuring accurate data linkage\n            and\n            event tracking.",
+            "Engineered scripts to identify dependencies in automated processes and code components, facilitating\n            efficient troubleshooting.",
+            "Created comprehensive test cases for automation workflows, ensuring robust and reliable system operations.",
+            "Utilized data visualization tools to generate dashboards, supporting informed decision-making."
+          ]
+        },
+        {
+          "name": "API and Rule Management",
+          "highlights": [
+            "Enhanced rule-based features to improve flexibility and accuracy in system configurations.",
+            "Expanded API functionalities to provide detailed insights and enhance decision-making processes.",
+            "Implemented global search capabilities, enabling efficient retrieval of relevant data.",
+            "Developed and maintained REST APIs for managing data mappings, ensuring consistency and integrity across\n            systems.",
+            "Conducted rigorous testing of APIs, ensuring robustness and reliability of the system."
+          ]
+        }
+      ],
+      "highlights": []
+    },
+    {
+      "role": "Software Developer Intern",
+      "company": "Tark Technologies",
+      "period": "September 2021 - June 2022",
+      "projects": [],
+      "highlights": [
+        "Enhanced problem-solving skills and solidified understanding of OOP principles.",
+        "Documented code and technical processes to support team knowledge sharing and project continuity.",
+        "Contributed to developing unit tests and assisted in automated testing to ensure robust application\n            functionality.",
+        "Participated in code reviews and contributed to improving code quality and software performance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "qualification": "Bachelor of Technology in Computer Science & Engineering",
+      "period": "2018 - 2022",
+      "score": "CPI : 8.94",
+      "institution": "V.V.P. Engineering College, Rajkot, India"
+    },
+    {
+      "qualification": "State Board HSC",
+      "period": "2017-2018",
+      "score": "Percentile Score: 93.32",
+      "institution": "Panini Science School, Rajkot, India"
+    },
+    {
+      "qualification": "State Board SSC",
+      "period": "2015 - 2016",
+      "score": "Percentile Score: 99.18",
+      "institution": "Patanjali Vidyalay, Rajkot, India"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Airline Reservation",
+      "description": "Built with .NET + Angular",
+      "image": "./assets/img/airline-reservation.png",
+      "imageAlt": "Airline Reservation screenshot",
+      "liveUrl": "https://rparth07-airline-reservation.netlify.app",
+      "sourceUrl": "https://github.com/rparth07/airline-reservation"
+    },
+    {
+      "name": "Parth Traders",
+      "description": "Built with .NET + Angular",
+      "image": "./assets/img/parth-traders.png",
+      "imageAlt": "Parth Traders screenshot",
+      "liveUrl": "https://rparth07-parth-traders.netlify.app",
+      "sourceUrl": "https://github.com/rparth07/Parth-Traders"
+    },
+    {
+      "name": "Stock Explorer",
+      "description": "Built with .NET + Angular",
+      "image": "./assets/img/stock-analyzer.png",
+      "imageAlt": "Stock Explorer screenshot",
+      "liveUrl": "https://rparth07-stock-explorer.netlify.app",
+      "sourceUrl": "https://github.com/rparth07/Stock-Analyzer"
+    },
+    {
+      "name": "TODO",
+      "description": "Built with Angular",
+      "image": "./assets/img/todo.png",
+      "imageAlt": "TODO screenshot",
+      "liveUrl": "https://rparth07-todo.netlify.app",
+      "sourceUrl": "https://github.com/rparth07/ToDo"
+    },
+    {
+      "name": "Prompt Guide",
+      "description": "Built with VuePress",
+      "image": "./assets/img/prompt-guide.png",
+      "imageAlt": "Prompt Guide screenshot",
+      "liveUrl": "https://prompt-guide.netlify.app",
+      "sourceUrl": "https://github.com/rparth07/Prompt-Guide"
+    }
+  ],
+  "contact": {
+    "title": "Get In Touch",
+    "lines": [
+      "Whether you have a question or just want to say hi.",
+      "Feel free to contact me. I'll try my best to get back to you!"
+    ],
+    "buttonLabel": "Say Hello"
+  }
+}
