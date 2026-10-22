@@ -20,6 +20,7 @@ const Scene = () => {
   const sceneRef = useRef(new THREE.Scene());
   const { setLoading } = useLoading();
 
+  const [slow, setSlow] = useState(false);
   const [failed, setFailed] = useState(false);
   const [character, setChar] = useState<THREE.Object3D | null>(null);
   useEffect(() => {
@@ -78,10 +79,18 @@ const Scene = () => {
         setFailed(true);
         setAllTimeline();
       };
-      const loadTimeout = setTimeout(() => failLoading(new Error("3D loading timed out")), 30000);
+      // A slow download or shader compilation is not a failed model. Release
+      // the blocking intro, but accept the result whenever loading completes.
+      const loadTimeout = setTimeout(() => {
+        if (disposed || loadingFailed) return;
+        progress.clear();
+        setSlow(true);
+        setAllTimeline();
+      }, 30000);
       loadCharacter().then((gltf) => {
         clearTimeout(loadTimeout);
         if (gltf && !disposed && !loadingFailed) {
+          setSlow(false);
           const animations = setAnimations(gltf);
           hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
           mixer = animations.mixer;
@@ -179,6 +188,7 @@ const Scene = () => {
 
   return (
     <>
+      {slow && <p className="scene-fallback" role="status">The 3D preview is still loading. You can explore the portfolio while it finishes.</p>}
       <div className="character-container">
         <div className="character-model" ref={canvasDiv}>
           <div className="character-rim"></div>
