@@ -115,6 +115,7 @@ export const setProgress = (setLoading: (value: number) => void) => {
 
   function clear() {
     stop();
+    percent = 100;
     setLoading(100);
   }
 

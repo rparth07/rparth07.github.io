@@ -8,7 +8,7 @@ this review changes its tablet gutters only, plus behavior and accessibility.
 
 | Finding | Correction |
 | --- | --- |
-| Failed avatar requests could leave the 3D loader blocking the whole page | Handle model errors and a 30-second deadline, release the loader, and retain readable content with an explanatory status message |
+| Failed avatar requests could leave the 3D loader blocking the whole page | Handle model errors; after 30 seconds release the intro while slow loading continues, allowing late success instead of permanently discarding the model |
 | WebGL creation or tech-stack rendering errors could crash the experience | Handle renderer creation failures and isolate the optional tech-stack preview with an error boundary |
 | The model loader's async compilation callback could reject outside its outer promise | Catch callback errors and reject the actual load promise; tolerate missing optional foot nodes |
 | Loading timers were scheduled during render | Schedule transitions in effects and cancel timers on cleanup |
