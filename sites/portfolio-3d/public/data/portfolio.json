@@ -260,6 +260,36 @@
         "imageAlt": "Prompt Guide screenshot",
         "url": "https://prompt-guide.netlify.app",
         "sourceUrl": "https://github.com/rparth07/Prompt-Guide"
+      },
+      {
+        "id": "jewellers",
+        "title": "Jewellers",
+        "category": "E-commerce Website",
+        "description": "Jewellery storefront with curated collections, product browsing, and gold rates.",
+        "tools": [
+          "Collections",
+          "Product catalogue",
+          "Shopping cart"
+        ],
+        "image": "/assets/img/jewellers.png",
+        "imageAlt": "Jewellers website screenshot",
+        "url": "https://rparth07-jewellers.netlify.app/",
+        "sourceUrl": ""
+      },
+      {
+        "id": "github-stats",
+        "title": "GitHub Stats",
+        "category": "Data Visualization",
+        "description": "Explore public repository contributors through an interactive treemap, ranked list, and image exports.",
+        "tools": [
+          "JavaScript",
+          "GitHub API",
+          "SVG"
+        ],
+        "image": "/assets/img/github-stats.png",
+        "imageAlt": "GitHub Stats website screenshot",
+        "url": "https://rparth07-github-stats.netlify.app/?repo-owner=microsoft&repo-name=vscode",
+        "sourceUrl": "https://github.com/rparth07/github-stats"
       }
     ],
     "demoLabel": "Live demo",

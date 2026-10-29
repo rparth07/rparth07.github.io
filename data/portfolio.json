@@ -323,6 +323,22 @@
       "imageAlt": "Prompt Guide screenshot",
       "liveUrl": "https://prompt-guide.netlify.app",
       "sourceUrl": "https://github.com/rparth07/Prompt-Guide"
+    },
+    {
+      "name": "Jewellers",
+      "description": "Jewellery storefront with curated collections, product browsing, and gold rates.",
+      "image": "./assets/img/jewellers.png",
+      "imageAlt": "Jewellers website screenshot",
+      "liveUrl": "https://rparth07-jewellers.netlify.app/",
+      "sourceUrl": ""
+    },
+    {
+      "name": "GitHub Stats",
+      "description": "Explore public repository contributors through an interactive treemap, ranked list, and image exports.",
+      "image": "./assets/img/github-stats.png",
+      "imageAlt": "GitHub Stats website screenshot",
+      "liveUrl": "https://rparth07-github-stats.netlify.app/?repo-owner=microsoft&repo-name=vscode",
+      "sourceUrl": "https://github.com/rparth07/github-stats"
     }
   ],
   "contact": {
