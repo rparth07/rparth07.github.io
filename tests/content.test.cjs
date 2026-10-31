@@ -100,3 +100,28 @@ test('HTTP and network failures preserve the classic fallback', async () => {
     assert.equal(result.errors.length, 1);
   }
 });
+test('community entries render from data and keep proposal status honest', async () => {
+ const data=structuredClone(original);
+ data.community.speaking.events.push({...data.community.speaking.events[0],id:'new-talk',title:'Additional community talk'});
+ const r=await render(data);
+ assert.equal(r.ok,true);
+ assert(r.nodes.get('#speaking .community-inner').innerHTML.includes('Additional community talk'));
+ const source=r.nodes.get('#open-source .community-inner').innerHTML;
+ assert(source.includes('Open pull request')); assert(source.includes('Closed, not merged'));
+ data.community.speaking.events[0].photos[0].src='javascript:alert(1)';
+ assert.equal((await render(data)).ok,false);
+ data.community.speaking.events[0].photos[0].src='/assets/media/community/cool-days-2025-1.jpeg';
+ data.community.openSource.featured[0].stars=499;
+ assert.equal((await render(data)).ok,false);
+});
+
+test('both portfolios share community content and publish every media file', () => {
+ const three=JSON.parse(fs.readFileSync(path.join(root,'sites/portfolio-3d/public/data/portfolio.json'),'utf8'));
+ assert.deepEqual(original.community,three.community);
+ for(const event of original.community.speaking.events) for(const src of [...event.photos.map(p=>p.src),event.clip].filter(Boolean)) {
+  assert(fs.existsSync(path.join(root,src.slice(1))),src);
+  assert(fs.existsSync(path.join(root,'sites/portfolio-3d/public',src.slice(1))),src);
+ }
+ assert(original.experience.some(e=>e.company==='Collabora Online'&&e.role==='Associate Software Engineer'&&e.period==='March 2025 - Present'));
+ assert(!original.experience.some(e=>e.company.includes('Tark')&&e.period.includes('Present')));
+});

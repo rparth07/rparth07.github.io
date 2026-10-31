@@ -55,5 +55,16 @@ try {
  const firstSlide = work.split('class="carousel-slide"')[1].split('class="carousel-slide"')[0];
  assert(!firstSlide.includes('href="#"'), 'Missing URLs must not become dead buttons');
  Object.assign(project, savedLinks);
+ const {OpenSource,Speaking}=await server.ssrLoadModule('/src/components/Community.tsx');
+ data.community.speaking.events.push({...data.community.speaking.events[0],id:'additional-talk',title:'Additional community talk'});
+ const talks=renderToStaticMarkup(createElement(Speaking));
+ assert(talks.includes('Additional community talk'));
+ assert(talks.includes('/portfolio-3d/assets/media/community/'));
+ assert(talks.includes('t=13651'));
+ assert(talks.includes('preload="none"'));
+ const contributions=renderToStaticMarkup(createElement(OpenSource));
+ assert(contributions.includes('Open pull request')); assert(contributions.includes('Closed, not merged'));
+ const lowStars=structuredClone(data);lowStars.community.openSource.featured[0].stars=499;
+ assert(validateContent(lowStars).some(error=>error.includes('stars')));
  console.log('PASS: content validation, duplicate ids, unsafe links, extra project, experience, service, and rotating role rendering.');
 } finally { await server.close(); }

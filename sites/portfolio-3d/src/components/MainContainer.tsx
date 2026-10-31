@@ -11,6 +11,7 @@ import Work from "./Work";
 import GraphicsBoundary from "./GraphicsBoundary";
 import Skills from "./Skills";
 import Education from "./Education";
+import { OpenSource, Speaking } from "./Community";
 import "./styles/ContentSections.css";
 import "./styles/Typography.css";
 import setSplitText from "./utils/splitText";
@@ -52,6 +53,8 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <WhatIDo />
             <Skills />
             <Career />
+            <OpenSource />
+            <Speaking />
             <Education />
             <Work />
             {isDesktopView && (

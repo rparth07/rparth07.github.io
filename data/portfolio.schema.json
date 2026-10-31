@@ -10,7 +10,8 @@
     "experience",
     "education",
     "projects",
-    "contact"
+    "contact",
+    "community"
   ],
   "properties": {
     "profile": {
@@ -346,6 +347,247 @@
         },
         "buttonLabel": {
           "type": "string"
+        }
+      }
+    },
+    "community": {
+      "type": "object",
+      "required": [
+        "openSource",
+        "speaking"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "openSource": {
+          "type": "object",
+          "required": [
+            "heading",
+            "intro",
+            "verifiedOn",
+            "note",
+            "featured",
+            "other"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "heading": {
+              "type": "string"
+            },
+            "intro": {
+              "type": "string"
+            },
+            "verifiedOn": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "featured": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "name",
+                  "repository",
+                  "organization",
+                  "url",
+                  "stars",
+                  "summary",
+                  "scope",
+                  "areas"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "repository": {
+                    "type": "string"
+                  },
+                  "organization": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "stars": {
+                    "type": "integer",
+                    "minimum": 500
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string"
+                  },
+                  "areas": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "title",
+                        "description",
+                        "links"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "links": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "label",
+                              "url"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "label": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "other": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "name",
+                  "organization",
+                  "stars",
+                  "status",
+                  "description",
+                  "url"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "organization": {
+                    "type": "string"
+                  },
+                  "stars": {
+                    "type": "integer",
+                    "minimum": 500
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "speaking": {
+          "type": "object",
+          "required": [
+            "heading",
+            "intro",
+            "events"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "heading": {
+              "type": "string"
+            },
+            "intro": {
+              "type": "string"
+            },
+            "events": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "title",
+                  "event",
+                  "date",
+                  "description",
+                  "videoUrl",
+                  "sourceUrl",
+                  "clip",
+                  "photos"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "event": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "videoUrl": {
+                    "type": "string"
+                  },
+                  "sourceUrl": {
+                    "type": "string"
+                  },
+                  "clip": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "src",
+                        "alt"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "src": {
+                          "type": "string"
+                        },
+                        "alt": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

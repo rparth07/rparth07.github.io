@@ -14,6 +14,10 @@ window.portfolioReady = (async () => {
   const list = values => values?.length ? `<ul>${values.map(v => `<li>${escape(v)}</li>`).join('')}</ul>` : '';
   const lines = values => (values || []).map(escape).join('<br>');
   const link = (href, label, glyph, external = false, extra = '') => href ? `<a href="${escape(url(href))}" aria-label="${escape(label)}" title="${escape(label)}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ''} ${extra}>${icon(glyph)}</a>` : '';
+  const evidence = links => links.map(l => `<a href="${escape(url(l.url))}" target="_blank" rel="noopener noreferrer">${escape(l.label)} ↗</a>`).join('');
+  const photo = p => `<a class="community-photo" href="${escape(url(p.src))}" target="_blank" rel="noopener noreferrer" aria-label="${escape(p.alt)} — open full photo"><img src="${escape(url(p.src))}" alt="${escape(p.alt)}" loading="lazy" decoding="async"></a>`;
+  const openSource = c => `<header class="community-heading"><p class="community-eyebrow">Contributing in public</p><h2>${escape(c.heading)}</h2><p>${escape(c.intro)}</p></header>${c.featured.map(r => `<article class="community-repo"><div class="community-repo-heading"><div><p class="community-eyebrow">${escape(r.organization)}</p><h3><a href="${escape(url(r.url))}" target="_blank" rel="noopener noreferrer">${escape(r.name)} ↗</a></h3></div><span class="community-stars">★ ${r.stars.toLocaleString('en-US')} stars</span></div><p>${escape(r.summary)}</p><p class="community-scope">${escape(r.scope)}</p><div class="community-areas">${r.areas.map(a => `<div><h4>${escape(a.title)}</h4><p>${escape(a.description)}</p><div class="community-links">${evidence(a.links)}</div></div>`).join('')}</div></article>`).join('')}<h3 class="community-other-title">Other public proposals</h3><div class="community-other">${c.other.map(r => `<article><p class="community-eyebrow">${escape(r.organization)} · ★ ${r.stars.toLocaleString('en-US')}</p><h4><a href="${escape(url(r.url))}" target="_blank" rel="noopener noreferrer">${escape(r.name)} ↗</a></h4><strong class="community-status">${escape(r.status)}</strong><p>${escape(r.description)}</p></article>`).join('')}</div><p class="community-note">${escape(c.note)}</p>`;
+  const speaking = c => `<header class="community-heading"><p class="community-eyebrow">Beyond the code</p><h2>${escape(c.heading)}</h2><p>${escape(c.intro)}</p></header><div class="community-events">${c.events.map(e => `<article class="community-event${e.clip ? ' community-mentoring' : ''}">${photo(e.photos[0])}<div class="community-event-copy"><p class="community-eyebrow">${escape(e.event)}${e.date ? ' · ' + escape(e.date) : ''}</p><h3>${escape(e.title)}</h3><p>${escape(e.description)}</p><div class="community-links">${evidence([...(e.videoUrl ? [{url:e.videoUrl,label:'Watch presentation'}] : []), ...(e.sourceUrl ? [{url:e.sourceUrl,label:'Event programme'}] : [])])}</div>${e.clip ? `<video controls preload="none" playsinline aria-label="Short clip from Parth’s seminar"><source src="${escape(url(e.clip))}" type="video/mp4">Your browser cannot play this video. <a href="${escape(url(e.clip))}">Open seminar clip</a>.</video>` : ''}</div>${e.photos.length > 1 ? `<details class="community-gallery"><summary>More photos (${e.photos.length - 1})</summary><div>${e.photos.slice(1).map(photo).join('')}</div></details>` : ''}</article>`).join('')}</div>`;
   const validateContent = data => {
     const object = (value, path) => {
       if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error(`${path} must be an object`);
@@ -52,6 +56,24 @@ window.portfolioReady = (async () => {
     });
     array(data.education, 'education', (v, k) => strings(v, ['qualification', 'period', 'score', 'institution'], k));
     array(data.projects, 'projects', (v, k) => strings(v, ['name', 'description', 'image', 'imageAlt', 'liveUrl', 'sourceUrl'], k));
+    object(data.community, 'community');
+    const community = data.community;
+    strings(community.openSource, ['heading','intro','verifiedOn','note'], 'community.openSource');
+    const repo = (v,k) => {
+      strings(v, ['id','name','organization'], k);
+      if (!Number.isInteger(v.stars) || v.stars < 500) throw new Error(`${k}.stars must be at least 500`);
+    };
+    array(community.openSource.featured, 'community.openSource.featured', (v,k) => {
+      repo(v,k); strings(v,['repository','url','summary','scope'],k);
+      array(v.areas,k+'.areas',(a,key) => { strings(a,['title','description'],key); array(a.links,key+'.links',(l,key) => strings(l,['label','url'],key)); });
+    });
+    array(community.openSource.other,'community.openSource.other',(v,k) => { repo(v,k); strings(v,['status','description','url'],k); });
+    strings(community.speaking,['heading','intro'],'community.speaking');
+    array(community.speaking.events,'community.speaking.events',(v,k) => {
+      strings(v,['id','title','event','date','description','videoUrl','sourceUrl','clip'],k);
+      array(v.photos,k+'.photos',(p,key) => strings(p,['src','alt'],key));
+      if (!v.photos.length) throw new Error(`${k}.photos needs a photo`);
+    });
     strings(data.contact, ['title', 'buttonLabel'], 'contact');
     textArray(data.contact.lines, 'contact.lines');
   };
@@ -67,6 +89,8 @@ window.portfolioReady = (async () => {
     if (!profile || !metadata || !contact || !Array.isArray(profile.roles) || !Array.isArray(profile.socialLinks)) throw new Error('Missing profile, metadata, or contact fields');
     // Prepare every fragment before changing the page, so invalid data leaves the fallback intact.
     const fragments = {
+      '#open-source .community-inner': openSource(data.community.openSource),
+      '#speaking .community-inner': speaking(data.community.speaking),
       '#navbar ul': data.navigation.map((n,i) => `<li><a href="#${escape(n.section)}" aria-label="${escape(n.label)}" class="nav-link scrollto${i === 0 ? ' active' : ''}">${icon(n.icon)} <span>${escape(n.label)}</span></a></li>`).join(''),
       '#hero h1': `<span style="font-weight: lighter;">${escape(profile.firstName)}</span> ${escape(profile.lastName)}`,
       '#hero .social-links': profile.socialLinks.map(s => `<a href="${escape(url(s.url))}" class="${escape(s.className || '')}" aria-label="${escape(s.label)}">${icon(s.icon)}</a>`).join(' '),

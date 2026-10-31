@@ -35,3 +35,9 @@ test('built scripts, styles, fonts, and icons stay inside the 3D path', () => {
     assert(exists('portfolio-3d/' + name), name);
   }
 });
+test('community styling is included in both experiences and stays scoped', () => {
+ assert(read('index.html').includes('assets/css/community.css'));
+ assert(read('portfolio-3d/index.html').includes('/portfolio-3d/assets/css/community.css'));
+ assert.equal(read('assets/css/community.css'),read('portfolio-3d/assets/css/community.css'));
+ assert(read('assets/css/community.css').includes('.community-block article { display:block; width:auto;'));
+});

@@ -91,22 +91,22 @@
       "title": "Experience",
       "icon": "./assets/img/experience.png",
       "lines": [
-        "2+ years",
-        "Senior Software Developer at Tark"
+        "Associate Software Engineer",
+        "Collabora Online · March 2025–present"
       ]
     },
     {
       "title": "Open Source Contributor",
       "icon": "./assets/img/experience.png",
       "lines": [
-        "Actively Building and contributing to projects"
+        "Building accessible office software in the open"
       ]
     },
     {
       "title": "Educator and Mentor",
       "icon": "./assets/img/experience.png",
       "lines": [
-        "Educated hundreds of students, sharing knowledge and expertise in tech"
+        "Sharing knowledge through seminars and mentoring"
       ]
     }
   ],
@@ -145,6 +145,10 @@
         {
           "name": "Apex",
           "icon": "./assets/img/languages/Oracle.png"
+        },
+        {
+          "name": "Python",
+          "icon": "./assets/img/languages/Python.svg"
         }
       ]
     },
@@ -217,13 +221,45 @@
           "icon": "./assets/img/languages/Tableau.png"
         }
       ]
+    },
+    {
+      "title": "AI tools & interests",
+      "items": [
+        {
+          "name": "Prompt engineering",
+          "icon": "./assets/img/languages/AI.svg"
+        },
+        {
+          "name": "LLM integration",
+          "icon": "./assets/img/languages/AI.svg"
+        },
+        {
+          "name": "Retrieval-augmented generation (RAG)",
+          "icon": "./assets/img/languages/AI.svg"
+        },
+        {
+          "name": "AI agent workflows",
+          "icon": "./assets/img/languages/AI.svg"
+        }
+      ]
     }
   ],
   "experience": [
     {
+      "role": "Associate Software Engineer",
+      "company": "Collabora Online",
+      "period": "March 2025 - Present",
+      "projects": [],
+      "highlights": [
+        "Improve keyboard navigation, screen-reader support, and dialog accessibility in Collabora Online.",
+        "Modernize document controls through IconView conversions and core-to-browser UI integration in LibreOffice and Collabora release branches.",
+        "Expand Cypress accessibility validation and regression coverage across the office applications."
+      ]
+    },
+    {
       "role": "Software Developer",
       "company": "Tark Technologies",
-      "period": "June 2022 - Present",
+      "period": "June 2022 - February 2025",
       "projects": [
         {
           "name": "Data Integration and Automation",
@@ -348,5 +384,209 @@
       "Feel free to contact me. I'll try my best to get back to you!"
     ],
     "buttonLabel": "Say Hello"
+  },
+  "community": {
+    "openSource": {
+      "heading": "Open source",
+      "intro": "Making office software more accessible, one contribution at a time.",
+      "verifiedOn": "2026-10-31",
+      "note": "Featured repositories have at least 500 GitHub stars. Snapshot checked 31 October 2026; pull-request counts include backports.",
+      "featured": [
+        {
+          "id": "collabora-online",
+          "name": "Collabora Online",
+          "repository": "CollaboraOnline/online",
+          "organization": "CollaboraOnline",
+          "url": "https://github.com/CollaboraOnline/online",
+          "stars": 3385,
+          "summary": "Browser-based office editing, with a focus on accessibility, usable controls, and reliable testing.",
+          "scope": "219 merged pull requests, including backports",
+          "areas": [
+            {
+              "title": "Keyboard & screen readers",
+              "description": "Improved tree-view navigation, sortable headers, dialog controls, and keyboard access to comments.",
+              "links": [
+                {
+                  "label": "Tree-view navigation",
+                  "url": "https://github.com/CollaboraOnline/online/pull/15359"
+                },
+                {
+                  "label": "Comment keyboard support",
+                  "url": "https://github.com/CollaboraOnline/online/pull/15110"
+                }
+              ]
+            },
+            {
+              "title": "Accessible document controls",
+              "description": "Connected IconView-based controls to the browser UI, including line options, bullets, and numbering.",
+              "links": [
+                {
+                  "label": "Line controls",
+                  "url": "https://github.com/CollaboraOnline/online/pull/12624"
+                },
+                {
+                  "label": "Bullets & numbering",
+                  "url": "https://github.com/CollaboraOnline/online/pull/12601"
+                }
+              ]
+            },
+            {
+              "title": "Regression coverage",
+              "description": "Expanded Cypress accessibility validation and Lighthouse checks across Writer, Calc, Impress, and Draw.",
+              "links": [
+                {
+                  "label": "Accessibility validator",
+                  "url": "https://github.com/CollaboraOnline/online/pull/13716"
+                },
+                {
+                  "label": "Lighthouse checks",
+                  "url": "https://github.com/CollaboraOnline/online/pull/13100"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "libreoffice",
+          "name": "LibreOffice",
+          "repository": "LibreOffice/core",
+          "organization": "The Document Foundation",
+          "url": "https://github.com/LibreOffice/core",
+          "stars": 4584,
+          "summary": "C++ and GTK interface work across LibreOffice upstream and Collabora release branches.",
+          "scope": "Upstream and release-branch contributions; backports are not separate features",
+          "areas": [
+            {
+              "title": "ValueSet to IconView",
+              "description": "Converted document controls into individually accessible items with keyboard interaction, labels, and tooltips.",
+              "links": [
+                {
+                  "label": "Cell alignment conversion",
+                  "url": "https://github.com/LibreOffice/core/commit/e1f818594bd428b150329c001d896c6c54f4f34e"
+                },
+                {
+                  "label": "Chart dialog conversion",
+                  "url": "https://github.com/LibreOffice/core/commit/20e561e308e8f2b1a02b354a2901772e40d3783e"
+                }
+              ]
+            },
+            {
+              "title": "Dialog accessibility",
+              "description": "Added accessible names and label relationships to drawing areas and shared document dialogs.",
+              "links": [
+                {
+                  "label": "Accessible drawing areas",
+                  "url": "https://github.com/LibreOffice/core/commit/61d6572656e7a31d854fc870ce9d47e7bc631aa4"
+                }
+              ]
+            },
+            {
+              "title": "Core-to-browser UI",
+              "description": "Improved JSON accessibility metadata and enabled conditional-format and print-area dialogs for online rendering.",
+              "links": [
+                {
+                  "label": "Accessibility metadata",
+                  "url": "https://github.com/LibreOffice/core/commit/191623706be6af759362ff602645e053df013af2"
+                },
+                {
+                  "label": "Conditional-format dialogs",
+                  "url": "https://github.com/LibreOffice/core/commit/84e7ebba0c8af520144b1439dfc4955b49b08559"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other": [
+        {
+          "id": "vscode",
+          "name": "Visual Studio Code",
+          "organization": "Microsoft",
+          "stars": 194416,
+          "status": "Open pull request",
+          "description": "Proposed support for duplicating an editor tab. This is an open proposal, not a shipped contribution.",
+          "url": "https://github.com/microsoft/vscode/pull/340912"
+        },
+        {
+          "id": "puppeteer",
+          "name": "Puppeteer",
+          "organization": "Puppeteer",
+          "stars": 95775,
+          "status": "Closed, not merged",
+          "description": "Earlier documentation proposal to migrate Browser.ts to TSDoc. The pull request was closed without merging.",
+          "url": "https://github.com/puppeteer/puppeteer/pull/7019"
+        }
+      ]
+    },
+    "speaking": {
+      "heading": "Speaking & mentoring",
+      "intro": "Sharing practical experience with open-source communities and aspiring developers.",
+      "events": [
+        {
+          "id": "cool-days-2025",
+          "title": "From Contributor to Collaboran",
+          "event": "COOL Days 2025",
+          "date": "2025",
+          "description": "My journey from community contributor to working on Collabora Online.",
+          "videoUrl": "https://www.youtube.com/watch?v=iCYmyjgiz_o",
+          "sourceUrl": "https://www.collaboraonline.com/events/cool-days-2025/",
+          "clip": "",
+          "photos": [
+            {
+              "src": "/assets/media/community/cool-days-2025-1.jpeg",
+              "alt": "Parth Raiyani speaking at the COOL Days 2025 lectern"
+            },
+            {
+              "src": "/assets/media/community/cool-days-2025-3.jpeg",
+              "alt": "The From Contributor to Collaboran title slide during Parth’s 2025 talk"
+            },
+            {
+              "src": "/assets/media/community/cool-days-2025-2.jpeg",
+              "alt": "Audience view of Parth’s COOL Days 2025 presentation"
+            },
+            {
+              "src": "/assets/media/community/cool-days-2025-4.jpeg",
+              "alt": "Parth explaining his early contributions during the 2025 conference talk"
+            }
+          ]
+        },
+        {
+          "id": "cool-days-2026",
+          "title": "Rebuilding the IconView for Better Accessibility",
+          "event": "COOL Days 2026 · Hamburg",
+          "date": "April 2026",
+          "description": "A talk about rebuilding document widgets for better accessibility. The recording opens at my presentation.",
+          "videoUrl": "https://www.youtube.com/live/-zIvdfpojAo?t=13651",
+          "sourceUrl": "https://www.collaboraonline.com/events/cool-days-2026/",
+          "clip": "",
+          "photos": [
+            {
+              "src": "/assets/media/community/cool-days-2026-1.png",
+              "alt": "Parth presenting IconView accessibility conversions at COOL Days 2026"
+            }
+          ]
+        },
+        {
+          "id": "mentoring",
+          "title": "Technical seminars & mentoring",
+          "event": "Teaching & community",
+          "date": "",
+          "description": "Sharing practical programming knowledge through seminars and mentoring sessions.",
+          "videoUrl": "",
+          "sourceUrl": "",
+          "clip": "/assets/media/community/mentoring-clip.mp4",
+          "photos": [
+            {
+              "src": "/assets/media/community/mentoring-2.jpeg",
+              "alt": "Parth leading a technical seminar with an audience of students"
+            },
+            {
+              "src": "/assets/media/community/mentoring-1.jpeg",
+              "alt": "Audience view of Parth’s seminar and mentoring session"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

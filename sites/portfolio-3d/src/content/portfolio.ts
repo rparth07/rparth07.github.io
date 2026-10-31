@@ -20,6 +20,7 @@ export function validateContent(value: unknown, rule: any = schema, path = "port
     if (new Set(ids).size !== ids.length) errors.push(`${path}: duplicate ids`);
   } else if (rule.type === "string" && typeof value !== "string") errors.push(`${path}: expected text`);
   else if (rule.type === "integer" && !Number.isInteger(value)) errors.push(`${path}: expected an integer`);
+  if (typeof value === "number" && rule.minimum !== undefined && value < rule.minimum) errors.push(`${path}: below minimum ${rule.minimum}`);
   if (rule.enum && !rule.enum.includes(value)) errors.push(`${path}: unsupported value`);
   return errors;
 }
