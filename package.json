@@ -5,6 +5,8 @@
     "build:3d": "npm --prefix sites/portfolio-3d run build",
     "test:classic": "node --test tests/content.test.cjs",
     "test:deployment": "node --test tests/deployment.test.cjs",
-    "test:3d": "npm --prefix sites/portfolio-3d run test:content"
+    "test:3d": "npm --prefix sites/portfolio-3d run test:content",
+    "test:survey": "node --test tests/survey.test.mjs",
+    "build:survey-api": "node services/surveys/build.mjs"
   }
 }

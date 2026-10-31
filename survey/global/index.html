@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-survey-variant="global">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Requirements & Budget Survey — Global</title>
+  <link rel="stylesheet" href="../assets/survey.css">
+</head>
+<body>
+  <main class="wrap">
+<nav class="survey-nav" aria-label="Survey navigation"><a href="/">PR <span>Parth Raiyani</span></a><a href="/portfolio-3d/">3D portfolio</a></nav>
+    <section class="hero">
+      <h1>What does your business need from a website?</h1>
+      <p>Hi, I’m Parth Raiyani, a software developer. I’m asking small-business owners about their website needs and budgets to help shape the website services I offer.</p>
+      <p>I’ll review your answers to understand business needs, useful features, and comfortable budgets. Your name and business details are optional. Any permission to contact you is separate and optional below.</p>
+      <p>All amounts are in US dollars (USD). Approximate amounts are fine. <a href="/">See my portfolio</a> or <a href="../india/">use the India survey (INR)</a>.</p>
+    </section>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Survey progress</span>
+        <span id="progressText">0%</span>
+      </div>
+      <div class="progress"><span id="progressBar"></span></div>
+    </div>
+
+    <noscript><p class="notice">Please enable JavaScript to submit this survey. You can still read the questions below.</p></noscript>
+    <form id="surveyForm" method="post">
+      <section class="card" role="group" aria-labelledby="question-1">
+        <div class="q-title"><span class="q-num">A</span><h2 id="question-1">Business name <span style="font-weight:400;color:var(--muted)">(optional)</span></h2></div>
+        <input type="text" name="businessName" aria-label="Business name (optional)" placeholder="Your business name" />
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-2">
+        <div class="q-title"><span class="q-num">B</span><h2 id="question-2">Your name <span style="font-weight:400;color:var(--muted)">(optional)</span></h2></div>
+        <input type="text" name="responderName" aria-label="Your name (optional)" placeholder="Your name" />
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-3">
+        <div class="q-title"><span class="q-num">C</span><h2 id="question-3"><label for="country">Country or region (optional)</label></h2></div>
+        <p class="hint" id="countryHint">Where is your business mainly based?</p>
+        <select id="country" name="country" autocomplete="country" aria-describedby="countryHint">
+          <option value="">Select your country or region</option>
+          <option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AG">Antigua &amp; Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia &amp; Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="VG">British Virgin Islands</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="CV">Cabo Verde</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="029">Caribbean</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo (DRC)</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curaçao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="CI">Côte d’Ivoire</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="150">Europe</option>
+<option value="FK">Falkland Islands</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong SAR</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KR">Korea</option>
+<option value="XK">Kosovo</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="419">Latin America</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao SAR</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Authority</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn Islands</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="RE">Réunion</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SH">St Helena, Ascension, Tristan da Cunha</option>
+<option value="BL">St. Barthélemy</option>
+<option value="KN">St. Kitts &amp; Nevis</option>
+<option value="LC">St. Lucia</option>
+<option value="MF">St. Martin</option>
+<option value="PM">St. Pierre &amp; Miquelon</option>
+<option value="VC">St. Vincent &amp; Grenadines</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard &amp; Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="ST">São Tomé &amp; Príncipe</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad &amp; Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks &amp; Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="TR">Türkiye</option>
+<option value="UM">U.S. Outlying Islands</option>
+<option value="VI">U.S. Virgin Islands</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VA">Vatican City</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="WF">Wallis &amp; Futuna</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+<option value="001">world</option>
+<option value="AX">Åland Islands</option>
+<option value="Other / not listed">Other / not listed</option><option value="Prefer not to say">Prefer not to say</option>
+        </select>
+      </section>
+      <section class="card" role="group" aria-labelledby="question-4">
+        <div class="q-title"><span class="q-num">1</span><h2 id="question-4">Which best describes your business right now?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="currentSituation" value="No website" required> I don't have a website</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Outdated website"> I have a website, but it looks old/outdated</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Missing features"> I have a website, but it doesn't do everything I need</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Good website, all features"> I have a good website with all the features I currently want</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Improve good website"> I have a good website but want to improve it</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Full replacement"> I want to completely replace my current website</label>
+        </div>
+      </section>
+
+      <section class="card business-type-card" role="group" aria-labelledby="question-5">
+        <div class="q-title"><span class="q-num">2</span><h2 id="question-5">What type of business do you have?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="businessType" value="Retail / Shop" required> Retail / Shop</label>
+          <label class="option"><input type="radio" name="businessType" value="Manufacturer"> Manufacturer</label>
+          <label class="option"><input type="radio" name="businessType" value="Wholesaler / Distributor"> Wholesaler / Distributor</label>
+          <label class="option"><input type="radio" name="businessType" value="Professional services"> Professional services</label>
+          <label class="option"><input type="radio" name="businessType" value="Restaurant / Food"> Restaurant / Food</label>
+          <label class="option"><input type="radio" name="businessType" value="Hotel / Travel"> Hotel / Travel</label>
+          <label class="option"><input type="radio" name="businessType" value="Beauty / Salon / Wellness"> Beauty / Salon / Wellness</label>
+          <label class="option"><input type="radio" name="businessType" value="Healthcare"> Healthcare</label>
+          <label class="option"><input type="radio" name="businessType" value="Education / Coaching"> Education / Coaching</label>
+          <label class="option"><input type="radio" name="businessType" value="Construction / Real estate"> Construction / Real estate</label>
+          <label class="option"><input type="radio" name="businessType" value="Artist / Handicraft / Creative business"> Artist / Handicraft / Creative business</label>
+          <label class="option"><input type="radio" name="businessType" value="Other" id="businessTypeOther"> Other</label>
+        </div>
+        <div id="businessTypeOtherWrap" class="business-other-fields">
+          <label for="businessTypeOtherText">Please describe your business type (optional)</label>
+          <input id="businessTypeOtherText" type="text" name="businessTypeOtherText" placeholder="Please describe your business type" />
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-6">
+        <div class="q-title"><span class="q-num">3</span><h2 id="question-6">What would you most like your website to achieve?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="goals" value="Professional image"> Make my business look professional and trustworthy</label>
+          <label class="option"><input type="checkbox" name="goals" value="Show products"> Show my products</label>
+          <label class="option"><input type="checkbox" name="goals" value="Explain services"> Explain my services</label>
+          <label class="option"><input type="checkbox" name="goals" value="More enquiries"> Get more customer enquiries</label>
+          <label class="option"><input type="checkbox" name="goals" value="Calls / email / messages"> Get more calls, emails or messages</label>
+          <label class="option"><input type="checkbox" name="goals" value="Sell online"> Sell products online</label>
+          <label class="option"><input type="checkbox" name="goals" value="Bookings"> Get bookings/appointments</label>
+          <label class="option"><input type="checkbox" name="goals" value="Reach wider market"> Reach customers outside my local area</label>
+          <label class="option"><input type="checkbox" name="goals" value="Portfolio"> Show my work/portfolio</label>
+          <label class="option"><input type="checkbox" name="goals" value="Customer information"> Provide useful information to customers</label>
+          <label class="option"><input type="checkbox" name="goals" value="Need guidance"> I'm not sure — I need guidance</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-7">
+        <div class="q-title"><span class="q-num">4</span><h2 id="question-7">What should customers be able to do on your website?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="customerActions" value="Read about business"> Read about my business</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="See products/services"> See my products/services</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="See prices"> See prices</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="View media"> View photos/videos</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Search"> Search for products/services</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Filter"> Filter products by type, price, etc.</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Call"> Call me directly</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Messaging apps"> Contact me through email or a messaging app</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Enquiry form"> Fill out an enquiry form</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Map"> Find my business location or the areas I serve</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Bookings"> Book an appointment/reservation</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Cart"> Add products to a cart</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Online ordering"> Order products online</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Online payment"> Pay online</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Account"> Create an account</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Order history"> Check their orders</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Save items"> Save products for later</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-8">
+        <div class="q-title"><span class="q-num">5</span><h2 id="question-8">What would you like to show on your website?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="content" value="About"> About our business</label>
+          <label class="option"><input type="checkbox" name="content" value="Products"> Products</label>
+          <label class="option"><input type="checkbox" name="content" value="Services"> Services</label>
+          <label class="option"><input type="checkbox" name="content" value="Prices"> Prices</label>
+          <label class="option"><input type="checkbox" name="content" value="Gallery"> Photos/gallery</label>
+          <label class="option"><input type="checkbox" name="content" value="Projects"> Previous work/projects</label>
+          <label class="option"><input type="checkbox" name="content" value="Reviews"> Customer reviews</label>
+          <label class="option"><input type="checkbox" name="content" value="Contact"> Contact information</label>
+          <label class="option"><input type="checkbox" name="content" value="Map"> Location, map or service area</label>
+          <label class="option"><input type="checkbox" name="content" value="FAQ"> Frequently asked questions</label>
+          <label class="option"><input type="checkbox" name="content" value="Offers"> Offers/discounts</label>
+          <label class="option"><input type="checkbox" name="content" value="News"> News/articles</label>
+          <label class="option"><input type="checkbox" name="content" value="Policies"> Delivery, returns, cancellations and other business policies</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-9">
+        <div class="q-title"><span class="q-num">6</span><h2 id="question-9">Approximately how many products or services would you like to show?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="catalogSize" value="1-10"> 1–10</label>
+          <label class="option"><input type="radio" name="catalogSize" value="11-25"> 11–25</label>
+          <label class="option"><input type="radio" name="catalogSize" value="26-50"> 26–50</label>
+          <label class="option"><input type="radio" name="catalogSize" value="51-100"> 51–100</label>
+          <label class="option"><input type="radio" name="catalogSize" value="101-500"> 101–500</label>
+          <label class="option"><input type="radio" name="catalogSize" value="500+"> More than 500</label>
+          <label class="option"><input type="radio" name="catalogSize" value="Not needed"> I don't need to show individual products/services</label>
+          <label class="option"><input type="radio" name="catalogSize" value="Unsure"> I'm not sure</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-10">
+        <div class="q-title"><span class="q-num">7</span><h2 id="question-10">If customers want to buy something from you, how should it work?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="buyFlow" value="No online sales"> I don't need to sell products or services through the website</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Call or message"> They should call/message me</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Send enquiry"> They should send an enquiry</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Send order then contact"> They should send their order through the website, and I'll contact them</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Full online checkout"> They should be able to order and pay completely online</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Unsure"> I'm not sure</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-11">
+        <div class="q-title"><span class="q-num">8</span><h2 id="question-11">How should your website look?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="designLevel" value="Simple"> Simple, clean and professional</label>
+          <label class="option"><input type="radio" name="designLevel" value="Modern"> Modern and attractive</label>
+          <label class="option"><input type="radio" name="designLevel" value="Premium"> Premium/high-end</label>
+          <label class="option"><input type="radio" name="designLevel" value="Unique"> Unique and specifically designed around my brand</label>
+          <label class="option"><input type="radio" name="designLevel" value="Need recommendation"> I'm not sure — I'd like recommendations</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-12">
+        <div class="q-title"><span class="q-num">9</span><h2 id="question-12">After the website is ready, what would you like to manage yourself?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="selfManage" value="Nothing"> Nothing — I'd prefer someone else to manage it</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Text/photos"> Change text/photos</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Products/services"> Add/edit products or services</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Prices"> Change prices</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Offers"> Add offers</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Enquiries"> Manage customer enquiries</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Orders"> Manage orders</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="News"> Add articles/news</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Unsure"> I don't know yet</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-13">
+        <div class="q-title"><span class="q-num">10</span><h2 id="question-13">What do you already have ready?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="assets" value="Logo"> Logo</label>
+          <label class="option"><input type="checkbox" name="assets" value="Brand style"> Brand colors/style</label>
+          <label class="option"><input type="checkbox" name="assets" value="Domain"> Website address (for example, yourbusiness.com)</label>
+          <label class="option"><input type="checkbox" name="assets" value="Business copy"> Written information about my business</label>
+          <label class="option"><input type="checkbox" name="assets" value="Descriptions"> Product/service descriptions</label>
+          <label class="option"><input type="checkbox" name="assets" value="Prices"> Prices</label>
+          <label class="option"><input type="checkbox" name="assets" value="Photos"> Good-quality photos</label>
+          <label class="option"><input type="checkbox" name="assets" value="Videos"> Videos</label>
+          <label class="option"><input type="checkbox" name="assets" value="Reviews"> Customer reviews</label>
+          <label class="option"><input type="checkbox" name="assets" value="Existing site"> Existing website</label>
+          <label class="option"><input type="checkbox" name="assets" value="Need help"> Nothing yet / I'll need help with these</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-14">
+        <div class="q-title"><span class="q-num">11</span><h2 id="question-14">Which additional things would be useful for your business?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="extras" value="Messaging apps"> A way for customers to message us (for example, WhatsApp or Messenger)</label>
+          <label class="option"><input type="checkbox" name="extras" value="Google Maps"> A map, directions or the areas we serve</label>
+          <label class="option"><input type="checkbox" name="extras" value="Reviews"> Customer reviews</label>
+          <label class="option"><input type="checkbox" name="extras" value="Booking"> Appointment/booking system</label>
+          <label class="option"><input type="checkbox" name="extras" value="Payments"> Online payments using methods my customers prefer</label>
+          <label class="option"><input type="checkbox" name="extras" value="Shipping"> Delivery/shipping options</label>
+          <label class="option"><input type="checkbox" name="extras" value="Coupons"> Discount/coupon codes</label>
+          <label class="option"><input type="checkbox" name="extras" value="Customer accounts"> Customer accounts</label>
+          <label class="option"><input type="checkbox" name="extras" value="Order tracking"> Order tracking</label>
+          <label class="option"><input type="checkbox" name="extras" value="Multiple languages"> Multiple languages</label>
+          <label class="option"><input type="checkbox" name="extras" value="Social media"> Links to our social media pages</label>
+          <label class="option"><input type="checkbox" name="extras" value="None"> None of these</label>
+          <label class="option"><input type="checkbox" name="extras" value="Unsure"> I'm not sure what I need</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-15">
+        <div class="q-title"><span class="q-num">12</span><h2 id="question-15">How important is appearing in search engines (such as Google) when people look for businesses like yours?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="googleImportance" value="Very important"> Very important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Somewhat important"> Somewhat important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Not very important"> Not very important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Not important"> Not important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Unsure"> I don't know</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-16">
+        <div class="q-title"><span class="q-num">13</span><h2 id="question-16">When would you ideally like your website ready?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="timeline" value="ASAP"> As soon as possible</label>
+          <label class="option"><input type="radio" name="timeline" value="2 weeks"> Within 2 weeks</label>
+          <label class="option"><input type="radio" name="timeline" value="1 month"> Within 1 month</label>
+          <label class="option"><input type="radio" name="timeline" value="2-3 months"> Within 2–3 months</label>
+          <label class="option"><input type="radio" name="timeline" value="No deadline"> No particular deadline</label>
+          <label class="option"><input type="radio" name="timeline" value="Exploring"> I'm just exploring at the moment</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-17">
+        <div class="q-title"><span class="q-num">14</span><h2 id="question-17">What one-time budget would you be comfortable spending to create or improve your website? (USD)</h2></div>
+        <p class="hint">All amounts are US dollars (USD). Estimate the initial work only, excluding ongoing fees. These are survey choices, not price quotes.</p><div class="options"><label class="option"><input type="radio" name="budget" value="USD <250" required> Under $250</label>
+<label class="option"><input type="radio" name="budget" value="USD 250-<500"> $250 to under $500</label>
+<label class="option"><input type="radio" name="budget" value="USD 500-<1000"> $500 to under $1,000</label>
+<label class="option"><input type="radio" name="budget" value="USD 1000-<2000"> $1,000 to under $2,000</label>
+<label class="option"><input type="radio" name="budget" value="USD 2000-<5000"> $2,000 to under $5,000</label>
+<label class="option"><input type="radio" name="budget" value="USD 5000-<10000"> $5,000 to under $10,000</label>
+<label class="option"><input type="radio" name="budget" value="USD 10000+"> $10,000 or more</label>
+<label class="option"><input type="radio" name="budget" value="Unsure"> I'm not sure yet</label>
+<label class="option"><input type="radio" name="budget" value="Prefer not to say"> Prefer not to say</label></div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-18">
+        <div class="q-title"><span class="q-num">15</span><h2 id="question-18">Suppose everything you want costs more than your preferred budget. What would you most likely do?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Increase budget"> Increase my budget if I understand the value</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Phase build"> Build the important things first and add more later</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Reduce features"> Remove some less-important features</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Cheaper option"> Look for a cheaper option</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Do not build"> Probably not build the website</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Discuss first"> I'd want to discuss the options first</label>
+        </div>
+      </section>
+
+      <section class="card existing-website-card" role="group" aria-labelledby="question-19">
+        <div class="q-title"><span class="q-num">16</span><h2 id="question-19">Do you currently have a website?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="hasExistingWebsite" value="No"> No</label>
+          <label class="option"><input type="radio" name="hasExistingWebsite" value="Yes"> Yes</label>
+        </div>
+
+        <div id="existingWebsiteDetails" class="existing-website-fields">
+          <div style="display:grid;gap:14px;">
+            <div>
+              <label for="existingWebsiteUrl" style="display:block;font-weight:600;margin-bottom:6px;">Website address (optional)</label>
+              <input id="existingWebsiteUrl" type="url" name="existingWebsiteUrl" placeholder="https://example.com" />
+            </div>
+            <div>
+              <label for="existingWebsiteSpend" style="display:block;font-weight:600;margin-bottom:6px;">Approximately how much did you spend to create it? (USD, optional)</label>
+              <input id="existingWebsiteSpend" type="text" name="existingWebsiteSpend" placeholder="Example: USD 1,000, or “I’m not sure”" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-20">
+        <div class="q-title"><span class="q-num">+</span><h2 id="question-20">Optional: Is there anything else you want your website to do?</h2></div>
+        <textarea name="notes" aria-label="Anything else you want your website to do (optional)" placeholder="Tell us anything else that matters to your business..."></textarea>
+      </section>
+
+      <p class="hint" style="margin:0">Required: questions 1, 2 and 14. All other questions are optional. Select one answer for round buttons and all that apply for square boxes. Use Submit to send your answers to Parth Raiyani.</p>
+      <section class="card contact-card">
+        <h2>Would you like to discuss your website? (optional)</h2>
+        <label class="option"><input id="contactPermission" name="contactPermission" type="checkbox"> I give Parth Raiyani permission to contact me by email about my website needs and services.</label>
+        <div id="contactDetails" hidden><label for="contactEmail">Your email address</label><input id="contactEmail" name="contactEmail" type="email" autocomplete="email" maxlength="254"><p class="hint">Only provide an email if you want to be contacted.</p></div>
+      </section>
+      <div class="spam-check" aria-hidden="true"><label for="companyFax">Leave this empty</label><input id="companyFax" name="companyFax" tabindex="-1" autocomplete="off"></div>
+      <div id="submissionStatus" role="status" aria-live="polite"></div>
+      <div id="submissionError" role="alert" tabindex="-1" hidden></div>
+      <div class="actions">
+        <button type="reset" class="secondary">Clear</button>
+        <button type="submit" class="primary" id="submitSurvey" disabled>Submit answers</button>
+      </div>
+
+      <div class="success" id="successMessage" role="status" tabindex="-1" hidden>Thank you. Your answers have been saved. You can close this page.</div>
+    </form>
+  </main>
+
+  <script type="module" src="../assets/survey.js"></script>
+</body>
+</html>

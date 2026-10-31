@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-survey-variant="india">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Requirements & Budget Survey — India</title>
+  <link rel="stylesheet" href="../assets/survey.css">
+</head>
+<body>
+  <main class="wrap">
+<nav class="survey-nav" aria-label="Survey navigation"><a href="/">PR <span>Parth Raiyani</span></a><a href="/portfolio-3d/">3D portfolio</a></nav>
+    <section class="hero">
+      <h1>What does your business need from a website?</h1>
+      <p>Hi, I’m Parth Raiyani, a software developer. I’m asking small-business owners about their website needs and budgets to help shape the website services I offer.</p>
+      <p>I’ll review your answers to understand business needs, useful features, and comfortable budgets. Your name and business details are optional. Any permission to contact you is separate and optional below.</p>
+      <p>All amounts are in Indian rupees (INR). Approximate amounts are fine. <a href="/">See my portfolio</a> or <a href="../global/">use the global survey (USD)</a>.</p>
+    </section>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Survey progress</span>
+        <span id="progressText">0%</span>
+      </div>
+      <div class="progress"><span id="progressBar"></span></div>
+    </div>
+
+    <noscript><p class="notice">Please enable JavaScript to submit this survey. You can still read the questions below.</p></noscript>
+    <form id="surveyForm" method="post">
+      <section class="card" role="group" aria-labelledby="question-1">
+        <div class="q-title"><span class="q-num">A</span><h2 id="question-1">Business name <span style="font-weight:400;color:var(--muted)">(optional)</span></h2></div>
+        <input type="text" name="businessName" aria-label="Business name (optional)" placeholder="Your business name" />
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-2">
+        <div class="q-title"><span class="q-num">B</span><h2 id="question-2">Your name <span style="font-weight:400;color:var(--muted)">(optional)</span></h2></div>
+        <input type="text" name="responderName" aria-label="Your name (optional)" placeholder="Your name" />
+      </section>
+      <section class="card" role="group" aria-labelledby="question-3">
+        <div class="q-title"><span class="q-num">1</span><h2 id="question-3">Which best describes your business right now?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="currentSituation" value="No website" required> I don't have a website</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Outdated website"> I have a website, but it looks old/outdated</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Missing features"> I have a website, but it doesn't do everything I need</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Good website, all features"> I have a good website with all the features I currently want</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Improve good website"> I have a good website but want to improve it</label>
+          <label class="option"><input type="radio" name="currentSituation" value="Full replacement"> I want to completely replace my current website</label>
+        </div>
+      </section>
+
+      <section class="card business-type-card" role="group" aria-labelledby="question-4">
+        <div class="q-title"><span class="q-num">2</span><h2 id="question-4">What type of business do you have?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="businessType" value="Retail / Shop" required> Retail / Shop</label>
+          <label class="option"><input type="radio" name="businessType" value="Manufacturer"> Manufacturer</label>
+          <label class="option"><input type="radio" name="businessType" value="Wholesaler / Distributor"> Wholesaler / Distributor</label>
+          <label class="option"><input type="radio" name="businessType" value="Professional services"> Professional services</label>
+          <label class="option"><input type="radio" name="businessType" value="Restaurant / Food"> Restaurant / Food</label>
+          <label class="option"><input type="radio" name="businessType" value="Hotel / Travel"> Hotel / Travel</label>
+          <label class="option"><input type="radio" name="businessType" value="Beauty / Salon / Wellness"> Beauty / Salon / Wellness</label>
+          <label class="option"><input type="radio" name="businessType" value="Healthcare"> Healthcare</label>
+          <label class="option"><input type="radio" name="businessType" value="Education / Coaching"> Education / Coaching</label>
+          <label class="option"><input type="radio" name="businessType" value="Construction / Real estate"> Construction / Real estate</label>
+          <label class="option"><input type="radio" name="businessType" value="Artist / Handicraft / Creative business"> Artist / Handicraft / Creative business</label>
+          <label class="option"><input type="radio" name="businessType" value="Other" id="businessTypeOther"> Other</label>
+        </div>
+        <div id="businessTypeOtherWrap" class="business-other-fields">
+          <label for="businessTypeOtherText">Please describe your business type (optional)</label><input id="businessTypeOtherText" type="text" name="businessTypeOtherText" placeholder="Please describe your business type" />
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-5">
+        <div class="q-title"><span class="q-num">3</span><h2 id="question-5">What would you most like your website to achieve?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="goals" value="Professional image"> Make my business look professional and trustworthy</label>
+          <label class="option"><input type="checkbox" name="goals" value="Show products"> Show my products</label>
+          <label class="option"><input type="checkbox" name="goals" value="Explain services"> Explain my services</label>
+          <label class="option"><input type="checkbox" name="goals" value="More enquiries"> Get more customer enquiries</label>
+          <label class="option"><input type="checkbox" name="goals" value="Calls / WhatsApp"> Get more calls or WhatsApp messages</label>
+          <label class="option"><input type="checkbox" name="goals" value="Sell online"> Sell products online</label>
+          <label class="option"><input type="checkbox" name="goals" value="Bookings"> Get bookings/appointments</label>
+          <label class="option"><input type="checkbox" name="goals" value="Reach wider market"> Reach customers outside my local area</label>
+          <label class="option"><input type="checkbox" name="goals" value="Portfolio"> Show my work/portfolio</label>
+          <label class="option"><input type="checkbox" name="goals" value="Customer information"> Provide useful information to customers</label>
+          <label class="option"><input type="checkbox" name="goals" value="Need guidance"> I'm not sure — I need guidance</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-6">
+        <div class="q-title"><span class="q-num">4</span><h2 id="question-6">What should customers be able to do on your website?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="customerActions" value="Read about business"> Read about my business</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="See products/services"> See my products/services</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="See prices"> See prices</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="View media"> View photos/videos</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Search"> Search for products/services</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Filter"> Filter products by type, price, etc.</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Call"> Call me directly</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="WhatsApp"> Message me on WhatsApp</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Enquiry form"> Fill out an enquiry form</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Map"> Find my shop/office on a map</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Bookings"> Book an appointment/reservation</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Cart"> Add products to a cart</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Online ordering"> Order products online</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Online payment"> Pay online</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Account"> Create an account</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Order history"> Check their orders</label>
+          <label class="option"><input type="checkbox" name="customerActions" value="Save items"> Save products for later</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-7">
+        <div class="q-title"><span class="q-num">5</span><h2 id="question-7">What would you like to show on your website?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="content" value="About"> About our business</label>
+          <label class="option"><input type="checkbox" name="content" value="Products"> Products</label>
+          <label class="option"><input type="checkbox" name="content" value="Services"> Services</label>
+          <label class="option"><input type="checkbox" name="content" value="Prices"> Prices</label>
+          <label class="option"><input type="checkbox" name="content" value="Gallery"> Photos/gallery</label>
+          <label class="option"><input type="checkbox" name="content" value="Projects"> Previous work/projects</label>
+          <label class="option"><input type="checkbox" name="content" value="Reviews"> Customer reviews</label>
+          <label class="option"><input type="checkbox" name="content" value="Contact"> Contact information</label>
+          <label class="option"><input type="checkbox" name="content" value="Map"> Location/map</label>
+          <label class="option"><input type="checkbox" name="content" value="FAQ"> Frequently asked questions</label>
+          <label class="option"><input type="checkbox" name="content" value="Offers"> Offers/discounts</label>
+          <label class="option"><input type="checkbox" name="content" value="News"> News/articles</label>
+          <label class="option"><input type="checkbox" name="content" value="Policies"> Shipping/return/business policies</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-8">
+        <div class="q-title"><span class="q-num">6</span><h2 id="question-8">Approximately how many products or services would you like to show?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="catalogSize" value="1-10"> 1–10</label>
+          <label class="option"><input type="radio" name="catalogSize" value="11-25"> 11–25</label>
+          <label class="option"><input type="radio" name="catalogSize" value="26-50"> 26–50</label>
+          <label class="option"><input type="radio" name="catalogSize" value="51-100"> 51–100</label>
+          <label class="option"><input type="radio" name="catalogSize" value="101-500"> 101–500</label>
+          <label class="option"><input type="radio" name="catalogSize" value="500+"> More than 500</label>
+          <label class="option"><input type="radio" name="catalogSize" value="Not needed"> I don't need to show individual products/services</label>
+          <label class="option"><input type="radio" name="catalogSize" value="Unsure"> I'm not sure</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-9">
+        <div class="q-title"><span class="q-num">7</span><h2 id="question-9">If customers want to buy something from you, how should it work?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="buyFlow" value="No online sales"> I don't sell products online</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Call or message"> They should call/message me</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Send enquiry"> They should send an enquiry</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Send order then contact"> They should send their order through the website, and I'll contact them</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Full online checkout"> They should be able to order and pay completely online</label>
+          <label class="option"><input type="radio" name="buyFlow" value="Unsure"> I'm not sure</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-10">
+        <div class="q-title"><span class="q-num">8</span><h2 id="question-10">How should your website look?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="designLevel" value="Simple"> Simple, clean and professional</label>
+          <label class="option"><input type="radio" name="designLevel" value="Modern"> Modern and attractive</label>
+          <label class="option"><input type="radio" name="designLevel" value="Premium"> Premium/high-end</label>
+          <label class="option"><input type="radio" name="designLevel" value="Unique"> Unique and specifically designed around my brand</label>
+          <label class="option"><input type="radio" name="designLevel" value="Need recommendation"> I'm not sure — I'd like recommendations</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-11">
+        <div class="q-title"><span class="q-num">9</span><h2 id="question-11">After the website is ready, what would you like to manage yourself?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="selfManage" value="Nothing"> Nothing — I'd prefer someone else to manage it</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Text/photos"> Change text/photos</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Products/services"> Add/edit products or services</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Prices"> Change prices</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Offers"> Add offers</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Enquiries"> Manage customer enquiries</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Orders"> Manage orders</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="News"> Add articles/news</label>
+          <label class="option"><input type="checkbox" name="selfManage" value="Unsure"> I don't know yet</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-12">
+        <div class="q-title"><span class="q-num">10</span><h2 id="question-12">What do you already have ready?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="assets" value="Logo"> Logo</label>
+          <label class="option"><input type="checkbox" name="assets" value="Brand style"> Brand colors/style</label>
+          <label class="option"><input type="checkbox" name="assets" value="Domain"> Website address/domain</label>
+          <label class="option"><input type="checkbox" name="assets" value="Business copy"> Written information about my business</label>
+          <label class="option"><input type="checkbox" name="assets" value="Descriptions"> Product/service descriptions</label>
+          <label class="option"><input type="checkbox" name="assets" value="Prices"> Prices</label>
+          <label class="option"><input type="checkbox" name="assets" value="Photos"> Good-quality photos</label>
+          <label class="option"><input type="checkbox" name="assets" value="Videos"> Videos</label>
+          <label class="option"><input type="checkbox" name="assets" value="Reviews"> Customer reviews</label>
+          <label class="option"><input type="checkbox" name="assets" value="Existing site"> Existing website</label>
+          <label class="option"><input type="checkbox" name="assets" value="Need help"> Nothing yet / I'll need help with these</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-13">
+        <div class="q-title"><span class="q-num">11</span><h2 id="question-13">Which additional things would be useful for your business?</h2></div>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="extras" value="WhatsApp"> WhatsApp integration</label>
+          <label class="option"><input type="checkbox" name="extras" value="Google Maps"> Google Maps/location</label>
+          <label class="option"><input type="checkbox" name="extras" value="Reviews"> Customer reviews</label>
+          <label class="option"><input type="checkbox" name="extras" value="Booking"> Appointment/booking system</label>
+          <label class="option"><input type="checkbox" name="extras" value="Payments"> Online payments</label>
+          <label class="option"><input type="checkbox" name="extras" value="Shipping"> Delivery/shipping options</label>
+          <label class="option"><input type="checkbox" name="extras" value="Coupons"> Discount/coupon codes</label>
+          <label class="option"><input type="checkbox" name="extras" value="Customer accounts"> Customer accounts</label>
+          <label class="option"><input type="checkbox" name="extras" value="Order tracking"> Order tracking</label>
+          <label class="option"><input type="checkbox" name="extras" value="Multiple languages"> Multiple languages</label>
+          <label class="option"><input type="checkbox" name="extras" value="Social media"> Instagram/social media connection</label>
+          <label class="option"><input type="checkbox" name="extras" value="None"> None of these</label>
+          <label class="option"><input type="checkbox" name="extras" value="Unsure"> I'm not sure what I need</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-14">
+        <div class="q-title"><span class="q-num">12</span><h2 id="question-14">How important is appearing on Google when people search for businesses like yours?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="googleImportance" value="Very important"> Very important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Somewhat important"> Somewhat important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Not very important"> Not very important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Not important"> Not important</label>
+          <label class="option"><input type="radio" name="googleImportance" value="Unsure"> I don't know</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-15">
+        <div class="q-title"><span class="q-num">13</span><h2 id="question-15">When would you ideally like your website ready?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="timeline" value="ASAP"> As soon as possible</label>
+          <label class="option"><input type="radio" name="timeline" value="2 weeks"> Within 2 weeks</label>
+          <label class="option"><input type="radio" name="timeline" value="1 month"> Within 1 month</label>
+          <label class="option"><input type="radio" name="timeline" value="2-3 months"> Within 2–3 months</label>
+          <label class="option"><input type="radio" name="timeline" value="No deadline"> No particular deadline</label>
+          <label class="option"><input type="radio" name="timeline" value="Exploring"> I'm just exploring at the moment</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-16">
+        <div class="q-title"><span class="q-num">14</span><h2 id="question-16">Based on everything you selected above, how much would you be comfortable investing in your website?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="budget" value="Under 10000" required> Under ₹10,000</label>
+          <label class="option"><input type="radio" name="budget" value="10000-20000"> ₹10,000–₹20,000</label>
+          <label class="option"><input type="radio" name="budget" value="20000-30000"> ₹20,000–₹30,000</label>
+          <label class="option"><input type="radio" name="budget" value="30000-50000"> ₹30,000–₹50,000</label>
+          <label class="option"><input type="radio" name="budget" value="50000-75000"> ₹50,000–₹75,000</label>
+          <label class="option"><input type="radio" name="budget" value="75000-100000"> ₹75,000–₹1,00,000</label>
+          <label class="option"><input type="radio" name="budget" value="100000-150000"> ₹1,00,000–₹1,50,000</label>
+          <label class="option"><input type="radio" name="budget" value="150000-200000"> ₹1,50,000–₹2,00,000</label>
+          <label class="option"><input type="radio" name="budget" value="200000+"> More than ₹2,00,000</label>
+          <label class="option"><input type="radio" name="budget" value="Unsure"> I'm not sure what a website like this should cost</label>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-17">
+        <div class="q-title"><span class="q-num">15</span><h2 id="question-17">Suppose everything you want costs more than your preferred budget. What would you most likely do?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Increase budget"> Increase my budget if I understand the value</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Phase build"> Build the important things first and add more later</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Reduce features"> Remove some less-important features</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Cheaper option"> Look for a cheaper option</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Do not build"> Probably not build the website</label>
+          <label class="option"><input type="radio" name="budgetFlexibility" value="Discuss first"> I'd want to discuss the options first</label>
+        </div>
+      </section>
+
+      <section class="card existing-website-card" role="group" aria-labelledby="question-18">
+        <div class="q-title"><span class="q-num">16</span><h2 id="question-18">Do you currently have an existing website?</h2></div>
+        <div class="options">
+          <label class="option"><input type="radio" name="hasExistingWebsite" value="No"> No</label>
+          <label class="option"><input type="radio" name="hasExistingWebsite" value="Yes"> Yes</label>
+        </div>
+
+        <div id="existingWebsiteDetails" class="existing-website-fields">
+          <div style="display:grid;gap:14px;">
+            <div>
+              <label for="existingWebsiteUrl" style="display:block;font-weight:600;margin-bottom:6px;">Website address (optional)</label>
+              <input id="existingWebsiteUrl" type="url" name="existingWebsiteUrl" placeholder="https://example.com" />
+            </div>
+            <div>
+              <label for="existingWebsiteSpend" style="display:block;font-weight:600;margin-bottom:6px;">Approximately how much did you spend on it? (INR, optional)</label>
+              <input id="existingWebsiteSpend" type="text" name="existingWebsiteSpend" placeholder="Example: ₹25,000" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" role="group" aria-labelledby="question-19">
+        <div class="q-title"><span class="q-num">+</span><h2 id="question-19">Optional: Is there anything else you want your website to do?</h2></div>
+        <textarea name="notes" aria-label="Anything else you want your website to do (optional)" placeholder="Tell us anything else that matters to your business..."></textarea>
+      </section>
+
+      <p class="hint">Required: questions 1, 2 and 14. All other questions are optional. Use Submit to send your answers to Parth Raiyani.</p>
+      <section class="card contact-card">
+        <h2>Would you like to discuss your website? (optional)</h2>
+        <label class="option"><input id="contactPermission" name="contactPermission" type="checkbox"> I give Parth Raiyani permission to contact me by email about my website needs and services.</label>
+        <div id="contactDetails" hidden><label for="contactEmail">Your email address</label><input id="contactEmail" name="contactEmail" type="email" autocomplete="email" maxlength="254"><p class="hint">Only provide an email if you want to be contacted.</p></div>
+      </section>
+      <div class="spam-check" aria-hidden="true"><label for="companyFax">Leave this empty</label><input id="companyFax" name="companyFax" tabindex="-1" autocomplete="off"></div>
+      <div id="submissionStatus" role="status" aria-live="polite"></div>
+      <div id="submissionError" role="alert" tabindex="-1" hidden></div>
+      <div class="actions">
+        <button type="reset" class="secondary">Clear</button>
+        <button type="submit" class="primary" id="submitSurvey" disabled>Submit answers</button>
+      </div>
+
+      <div class="success" id="successMessage" role="status" tabindex="-1" hidden>Thank you. Your answers have been saved. You can close this page.</div>
+    </form>
+  </main>
+
+  <script type="module" src="../assets/survey.js"></script>
+</body>
+</html>
