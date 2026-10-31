@@ -107,7 +107,7 @@ test('community entries render from data and keep proposal status honest', async
  assert.equal(r.ok,true);
  assert(r.nodes.get('#speaking .community-inner').innerHTML.includes('Additional community talk'));
  const source=r.nodes.get('#open-source .community-inner').innerHTML;
- assert(source.includes('Open pull request')); assert(source.includes('Closed, not merged'));
+ assert(source.includes('Open pull request')); assert(!source.includes('Puppeteer')); assert(!source.includes('backport')); assert(source.includes('Developer writing')); assert(source.includes('Written by me')); assert(source.includes('My work featured by Collabora'));
  data.community.speaking.events[0].photos[0].src='javascript:alert(1)';
  assert.equal((await render(data)).ok,false);
  data.community.speaking.events[0].photos[0].src='/assets/media/community/cool-days-2025-1.jpeg';

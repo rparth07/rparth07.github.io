@@ -264,6 +264,25 @@
             "items": {
               "type": "string"
             }
+          },
+          "relatedLinks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "label",
+                "url"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -364,9 +383,9 @@
             "heading",
             "intro",
             "verifiedOn",
-            "note",
             "featured",
-            "other"
+            "other",
+            "writing"
           ],
           "additionalProperties": false,
           "properties": {
@@ -377,9 +396,6 @@
               "type": "string"
             },
             "verifiedOn": {
-              "type": "string"
-            },
-            "note": {
               "type": "string"
             },
             "featured": {
@@ -495,6 +511,41 @@
                     "minimum": 500
                   },
                   "status": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "writing": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "title",
+                  "date",
+                  "kind",
+                  "description",
+                  "url"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "kind": {
                     "type": "string"
                   },
                   "description": {

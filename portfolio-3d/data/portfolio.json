@@ -190,11 +190,24 @@
         "period": "March 2025 - Present",
         "description": "",
         "highlights": [
-          "Improve keyboard navigation, screen-reader support, and dialog accessibility in Collabora Online.",
-          "Modernize document controls through IconView conversions and core-to-browser UI integration in LibreOffice and Collabora release branches.",
-          "Expand Cypress accessibility validation and regression coverage across the office applications."
+          "Develop features and improve UI/UX across Writer, Calc, Impress, and Draw, including dialog layouts, tooltips, menus, and document controls.",
+          "Build document-aware bullet selection in Impress and refine table-style gallery commands to match the current selection.",
+          "Improve keyboard navigation, screen-reader support, focus management, and dialog accessibility.",
+          "Modernize LibreOffice controls with IconView and connect core document features to the browser UI.",
+          "Fix interaction and rendering bugs, optimize toolbar resize handling, and improve diagnostic tools and log anonymization.",
+          "Expand Cypress accessibility and regression tests, add Lighthouse checks, and publish developer articles explaining IconView improvements and dialog test coverage."
         ],
-        "projects": []
+        "projects": [],
+        "relatedLinks": [
+          {
+            "label": "Read my IconView article",
+            "url": "https://www.collaboraonline.com/blog/calc-converted-reference-edge-from-valueset-to-iconview/"
+          },
+          {
+            "label": "Read my dialog testing article",
+            "url": "https://www.collaboraonline.com/blog/when-you-need-a-red-ci-for-exactly-the-purpose-a11y-dialog-coverage-in-collabora-online/"
+          }
+        ]
       }
     ]
   },
@@ -682,9 +695,8 @@
   "community": {
     "openSource": {
       "heading": "Open source",
-      "intro": "Making office software more accessible, one contribution at a time.",
+      "intro": "Building useful features, improving UI/UX, and making open-source office software more accessible.",
       "verifiedOn": "2026-10-31",
-      "note": "Featured repositories have at least 500 GitHub stars. Snapshot checked 31 October 2026; pull-request counts include backports.",
       "featured": [
         {
           "id": "collabora-online",
@@ -693,9 +705,37 @@
           "organization": "CollaboraOnline",
           "url": "https://github.com/CollaboraOnline/online",
           "stars": 3385,
-          "summary": "Browser-based office editing, with a focus on accessibility, usable controls, and reliable testing.",
-          "scope": "219 merged pull requests, including backports",
+          "summary": "Feature development, UI/UX improvements, accessibility, performance, and automated testing for collaborative office software.",
+          "scope": "219 merged pull requests",
           "areas": [
+            {
+              "title": "UI/UX & interaction fixes",
+              "description": "Refined dialog layouts, tooltips, menus, and control sizing for clearer, more consistent editing workflows.",
+              "links": [
+                {
+                  "label": "Dialog layout improvements",
+                  "url": "https://github.com/CollaboraOnline/online/pull/12601"
+                },
+                {
+                  "label": "Toolbar resize handling",
+                  "url": "https://github.com/CollaboraOnline/online/pull/15163"
+                }
+              ]
+            },
+            {
+              "title": "Document-aware editor features",
+              "description": "Added Impress bullet choices from the current presentation and made table-style gallery commands follow the current state.",
+              "links": [
+                {
+                  "label": "Impress bullet picker",
+                  "url": "https://www.collaboraonline.com/blog/open-source-in-action-22-grammar-checking-that-runs-tabs-in-the-windows-app-and-smaller-accessible-pdfs/"
+                },
+                {
+                  "label": "Table-style gallery",
+                  "url": "https://www.collaboraonline.com/blog/open-source-in-action-24/"
+                }
+              ]
+            },
             {
               "title": "Keyboard & screen readers",
               "description": "Improved tree-view navigation, sortable headers, dialog controls, and keyboard access to comments.",
@@ -737,6 +777,24 @@
                   "url": "https://github.com/CollaboraOnline/online/pull/13100"
                 }
               ]
+            },
+            {
+              "title": "Performance & diagnostics",
+              "description": "Reduced redundant toolbar resize work, improved diagnostic controls, and anonymized user and document information in logs.",
+              "links": [
+                {
+                  "label": "Resize optimization",
+                  "url": "https://github.com/CollaboraOnline/online/pull/15163"
+                },
+                {
+                  "label": "Log anonymization",
+                  "url": "https://github.com/CollaboraOnline/online/pull/11500"
+                },
+                {
+                  "label": "Server audit warnings",
+                  "url": "https://github.com/CollaboraOnline/online/pull/9619"
+                }
+              ]
             }
           ]
         },
@@ -747,8 +805,8 @@
           "organization": "The Document Foundation",
           "url": "https://github.com/LibreOffice/core",
           "stars": 4584,
-          "summary": "C++ and GTK interface work across LibreOffice upstream and Collabora release branches.",
-          "scope": "Upstream and release-branch contributions; backports are not separate features",
+          "summary": "C++ and GTK development for LibreOffice document controls, dialogs, and user interactions.",
+          "scope": "Merged feature, UI, and accessibility improvements in LibreOffice",
           "areas": [
             {
               "title": "ValueSet to IconView",
@@ -798,17 +856,42 @@
           "organization": "Microsoft",
           "stars": 194416,
           "status": "Open pull request",
-          "description": "Proposed support for duplicating an editor tab. This is an open proposal, not a shipped contribution.",
+          "description": "Proposed support for duplicating an editor tab.",
           "url": "https://github.com/microsoft/vscode/pull/340912"
+        }
+      ],
+      "writing": [
+        {
+          "id": "iconview-article",
+          "title": "Calc: Converted Reference Edge from ValueSet to IconView",
+          "date": "21 April 2026",
+          "kind": "Written by me",
+          "description": "How I rebuilt Calc’s reference-edge selector with individual options, clearer spacing, tooltips, and keyboard interaction.",
+          "url": "https://www.collaboraonline.com/blog/calc-converted-reference-edge-from-valueset-to-iconview/"
         },
         {
-          "id": "puppeteer",
-          "name": "Puppeteer",
-          "organization": "Puppeteer",
-          "stars": 95775,
-          "status": "Closed, not merged",
-          "description": "Earlier documentation proposal to migrate Browser.ts to TSDoc. The pull request was closed without merging.",
-          "url": "https://github.com/puppeteer/puppeteer/pull/7019"
+          "id": "a11y-ci-article",
+          "title": "When you need a red CI for exactly the purpose: a11y dialog coverage in Collabora Online",
+          "date": "3 July 2026",
+          "kind": "Written by me",
+          "description": "Explaining how dialog coverage checks reveal missing tests and labels before changes reach users.",
+          "url": "https://www.collaboraonline.com/blog/when-you-need-a-red-ci-for-exactly-the-purpose-a11y-dialog-coverage-in-collabora-online/"
+        },
+        {
+          "id": "impress-bullets-feature",
+          "title": "Impress: reuse bullets from the current presentation",
+          "date": "28 September 2026",
+          "kind": "My work featured by Collabora",
+          "description": "Added a From Document choice that reuses a presentation’s existing bullet characters and images in the picker and dialog.",
+          "url": "https://www.collaboraonline.com/blog/open-source-in-action-22-grammar-checking-that-runs-tabs-in-the-windows-app-and-smaller-accessible-pdfs/"
+        },
+        {
+          "id": "table-style-feature",
+          "title": "Table-style gallery commands that follow the selection",
+          "date": "12 October 2026",
+          "kind": "My work featured by Collabora",
+          "description": "Made the table-style gallery’s New and Clear commands reflect its current state.",
+          "url": "https://www.collaboraonline.com/blog/open-source-in-action-24/"
         }
       ]
     },

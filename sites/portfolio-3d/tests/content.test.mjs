@@ -63,7 +63,7 @@ try {
  assert(talks.includes('t=13651'));
  assert(talks.includes('preload="none"'));
  const contributions=renderToStaticMarkup(createElement(OpenSource));
- assert(contributions.includes('Open pull request')); assert(contributions.includes('Closed, not merged'));
+ assert(contributions.includes('Open pull request')); assert(!contributions.includes('Puppeteer')); assert(!contributions.includes('backport')); assert(contributions.includes('Developer writing')); assert(contributions.includes('Written by me')); assert(contributions.includes('My work featured by Collabora')); assert(career.includes('Read my IconView article'));
  const lowStars=structuredClone(data);lowStars.community.openSource.featured[0].stars=499;
  assert(validateContent(lowStars).some(error=>error.includes('stars')));
  console.log('PASS: content validation, duplicate ids, unsafe links, extra project, experience, service, and rotating role rendering.');

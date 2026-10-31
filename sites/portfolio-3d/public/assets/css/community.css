@@ -19,7 +19,7 @@
 .community-areas { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; margin-top:28px; }
 .community-links { display:flex; gap:4px 20px; flex-wrap:wrap; font-size:14px; }
 .community-links a { padding:10px 0; min-height:44px; display:inline-flex; align-items:center; }
-.community-other { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.community-other { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:32px; }
 .community-other article { border-left:2px solid var(--community-border); padding-left:22px; }
 .community-block .community-other-title { font-size:22px; margin-bottom:26px; }
 .community-status { display:block; color:var(--community-muted); font-size:13px; margin-bottom:12px; }
@@ -48,3 +48,8 @@
 .community-block article { display:block; width:auto; gap:normal; }
 .community-block .community-mentoring { display:grid; gap:0 32px; }
 @media(max-width:700px) { .community-block .community-mentoring { display:block; } }
+
+.community-writing { margin-top:48px; padding-top:32px; border-top:1px solid var(--community-border); }
+.community-writing-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; margin-top:28px; }
+.community-writing-list article { min-width:0; }
+@media(max-width:700px) { .community-writing-list { grid-template-columns:1fr; } }
