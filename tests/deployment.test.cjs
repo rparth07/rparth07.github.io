@@ -20,6 +20,7 @@ test('built scripts, styles, fonts, and icons stay inside the 3D path', () => {
   const urls = [...html.matchAll(/<(?:script|link)\b[^>]*(?:src|href)="([^"#]+)"/g)].map(m => m[1]);
   assert(urls.length > 0);
   for (const url of urls) {
+    if (url === "https://static.cloudflareinsights.com/beacon.min.js") continue;
     assert(url.startsWith('/portfolio-3d/'), url);
     assert(exists(decodeURIComponent(url.slice(1))), url);
   }
